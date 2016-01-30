@@ -39,7 +39,7 @@ var Society = cc.Class({
         },
 
         // Decide when to ask
-        askCoef: 0,
+        askDelay: 3,
         
         // Decide the possibility to lost people
         lostCoef: 1,
@@ -105,7 +105,7 @@ var Society = cc.Class({
     },
 
     tribute: function (resources) {
-        this.mainPanel.power.increase(resources);
+        this.god.tribute(resources);
     },
 
     newSkillsAvailable: function (skills) {

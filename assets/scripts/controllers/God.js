@@ -19,6 +19,10 @@ cc.Class({
         this.mainPanel.on('skill-fired', this.skillFired, this);
     },
 
+    tribute: function (value) {
+        this.resources.addPower(value);
+    },
+
     skillFired: function (data) {
         this.society.skillFired(data.detail.skillID);
     },
