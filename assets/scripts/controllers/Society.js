@@ -84,8 +84,8 @@ var Society = cc.Class({
             }
             // Ritual need satisfied
             if (pickedPose && max >= this.learningGroup.wish.ritualNeed) {
+                this.vitualLearnt(this.learningGroup.wish, pickedPose);
                 this.learningGroup.toState(States.WORSHINPING, pickedPose);
-                this.vitualLearnt(wishID, pickedPose);
             }
         }
         else {
@@ -160,7 +160,7 @@ var Society = cc.Class({
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
         // Learn new skill if possible
-        if (this.wishes.length > 0 && !this.learningGroup.isLearning()) {
+        if (this.wishes.length > 0 && !this.learningGroup.active) {
             this.learn();
         }
         if (this.learningGroup.active) {
