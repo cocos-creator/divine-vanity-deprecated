@@ -47,8 +47,8 @@ var BattlePanel = cc.Class ({
                         }
                         self.unlockBtn(self.state);
                         break;
+
                 }
-            }
         }, this.node);
     },
 

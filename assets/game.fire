@@ -3451,7 +3451,7 @@
         "__id__": 112
       },
       {
-        "__id__": 115
+        "__id__": 114
       }
     ],
     "_prefab": null
@@ -3482,9 +3482,6 @@
     "wishes": [
       {
         "__id__": 113
-      },
-      {
-        "__id__": 114
       }
     ],
     "host": {
@@ -3504,18 +3501,6 @@
   {
     "__type__": "Wish",
     "id": 0,
-    "poseCount": 2,
-    "poseDuration": 3,
-    "moveSpeed": 50,
-    "ritualNeed": 3,
-    "tributePerP": 2,
-    "divineConsume": 1,
-    "wishConsume": 3,
-    "levelBonus": 0.1
-  },
-  {
-    "__type__": "Wish",
-    "id": 1,
     "poseCount": 2,
     "poseDuration": 3,
     "moveSpeed": 50,
