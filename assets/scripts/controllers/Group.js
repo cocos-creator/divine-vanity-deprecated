@@ -120,7 +120,7 @@ cc.js.mixin(Group.prototype, {
                         var prevPose = this.poses.indexOf(behavior.currentPose), poseId;
                         do {
                             poseId = Math.floor(Math.random() * this.poses.length);
-                        } while (poseId === prevPose);
+                        } while (poseId === prevPose && this.poses.length > 1);
                         behavior.currentPose = this.poses[poseId];
                     }
                 });
