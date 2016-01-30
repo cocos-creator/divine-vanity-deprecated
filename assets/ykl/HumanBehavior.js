@@ -99,6 +99,7 @@ cc.Class({
         }
         else if ( state === window.States.LOST ) {
             // 丢失或是死掉
+            this.node.removeFromParent();
         }
     },
 
