@@ -37,7 +37,7 @@
         "__id__": 2
       },
       {
-        "__id__": 7
+        "__id__": 8
       }
     ],
     "_localZOrder": 0,
@@ -102,6 +102,9 @@
     "_components": [
       {
         "__id__": 6
+      },
+      {
+        "__id__": 7
       }
     ],
     "_prefab": null
@@ -248,6 +251,17 @@
     "_fitHeight": false
   },
   {
+    "__type__": "88808PpqTxP1LWq3PyX3Lux",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "humans": [],
+    "showCheckedTimeMax": 3
+  },
+  {
     "__type__": "cc.Node",
     "_name": "Controllers",
     "_objFlags": 0,
@@ -294,9 +308,6 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 8
-      },
-      {
         "__id__": 9
       },
       {
@@ -304,6 +315,9 @@
       },
       {
         "__id__": 11
+      },
+      {
+        "__id__": 12
       }
     ],
     "_prefab": null
@@ -313,7 +327,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 7
+      "__id__": 8
     },
     "_enabled": true
   },
@@ -322,7 +336,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 7
+      "__id__": 8
     },
     "_enabled": true
   },
@@ -331,7 +345,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 7
+      "__id__": 8
     },
     "_enabled": true
   },
@@ -340,13 +354,10 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 7
+      "__id__": 8
     },
     "_enabled": true,
     "wishes": [
-      {
-        "__id__": 12
-      },
       {
         "__id__": 13
       },
@@ -361,6 +372,9 @@
       },
       {
         "__id__": 17
+      },
+      {
+        "__id__": 18
       }
     ],
     "person": {
@@ -376,8 +390,8 @@
   {
     "__type__": "Wish",
     "name": "RAIN",
-    "actionCount": 1,
-    "actionSpeed": 3,
+    "poseCount": 1,
+    "poseDuration": 3,
     "moveSpeed": 50,
     "ritualNeed": 3,
     "tributePerP": 2,
@@ -388,8 +402,8 @@
   {
     "__type__": "Wish",
     "name": "FIRE",
-    "actionCount": 1,
-    "actionSpeed": 3,
+    "poseCount": 1,
+    "poseDuration": 3,
     "moveSpeed": 50,
     "ritualNeed": 3,
     "tributePerP": 2,
@@ -400,8 +414,8 @@
   {
     "__type__": "Wish",
     "name": "MEAT",
-    "actionCount": 1,
-    "actionSpeed": 3,
+    "poseCount": 1,
+    "poseDuration": 3,
     "moveSpeed": 50,
     "ritualNeed": 3,
     "tributePerP": 2,
@@ -412,8 +426,8 @@
   {
     "__type__": "Wish",
     "name": "HEALTH",
-    "actionCount": 1,
-    "actionSpeed": 3,
+    "poseCount": 1,
+    "poseDuration": 3,
     "moveSpeed": 50,
     "ritualNeed": 3,
     "tributePerP": 2,
@@ -424,8 +438,8 @@
   {
     "__type__": "Wish",
     "name": "SUN",
-    "actionCount": 1,
-    "actionSpeed": 3,
+    "poseCount": 1,
+    "poseDuration": 3,
     "moveSpeed": 50,
     "ritualNeed": 3,
     "tributePerP": 2,
@@ -436,8 +450,8 @@
   {
     "__type__": "Wish",
     "name": "VEGETABLE",
-    "actionCount": 1,
-    "actionSpeed": 3,
+    "poseCount": 1,
+    "poseDuration": 3,
     "moveSpeed": 50,
     "ritualNeed": 3,
     "tributePerP": 2,

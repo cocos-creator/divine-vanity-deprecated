@@ -875,7 +875,7 @@
       "height": 640
     },
     "_fitWidth": false,
-    "_fitHeight": true
+    "_fitHeight": false
   },
   {
     "__type__": "88808PpqTxP1LWq3PyX3Lux",
@@ -985,8 +985,8 @@
   {
     "__type__": "Wish",
     "name": "RAIN",
-    "actionCount": 1,
-    "actionSpeed": 3,
+    "poseCount": 1,
+    "poseDuration": 3,
     "moveSpeed": 50,
     "ritualNeed": 3,
     "tributePerP": 2,
@@ -997,8 +997,8 @@
   {
     "__type__": "Wish",
     "name": "FIRE",
-    "actionCount": 1,
-    "actionSpeed": 3,
+    "poseCount": 1,
+    "poseDuration": 3,
     "moveSpeed": 50,
     "ritualNeed": 3,
     "tributePerP": 2,

@@ -62,7 +62,9 @@ cc.Class({
 
     skillFired: function (skill) {
         if (this.learningGroup.isLearning()) {
-            // this.learningGroup.
+            for (var i = 0; i < this.learningGroup.length; ++i) {
+                var person = this.learningGroup[i];
+            }
         }
     },
 
