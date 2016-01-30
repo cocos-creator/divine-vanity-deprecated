@@ -14,34 +14,29 @@ var PowerBar = cc.Class ({
         this.newPowerValue = 0;
         this.newPowerBarValue = 0;
         this.addPower = 0;
-        this.curValue = 0;
+        this.curValue = this.power.progress * 100;
+        this.curProgressValue = 0;
     },
 
-    updateValue: function (value, barValue) {
+    updateValue: function (value, barValue, addorLower) {
         this.changePower = true;
         this.newPowerValue = value;
         this.newPowerBarValue = barValue;
-        this.addPower = this.newPowerBarValue > this.power.progress ? 1 : -1;
-    },
-
-    increase: function (addition) {
-        this.changePower = true;
-        this.newPowerValue = this.curValue + addition;
-        this.newPowerBarValue = this.newPowerValue / 100;
-        this.addPower = this.newPowerBarValue > this.power.progress ? 1 : -1;
+        this.curProgressValue = parseFloat(this.power.progress.toFixed(2));
+        this.addPower = this.newPowerBarValue >= this.curProgressValue ? 1 : -1;
     },
 
     animaBar: function () {
         if (this.changePower) {
-            var progress = parseFloat(this.power.progress.toFixed(2));
-            if (progress !== this.newPowerBarValue) {
+            this.curProgressValue = parseFloat(this.power.progress.toFixed(2));
+            if (this.curProgressValue !== this.newPowerBarValue) {
                 this.power.progress += 0.01 * this.addPower;
             }
             if (this.curValue !== this.newPowerValue) {
                 this.curValue += 1 * this.addPower;
                 this.content.string = this.curValue;
             }
-            if (progress == this.newPowerBarValue && this.curValue === this.newPowerValue) {
+            if (this.curProgressValue == this.newPowerBarValue && this.curValue === this.newPowerValue) {
                 this.changePower = false;
             }
         }
