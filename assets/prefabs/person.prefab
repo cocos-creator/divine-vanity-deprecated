@@ -25,12 +25,12 @@
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 0.5
+      "y": 0
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 103,
-      "height": 77
+      "width": 153,
+      "height": 195
     },
     "_children": [
       {
@@ -39,7 +39,7 @@
     ],
     "_rotationX": 0,
     "_rotationY": 0,
-    "_scaleX": 0.82,
+    "_scaleX": -0.7768502499998607,
     "_scaleY": 0.82,
     "_position": {
       "__type__": "cc.Vec2",
@@ -215,7 +215,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "52e8ft4qGdKTZBXzzeOHtYH"
+    "fileId": "a4ade+wgY5DV5Y3rOOKqZbb"
   },
   {
     "__type__": "cc.Widget",
@@ -336,7 +336,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "76342wY+MhK36LlM6OLcSWr"
+    "fileId": "92d22gTn3xCdIMhZ1X0QEbJ"
   },
   {
     "__type__": "cc.Sprite",
@@ -347,7 +347,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "f491dc10-ce60-4d22-8073-fa67cc0cdef2"
+      "__uuid__": "17307041-4c31-4dd4-9c83-90b6c895a848"
     },
     "_type": 0,
     "_useOriginalSize": true,
@@ -361,9 +361,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": {
-      "__uuid__": "79b45ab9-f036-418d-a371-6119cc2f110b"
-    }
+    "_atlas": null
   },
   {
     "__type__": "cc.Animation",
@@ -374,17 +372,20 @@
     },
     "_enabled": true,
     "_defaultClip": {
-      "__uuid__": "128078b9-2ba3-4e18-a524-71a3941e1000"
+      "__uuid__": "808ec267-0315-46da-b699-8a43c81153f4"
     },
     "_clips": [
       {
-        "__uuid__": "90da8dd8-2886-46b6-bd2c-f26f0e59b745"
+        "__uuid__": "d88bf0d6-8f10-4cad-ad1b-7e1c9588763a"
       },
       {
-        "__uuid__": "128078b9-2ba3-4e18-a524-71a3941e1000"
+        "__uuid__": "84e38084-e07c-419a-90d7-730f11a96857"
+      },
+      {
+        "__uuid__": "808ec267-0315-46da-b699-8a43c81153f4"
       }
     ],
-    "playOnLoad": true
+    "playOnLoad": false
   },
   {
     "__type__": "fd410vTg3VKQbu9IoKPzDA9",
@@ -410,6 +411,6 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "e58f3jlqwZO/4PgwfcPA82R"
+    "fileId": "08e8cGnwIFHPqSJYzObKbD6"
   }
 ]

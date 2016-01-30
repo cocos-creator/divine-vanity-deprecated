@@ -1,0 +1,69 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "p_act01",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 2.05,
+  "sample": 20,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "f69fc470-83a1-49af-b8d8-60dbb22a43c1"
+            }
+          }
+        ]
+      }
+    },
+    "props": {
+      "rotation": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.5,
+          "value": -19
+        },
+        {
+          "frame": 0.6,
+          "value": 0
+        },
+        {
+          "frame": 0.7,
+          "value": -15
+        },
+        {
+          "frame": 0.8,
+          "value": 0
+        },
+        {
+          "frame": 1.25,
+          "value": 0
+        },
+        {
+          "frame": 1.75,
+          "value": 19
+        },
+        {
+          "frame": 1.85,
+          "value": 0
+        },
+        {
+          "frame": 1.95,
+          "value": 15
+        },
+        {
+          "frame": 2.05,
+          "value": 0
+        }
+      ]
+    }
+  },
+  "events": []
+}

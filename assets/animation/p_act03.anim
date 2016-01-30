@@ -1,0 +1,61 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "p_act03",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.5,
+  "sample": 20,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "17307041-4c31-4dd4-9c83-90b6c895a848"
+            }
+          }
+        ]
+      }
+    },
+    "props": {
+      "scaleX": [
+        {
+          "frame": 0,
+          "value": 0.82
+        },
+        {
+          "frame": 0.15,
+          "value": 0.75
+        },
+        {
+          "frame": 0.5,
+          "value": 0.9
+        },
+        {
+          "frame": 0.75,
+          "value": 0.82
+        },
+        {
+          "frame": 0.8,
+          "value": -0.82
+        },
+        {
+          "frame": 1,
+          "value": -0.75
+        },
+        {
+          "frame": 1.35,
+          "value": -0.9
+        },
+        {
+          "frame": 1.5,
+          "value": -0.82
+        }
+      ]
+    }
+  },
+  "events": []
+}

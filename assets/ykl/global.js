@@ -16,8 +16,9 @@ var WishType = cc.Enum({
 });
 
 var Poses = [
-    'dark_knight_fall',
-    'dark_knight_idle'
+    'p_act01',
+    'p_act02',
+    'p_act03'
 ];
 
 window.States = States;
