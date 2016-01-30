@@ -68,6 +68,8 @@ cc.Class({
 
         if ( state === window.States.DEFAULT ) {
             // 无序行走
+            this.wishIcon.x = this.wishIcon.y = 0;
+            this.wishIcon.active = false;
         }
         else if ( state === window.States.LEARNING ) {
             if (oldState !== window.States.DOUBTING) {
