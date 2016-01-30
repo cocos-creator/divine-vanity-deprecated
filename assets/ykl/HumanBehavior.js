@@ -32,6 +32,7 @@ cc.Class({
                 if (CC_EDITOR) return;
 
                 var name = WishType[this.currentWish.id];
+                this.wishIcon.getComponent(cc.Sprite).spriteFrame = this.sfWishIcons[this.currentWish.id];
                 this.wishIconAnim.play('show');
             }
         },
@@ -53,6 +54,8 @@ cc.Class({
             default: null,
             type: cc.Animation
         },
+
+        sfWishIcons: [cc.SpriteFrame],
 
         moveSpeed: 300,
 
