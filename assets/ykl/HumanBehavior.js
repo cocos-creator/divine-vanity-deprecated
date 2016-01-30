@@ -103,7 +103,9 @@ cc.Class({
         }
         else if ( state === window.States.LOST ) {
             // 丢失或是死掉
-            this.node.removeFromParent();
+            this.node.runAction(cc.sequence(cc.fadeOut(1), cc.callFunc(function () {
+                this.node.removeFromParent();
+            }, this)));
         }
     },
 

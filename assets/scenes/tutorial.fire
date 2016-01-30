@@ -3341,8 +3341,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 960,
-      "y": 640
+      "x": 480,
+      "y": 320
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -3351,7 +3351,7 @@
     "_ignoreAnchorPointForPosition": false,
     "_tag": -1,
     "_opacityModifyRGB": false,
-    "_id": "32c96vJz9FLD4YWG4m7FwAf",
+    "_id": "bdf37O/g0RFu6Aco4zrz7v2",
     "_active": true,
     "_components": [
       {
@@ -3361,10 +3361,12 @@
         "__id__": 109
       },
       {
-        "__id__": 112
+        "__id__": 111
       }
     ],
-    "_prefab": null
+    "_prefab": {
+      "__id__": 112
+    }
   },
   {
     "__type__": "8d8488GNe5KUoYdFG5att29",
@@ -3392,9 +3394,6 @@
     "wishes": [
       {
         "__id__": 110
-      },
-      {
-        "__id__": 111
       }
     ],
     "host": {
@@ -3406,8 +3405,9 @@
     "fxRitual": {
       "__id__": 45
     },
-    "askDelay": 3,
-    "lostCoef": 0.4,
+    "prayDelay": 15,
+    "lostCoef": 0.5,
+    "prayCoef": 0.3,
     "learnDelay": 3,
     "population": 0
   },
@@ -3418,18 +3418,6 @@
     "poseDuration": 3,
     "moveSpeed": 50,
     "ritualNeed": 3,
-    "tributePerP": 2,
-    "divineConsume": 1,
-    "wishConsume": 3,
-    "levelBonus": 0.1
-  },
-  {
-    "__type__": "Wish",
-    "id": 1,
-    "poseCount": 2,
-    "poseDuration": 2.5,
-    "moveSpeed": 50,
-    "ritualNeed": 5,
     "tributePerP": 2,
     "divineConsume": 1,
     "wishConsume": 3,
@@ -3450,6 +3438,16 @@
     "person": {
       "__uuid__": "09a4a97c-211f-4362-a0b0-a3bb71d0666f"
     }
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 107
+    },
+    "asset": {
+      "__uuid__": "4d988f64-02f1-42f3-80e1-f83a95fc9603"
+    },
+    "fileId": "6aea9LoS91OdLU10fdLLHij"
   },
   {
     "__type__": "cc.Node",

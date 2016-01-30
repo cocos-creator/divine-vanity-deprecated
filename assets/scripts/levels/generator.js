@@ -35,6 +35,8 @@ cc.Class({
             newbie.x = w * 0.2 + Math.floor(Math.random() * w * 0.6) - 96;
             newbie.y = this.y.length > 0 ? this.y[i % this.y.length] : 100;
             var zIndex = cc.winSize.height - newbie.y;
+            newbie.opacity = 0;
+            newbie.runAction(cc.fadeIn(1));
             society.host.addChild(newbie, zIndex);
             society.defaultGroup.addMember(newbie);
         }

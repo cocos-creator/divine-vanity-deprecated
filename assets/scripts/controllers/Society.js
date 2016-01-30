@@ -42,10 +42,12 @@ var Society = cc.Class({
         },
 
         // Decide when to ask
-        prayDelay: 3,
+        prayDelay: 20,
         
         // Decide the possibility to lost people
         lostCoef: 1,
+
+        prayCoef: 0.3,
 
         // Decide when to learn, +- 1 floating
         learnDelay: 1,
@@ -94,14 +96,15 @@ var Society = cc.Class({
             if (pickedPose && max >= wish.ritualNeed) {
                 this.tribute(max * wish.wishConsume);
                 this.scheduleOnce(function () {
-                    this.vitualLearnt(wish, pickedPose);
+                    this.fxRitual.playAnim();
                 }, 3);
-                group.toState(States.WORSHINPING, pickedPose);
+                this.ritualLearnt(wish, pickedPose);
+                group.toState(States.WORSHIPING, pickedPose);
             }
         }
         else if (group.isPraying() && group.prayRitual === this.rituals[wishID]) {
-            this.tribute(group.people.length * Wishes[wishID].wishConsume);
-            group.toState(States.WORSHINPING);
+            this.tribute(group.people.length * Wishes[wishID].wishConsume * 2);
+            group.toState(States.WORSHIPING);
         }
         else if (group.wish) {
             // Force update pose
@@ -110,20 +113,19 @@ var Society = cc.Class({
     },
 
     skillFired: function (wishID) {
-        if (!this.learningGroup.isLearning()) {
-            return;
-        }
-
-        this.wishCheck(this.learningGroup, wish);
+        this.wishCheck(this.learningGroup, wishID);
 
         for (var i = 0; i < this.runningGroups.length; ++i) {
             var group = this.runningGroups[i];
-            this.wishCheck(group);
+            this.wishCheck(group, wishID);
         }
     },
 
     tribute: function (resources) {
         this.god.tribute(resources);
+        var ratio = resources / 100;
+        var newbies = Math.ceil(this.population * ratio * this.prayCoef);
+        this.getComponent('generator').generate(newbies);
     },
 
     newSkillsAvailable: function (skills) {
@@ -156,7 +158,7 @@ var Society = cc.Class({
         }
     },
 
-    vitualLearnt: function (wish, pose) {
+    ritualLearnt: function (wish, pose) {
         this.rituals[wish.id] = pose;
         this.ritualCount = Object.keys(this.rituals).length;
         this.timeout = this.prayDelay;
@@ -168,7 +170,6 @@ var Society = cc.Class({
         if (index > -1) {
             UnusedPoses.splice(index, 1);
         }
-        this.fxRitual.playAnim();
     },
 
     rejointDefault: function (group) {
@@ -191,6 +192,9 @@ var Society = cc.Class({
     lost: function (count) {
         this.population -= count;
         this.battlePanel.people.string = this.population;
+        if (this.population < 3) {
+            this.node.emit('population-out');
+        }
     },
 
     // called every frame, uncomment this function to activate update callback
