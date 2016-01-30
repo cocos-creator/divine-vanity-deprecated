@@ -3,17 +3,17 @@ cc.Class({
 
     editor: {
         executeInEditMode: true,
+        playOnFocus: true,
     },
 
     properties: {
-        preview: {
-            get () {
-                return this.enabled;
+        previewOnFocus: {
+            default: true,
+            notify () {
+                this.enabled = this.previewOnFocus;
             },
-            set (value) {
-                this.enabled = value;
-            },
-            tooltip: 'Enable to preview in editor'
+            tooltip: 'Enable to preview in editor when you select the camera',
+            editorOnly: true
         },
 
         world: {
@@ -23,6 +23,16 @@ cc.Class({
         },
 
         // ...
+    },
+
+    onFocusInEditor : CC_EDITOR && function () {
+        if (this.previewOnFocus) {
+            this.enabled = true;
+        }
+    },
+
+    onLostFocusInEditor : CC_EDITOR && function () {
+        this.enabled = false;
     },
 
     //onEnable () {
@@ -44,8 +54,6 @@ cc.Class({
         this.world.position = cc.Vec2.ZERO;
         this.world.scale = cc.Vec2.ONE;
         this.world.rotation = 0;
-
-        cc.log('onDisable');
 
         if (CC_EDITOR && !cc.engine.isPlaying) {
             cc.engine.repaintInEditMode();
