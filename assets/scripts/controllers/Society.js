@@ -151,7 +151,8 @@ var Society = cc.Class({
         if (index > -1) {
             UnusedPoses.splice(index, 1);
         }
-        this.fxRitual.playAnim();
+        let signID = Poses.indexOf(pose);
+        this.fxRitual.playAnim(signID);
     },
 
     rejointDefault: function (group) {
