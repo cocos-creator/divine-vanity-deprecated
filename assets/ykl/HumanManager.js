@@ -4,23 +4,11 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        humans: {
-            default: [],
-            type: HumanBehavior
-        },
-
-        showCheckedTimeMax: {
-            default: 3,
-            displayName: '显示button时长'
-        }
     },
 
     onLoad: function () {
-        this.currentState = '';
         // 已经被点击了的人类
         this.checkedHumans = [];
-
-        this._showCheckedTime = this.showCheckedTimeMax;
 
         var canvas = cc.find('Canvas');
         canvas.on('wish-clicked', this.onHumanIconClicked, this);
@@ -43,20 +31,53 @@ cc.Class({
 
     update: function (dt) {
         this.updateHumanPosition();
-        this.updateHumanIcon(dt);
     },
 
     updateHumanPosition: function () {
+        var checkedHumans = this.checkedHumans;
+        var length = checkedHumans.length;
 
-    },
-
-    updateHumanIcon: function (dt) {
-        this._showCheckedTime += dt;
-        if (this._showCheckedTime < this.showCheckedTimeMax) {
+        if (length < 2) {
             return;
         }
 
-        this._showCheckedTime = 0;
+        var minDistance = 50;
+        var speed = checkedHumans[0].currentWish.moveSpeed;
+
+        for (var i = 0; i < length; i++) {
+            var first = checkedHumans[i];
+            var x = first.node.x;
+            var close = false;
+            var left = 0;
+            var right = 0;
+            var dif;
+
+            for (var j = 0; j < length; j++) {
+                var second = checkedHumans[j];
+                if (second === first) {
+                    continue;
+                }
+
+                dif = x - second.node.x;
+                if ( Math.abs(dif) < minDistance ) {
+                    close = true;
+                    break;
+                }
+
+                if (dif > 0) {
+                    left ++;
+                }
+                else {
+                    right ++;
+                }
+            }
+
+            if (close) {
+                continue;
+            }
+
+            first.node.x += left > right ? -speed : speed;
+        }
     },
 
     addCheckedHuman: function (checkedHuman) {
@@ -73,35 +94,6 @@ cc.Class({
             checkedHuman.currentPose !== checkedHumans[0].currentPose) ) {
             checkedHuman.checked = false;
             this.break();
-            return;
-        }
-
-        if (checkedHumans.length < 2) {
-            return;
-        }
-
-        // 重新规划目的地
-        var destPosition = 0;
-        var i = 0, l = checkedHumans.length;
-        var human;
-
-        for (; i < l; i++) {
-            human = checkedHumans[i];
-            destPosition += human.node.x;
-        }
-
-        destPosition /= l;
-
-        var range = 100;
-        for (i = 0; i < l; i++) {
-            human = checkedHumans[i];
-
-            var rndRange = range * (Math.random() - 0.5);
-            var dest = rndRange + destPosition;
-            if (dest < -480) {
-                dest = -480;
-            }
-            human.moveTo(dest, human.node.y);
         }
     },
 
