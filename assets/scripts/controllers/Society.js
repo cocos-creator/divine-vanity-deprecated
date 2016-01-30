@@ -1,6 +1,7 @@
 require('../../ykl/global');
 var Group = require('Group');
 var Wish = require('../Wish');
+var MainPanel = require('MainPanel');
 
 var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
@@ -32,6 +33,11 @@ var Society = cc.Class({
             type: cc.Node
         },
 
+        mainPanel: {
+            default: null,
+            type: MainPanel
+        },
+
         // Decide when to ask
         askCoef: 0,
         
@@ -39,7 +45,10 @@ var Society = cc.Class({
         lostCoef: 1,
 
         // Decide when to learn, +- 1 floating
-        learnDelay: 3,
+        learnDelay: 1,
+
+        // Population
+        population: 0,
     },
 
     // use this for initialization
@@ -163,6 +172,13 @@ var Society = cc.Class({
             this.host.addChild(newbie);
             this.defaultGroup.addMember(newbie);
         }
+        this.population += count;
+        this.mainPanel.people.string = this.population;
+    },
+
+    lost: function (count) {
+        this.population -= count;
+        this.mainPanel.people.string = this.population;
     },
 
     // called every frame, uncomment this function to activate update callback

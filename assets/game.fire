@@ -1300,9 +1300,13 @@
     "host": {
       "__id__": 5
     },
+    "mainPanel": {
+      "__id__": 38
+    },
     "askCoef": 0,
     "lostCoef": 1,
-    "learnDelay": 3
+    "learnDelay": 3,
+    "population": 0
   },
   {
     "__type__": "Wish",
@@ -1318,7 +1322,7 @@
   },
   {
     "__type__": "Wish",
-    "id": 0,
+    "id": 1,
     "poseCount": 3,
     "poseDuration": 3,
     "moveSpeed": 50,
