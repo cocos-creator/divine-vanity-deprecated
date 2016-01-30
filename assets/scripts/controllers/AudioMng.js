@@ -12,7 +12,7 @@ cc.Class({
         },
         wishSFX: {
             default: [],
-            type: cc.SpriteFrame
+            url: cc.AudioClip
         }
     },
 
@@ -25,21 +25,11 @@ cc.Class({
     },
 
     playWishSFX (wishType) {
-        cc.audioEngine.playEffect(wishType, false);
+        cc.audioEngine.playEffect(this.wishSFX[wishType], false);
     },
 
     onLoad () {
-        this.test();
     },
-
-    test () {
-        this.playBGM();
-        var idx = 0;
-        this.schedule(function() {
-            // this.playWishSFX(idx);
-            this.playRitual();
-        }.bind(this), 5, 3, 2.5);
-    }
 
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
