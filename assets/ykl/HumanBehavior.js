@@ -55,7 +55,7 @@ cc.Class({
         this.currentState = window.States.LEARNING;
     },
 
-    _updateState: function () {
+    _updateState: function (oldState) {
         var state = this.currentState;
 
         if ( state === window.States.DEFAULT ) {
