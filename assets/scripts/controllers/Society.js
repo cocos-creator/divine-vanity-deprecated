@@ -2,6 +2,7 @@ require('../../ykl/global');
 var Group = require('Group');
 var Wish = require('../Wish');
 var MainPanel = require('MainPanel');
+var FXRitual = require('FXRitual');
 
 var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
@@ -30,6 +31,11 @@ var Society = cc.Class({
         mainPanel: {
             default: null,
             type: MainPanel
+        },
+
+        fxRitual: {
+            default: null,
+            type: FXRitual,
         },
 
         // Decide when to ask
@@ -83,19 +89,23 @@ var Society = cc.Class({
                 }
             }
             // Ritual need satisfied
-            if (pickedPose && max >= this.learningGroup.wish.ritualNeed) {
-                this.vitualLearnt(this.learningGroup.wish, pickedPose);
+            var wish = this.learningGroup.wish;
+            if (pickedPose && max >= wish.ritualNeed) {
+                this.tribute(max * wish.wishConsume);
+                this.scheduleOnce(function () {
+                    this.vitualLearnt(wish, pickedPose);
+                }, 3);
                 this.learningGroup.toState(States.WORSHINPING, pickedPose);
             }
         }
         else {
             // Force update pose
-            this.learningGroup.countdown = 0;
+            this.learningGroup.punish();
         }
     },
 
     tribute: function (resources) {
-
+        this.mainPanel.power.increase(resources);
     },
 
     newSkillsAvailable: function (skills) {
@@ -121,6 +131,7 @@ var Society = cc.Class({
             var succeed = this.defaultGroup.split(wish, this.learningGroup);
             if (succeed) {
                 this.learningGroup.wish = wish;
+                this.learningGroup.learning = true;
                 this.scheduleOnce(this.startLearning, delay);
                 break;
             }
@@ -137,6 +148,7 @@ var Society = cc.Class({
         if (index > -1) {
             UnusedPoses.splice(index, 1);
         }
+        this.fxRitual.playAnim();
     },
 
     rejointDefault: function (group) {
@@ -160,7 +172,7 @@ var Society = cc.Class({
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
         // Learn new skill if possible
-        if (this.wishes.length > 0 && !this.learningGroup.active) {
+        if (this.wishes.length > 0 && !this.learningGroup.learning) {
             this.learn();
         }
         if (this.learningGroup.active) {
