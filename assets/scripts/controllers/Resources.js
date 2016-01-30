@@ -22,6 +22,19 @@ var Resources = cc.Class({
     extends: cc.Component,
 
     properties: {
+        curPower: {
+            default: 0,
+            type: cc.Integer,
+            notify: function () {
+                if (this.curPower > MAX_POWER) {
+                    this.curPower = MAX_POWER;
+                }
+                else if (this.curPower < MIN_POWER) {
+                    this.curPower = MIN_POWER;
+                }
+                MainPanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
+            }
+        }
     },
 
     statics: {
@@ -40,15 +53,11 @@ var Resources = cc.Class({
     // 增加能量
     addPower: function (value) {
         this.curPower += value;
-        this.curPower = this.curPower >= MAX_POWER ? MAX_POWER : this.curPower;
-        MainPanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
     },
 
     // 减能量
     spendPower: function (value) {
         this.curPower -= value;
-        this.curPower = this.curPower <= MIN_POWER ? MIN_POWER : this.curPower;
-        MainPanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
     }
 });
 
