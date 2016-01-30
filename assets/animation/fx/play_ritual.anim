@@ -103,7 +103,7 @@
   },
   "events": [
     {
-      "frame": 0.75,
+      "frame": 0.25,
       "func": "playParticle",
       "params": []
     }
