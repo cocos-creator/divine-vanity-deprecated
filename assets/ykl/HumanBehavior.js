@@ -107,10 +107,9 @@ cc.Class({
             this.randomPose();
 
             if (oldState !== window.States.DOUBTING) {
-                setTimeout(() => {
-                    this.showWish();
-                }, 1000);
+                this.showWish();
             }
+            this.wishIcon.getComponent(cc.Button).interactable = true;
         }
         else if ( state === window.States.DOUBTING ) {
             // 头上显示问号
@@ -162,6 +161,7 @@ cc.Class({
             return;
         }
         this.checked = true;
+        this.wishIcon.getComponent(cc.Button).interactable = false;
         this.wishIconLabel.string = 'checked';
 
         this.canvas.emit('wish-clicked', this);
