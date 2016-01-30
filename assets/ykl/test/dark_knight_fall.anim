@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "dark_knight_fall",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.6666666666666666,
+  "sample": 6,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "96aee0fe-feaf-4984-978e-0532a6682b42"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "8dc7c829-6f0d-49b0-99a7-8fd3f1c76e9b"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "3ba57adc-0a08-40ed-98f4-85b588a59341"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "755c0a9c-1787-404d-a984-f8a44bd2c3dd"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
