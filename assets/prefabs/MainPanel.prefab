@@ -941,7 +941,7 @@
       }
     ],
     "skillID": 0,
-    "costValue": 0,
+    "cost": 0,
     "button": {
       "__id__": 28
     },
@@ -1235,7 +1235,7 @@
       }
     ],
     "skillID": 0,
-    "costValue": 0,
+    "cost": 0,
     "button": {
       "__id__": 38
     },
@@ -1529,7 +1529,7 @@
       }
     ],
     "skillID": 0,
-    "costValue": 0,
+    "cost": 0,
     "button": {
       "__id__": 48
     },
