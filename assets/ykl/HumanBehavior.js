@@ -32,6 +32,7 @@ cc.Class({
                 if (CC_EDITOR) return;
 
                 var name = WishType[this.currentWish.id];
+                this.wishIcon.getComponent(cc.Sprite).spriteFrame = this.sfWishIcons[this.currentWish.id];
                 this.wishIconAnim.play('show');
             }
         },
@@ -53,6 +54,8 @@ cc.Class({
             default: null,
             type: cc.Animation
         },
+
+        sfWishIcons: [cc.SpriteFrame],
 
         moveSpeed: 300,
 
@@ -76,6 +79,7 @@ cc.Class({
         if ( state === window.States.DEFAULT ) {
             this.hideWish();
             this.anim.play('idle');
+            this.checked = false;
         }
         else if ( state === window.States.LEARNING ) {
             if (oldState !== window.States.DOUBTING) {
@@ -141,7 +145,6 @@ cc.Class({
 
             var direction = Math.floor( Math.random() * 2 );
             this.idleMoveSpeed *= direction === 0 ? -1 : 1;
-            this.changeIdleAnimByDirection(this.idleMoveSpeed);
         }
 
         var speed = this.idleMoveSpeed * dt;
@@ -150,20 +153,16 @@ cc.Class({
 
         if (x <= 0 || x >= width) {
             this.idleMoveSpeed *= -1;
-            this.changeIdleAnimByDirection(this.idleMoveSpeed);
-
             x = this.node.x - speed;
         }
 
-        this.node.x = x;
-    },
-
-    changeIdleAnimByDirection: function (direction) {
-        if (direction <= 0) {
+        if (this.idleMoveSpeed < 0 && this.anim.currentClip.name !== 'idle-left') {
             this.anim.play('idle-left');
         }
-        else {
+        else if (this.idleMoveSpeed > 0 && this.anim.currentClip.name !== 'idle') {
             this.anim.play('idle');
         }
+
+        this.node.x = x;
     }
 });

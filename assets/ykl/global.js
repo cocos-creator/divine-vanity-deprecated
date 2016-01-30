@@ -18,7 +18,9 @@ var WishType = cc.Enum({
 var Poses = [
     'p_act01',
     'p_act02',
-    'p_act03'
+    'p_act03',
+    'p_act04',
+    'p_act05'
 ];
 
 window.States = States;
