@@ -115,7 +115,7 @@ cc.Class({
     showWish: function () {
         this.wishIcon.stopAllActions();
         this.wishIcon.active = true;
-        this.wishIcon.runAction( cc.moveBy(0.2, 0, 120) );
+        this.wishIcon.runAction( cc.moveTo(0.2, 0, 120) );
     },
 
     hideWish: function () {
