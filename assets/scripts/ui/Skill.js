@@ -2,12 +2,19 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        label: {
-            default: null,
-            type: cc.Label
+        label: cc.Label,
+        sprite: cc.Sprite,
+        sfIcons: [cc.SpriteFrame],
+        skillID: {
+            default: 0,
+            type: cc.Integer,
+            visible: false
         },
-        skillID: 0,
-        costValue: 0
+        costValue: {
+            default: 0,
+            type: cc.Integer,
+            visible: false
+        }
     },
 
     userSkill: function () {
@@ -16,11 +23,11 @@ cc.Class({
         }
     },
 
-    updateSkill: function(skillId, skillInfo, callback) {
-        this.skillID = skillId;
-        var info = skillInfo.split('|');
-        this.label.string = info[0];
-        this.costValue = parseInt(info[1]);
+    updateSkill: function(skillInfo, callback) {
+        this.skillID = skillInfo.id;
+        this.costValue = skillInfo.cost;
+        this.label.string = this.costValue;
+        this.sprite.spriteFrame = this.sfIcons[this.skillID];
         this.callback = callback;
     }
 });
