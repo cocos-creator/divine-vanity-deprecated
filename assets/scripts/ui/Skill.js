@@ -14,13 +14,21 @@ cc.Class({
             default: 0,
             type: cc.Integer,
             visible: false
-        }
+        },
+        button: cc.Button,
+        cooldown: 0
     },
 
     userSkill: function () {
         if (this.callback) {
             this.callback(this.skillID, this.costValue);
+            this.button.interactable = false;
+            this.scheduleOnce(this.onButtonCooldown.bind(this), this.cooldown);
         }
+    },
+
+    onButtonCooldown () {
+        this.button.interactable = true;
     },
 
     updateSkill: function(skillInfo, callback) {

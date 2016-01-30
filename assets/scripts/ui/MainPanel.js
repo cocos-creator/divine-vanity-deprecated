@@ -58,7 +58,7 @@ var MainPanel = cc.Class ({
             item.setPosition (0, -item.height * (0.5 + i) - this.spacing * (i + 1));
             item.getComponent ('Skill').updateSkill ({
                 id: i,
-                cost: Resources.Skills[i]
+                cost: 10*(i+1)
             }, this.useSkill);
             this.skills.push (item);
         }
