@@ -62,6 +62,27 @@
           "frame": 2.05,
           "value": 0
         }
+      ],
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            0,
+            0
+          ]
+        }
+      ],
+      "scaleX": [
+        {
+          "frame": 0,
+          "value": -0.7768502499998607
+        }
+      ],
+      "scaleY": [
+        {
+          "frame": 0,
+          "value": 0.82
+        }
       ]
     }
   },

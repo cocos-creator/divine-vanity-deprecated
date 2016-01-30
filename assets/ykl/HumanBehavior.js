@@ -21,6 +21,11 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        anim: {
+            default: null,
+            type: cc.Animation
+        },
+
         currentPose: {
             visible: false,
             default: '',
@@ -29,8 +34,8 @@ cc.Class({
                 if (CC_EDITOR) return;
 
                 // 播动画
-                var anim = this.getComponent(cc.Animation);
-                anim.play(this.currentPose);
+                this.anim.stop();
+                this.anim.play(this.currentPose);
 
                 // 做其他事情
             }
@@ -63,7 +68,9 @@ cc.Class({
         wishIconLabel: {
             default: null,
             type: cc.Label
-        }
+        },
+
+        moveSpeed: 300
     },
 
     onLoad: function () {
@@ -163,6 +170,6 @@ cc.Class({
     showWish: function () {
         this.wishIcon.stopAllActions();
         this.wishIcon.active = true;
-        this.wishIcon.runAction( cc.moveBy(0.2, 0, 70) );
+        this.wishIcon.runAction( cc.moveBy(0.2, 0, 220) );
     }
 });

@@ -24,7 +24,7 @@
       "scaleX": [
         {
           "frame": 0,
-          "value": 0.82
+          "value": -0.7768502499998607
         },
         {
           "frame": 0.15,
@@ -53,6 +53,27 @@
         {
           "frame": 1.5,
           "value": -0.82
+        }
+      ],
+      "scaleY": [
+        {
+          "frame": 0,
+          "value": 0.82
+        }
+      ],
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            0,
+            0
+          ]
+        }
+      ],
+      "rotation": [
+        {
+          "frame": 0,
+          "value": 0
         }
       ]
     }

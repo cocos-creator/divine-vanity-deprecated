@@ -30,10 +30,10 @@ cc.Class({
     },
 
     update: function (dt) {
-        this.updateHumanPosition();
+        this.updateHumanPosition(dt);
     },
 
-    updateHumanPosition: function () {
+    updateHumanPosition: function (dt) {
         var checkedHumans = this.checkedHumans;
         var length = checkedHumans.length;
 
@@ -42,7 +42,7 @@ cc.Class({
         }
 
         var minDistance = 50;
-        var speed = checkedHumans[0].currentWish.moveSpeed;
+        var speed = checkedHumans[0].moveSpeed * dt;
 
         for (var i = 0; i < length; i++) {
             var first = checkedHumans[i];
