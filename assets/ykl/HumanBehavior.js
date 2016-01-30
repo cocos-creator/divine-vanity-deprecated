@@ -30,6 +30,9 @@ cc.Class({
             displayName: '当前愿望',
             notify: function () {
                 if (CC_EDITOR) return;
+
+                var name = WishType[this.currentWish.id];
+                this.wishIconLabel.string = name;
             }
         },
 
@@ -58,8 +61,6 @@ cc.Class({
         this.checked = false;
         this._time = 0;
         this.canvas = cc.find('Canvas');
-
-        this.currentState = window.States.LEARNING;
     },
 
     _updateState: function (oldState) {
@@ -67,6 +68,8 @@ cc.Class({
 
         if ( state === window.States.DEFAULT ) {
             // 无序行走
+            this.wishIcon.x = this.wishIcon.y = 0;
+            this.wishIcon.active = false;
         }
         else if ( state === window.States.LEARNING ) {
             if (oldState !== window.States.DOUBTING) {

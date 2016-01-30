@@ -11,7 +11,7 @@ var States = cc.Enum({
 
 var WishType = cc.Enum({
 	Fire: -1,
-	Water: -1,
+	Rain: -1,
 	Meat: -1,
 });
 
@@ -24,4 +24,4 @@ var Poses = [
 window.States = States;
 window.Poses = Poses;
 window.UnusedPoses = Poses;
-window.WithType = WishType;
+window.WishType = WishType;

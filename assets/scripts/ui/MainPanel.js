@@ -54,13 +54,13 @@ var MainPanel = cc.Class ({
             if (i === 0) {
                 this.content.height = this.spawnCount * (item.height + this.spacing) + this.spacing;
             }
-            this.content.addChild (item);
-            item.setPosition (0, -item.height * (0.5 + i) - this.spacing * (i + 1));
-            item.getComponent ('Skill').updateSkill ({
+            this.content.addChild(item);
+            item.setPosition(0, -item.height * (0.5 + i) - this.spacing * (i + 1));
+            item.getComponent('Skill').updateSkill({
                 id: i,
                 cost: 10*(i+1)
-            }, this.useSkill);
-            this.skills.push (item);
+            }, this.useSkill, this);
+            this.skills.push(item);
         }
     },
 

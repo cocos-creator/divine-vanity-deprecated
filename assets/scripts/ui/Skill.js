@@ -21,7 +21,7 @@ cc.Class({
 
     userSkill: function () {
         if (this.callback) {
-            this.callback(this.skillID, this.costValue);
+            this.callback.call(this.target, this.skillID, this.costValue);
             this.button.interactable = false;
             this.scheduleOnce(this.onButtonCooldown.bind(this), this.cooldown);
         }
@@ -31,11 +31,12 @@ cc.Class({
         this.button.interactable = true;
     },
 
-    updateSkill: function(skillInfo, callback) {
+    updateSkill: function(skillInfo, callback, target) {
         this.skillID = skillInfo.id;
         this.costValue = skillInfo.cost;
         this.label.string = this.costValue;
         this.sprite.spriteFrame = this.sfIcons[this.skillID];
         this.callback = callback;
+        this.target = target;
     }
 });

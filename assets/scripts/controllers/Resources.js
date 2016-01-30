@@ -45,14 +45,14 @@ var Resources = cc.Class({
     addPower: function (value) {
         this.curPower += value;
         this.curPower = this.curPower > MAX_POWER ? MAX_POWER : this.curPower;
-        // MainPanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
+        MainPanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
     },
 
     // 减能量
     spendPower: function (value) {
         this.curPower -= value;
         this.curPower = this.curPower < MIN_POWER ? MIN_POWER : this.curPower;
-        // MainPanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
+        MainPanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
     }
 });
 
