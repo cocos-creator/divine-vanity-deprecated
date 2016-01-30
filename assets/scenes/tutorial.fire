@@ -3400,6 +3400,9 @@
     "mainPanel": {
       "__id__": 102
     },
+    "fxRitual": {
+      "__id__": 45
+    },
     "askCoef": 0,
     "lostCoef": 0.4,
     "learnDelay": 3,
