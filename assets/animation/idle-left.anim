@@ -1,6 +1,6 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "idle",
+  "_name": "idle-left",
   "_objFlags": 0,
   "_rawFiles": null,
   "_duration": 0.6,
@@ -39,6 +39,12 @@
       }
     },
     "props": {
+      "rotation": [
+        {
+          "frame": 0,
+          "value": 0
+        }
+      ],
       "position": [
         {
           "frame": 0,
@@ -48,19 +54,7 @@
           ]
         }
       ],
-      "rotation": [
-        {
-          "frame": 0,
-          "value": 0
-        }
-      ],
       "scaleX": [
-        {
-          "frame": 0,
-          "value": -0.7768502499998607
-        }
-      ],
-      "scaleY": [
         {
           "frame": 0,
           "value": 0.82

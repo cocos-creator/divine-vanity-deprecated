@@ -54,13 +54,20 @@ cc.Class({
             type: cc.Label
         },
 
-        moveSpeed: 300
+        moveSpeed: 300,
+
+        idleMoveSpeed: 50,
+
+        idleChangeDirectionTimeRange: cc.v2(2, 4)
     },
 
     onLoad: function () {
         this.checked = false;
-        this._time = 0;
         this.canvas = cc.find('Canvas');
+
+        this._idleTime = this._idleChangeDirectionTime = 3;
+
+        this._updateState();
     },
 
     _updateState: function (oldState) {
@@ -70,6 +77,8 @@ cc.Class({
             // 无序行走
             this.wishIcon.x = this.wishIcon.y = 0;
             this.wishIcon.active = false;
+
+            this.anim.play('idle');
         }
         else if ( state === window.States.LEARNING ) {
             if (oldState !== window.States.DOUBTING) {
@@ -108,6 +117,48 @@ cc.Class({
     showWish: function () {
         this.wishIcon.stopAllActions();
         this.wishIcon.active = true;
-        this.wishIcon.runAction( cc.moveBy(0.2, 0, 220) );
+        this.wishIcon.runAction( cc.moveBy(0.2, 0, 120) );
+    },
+
+    update: function (dt) {
+        if (this.currentState === window.States.DEFAULT) {
+            this.handleDefaultState(dt);
+        }
+    },
+
+    handleDefaultState: function (dt) {
+        this._idleTime += dt;
+        if (this._idleTime > this._idleChangeDirectionTime) {
+            this._idleTime = 0;
+
+            var range = this.idleChangeDirectionTimeRange;
+            this._idleChangeDirectionTime = range.x + Math.random() * (range.y - range.x);
+
+            var direction = Math.floor( Math.random() * 2 );
+            this.idleMoveSpeed *= direction === 0 ? -1 : 1;
+            this.changeIdleAnimByDirection(this.idleMoveSpeed);
+        }
+
+        var speed = this.idleMoveSpeed * dt;
+        var x = this.node.x + speed;
+        var width = this.canvas.width;
+
+        if (x <= 0 || x >= width) {
+            this.idleMoveSpeed *= -1;
+            this.changeIdleAnimByDirection(this.idleMoveSpeed);
+
+            x = this.node.x - speed;
+        }
+
+        this.node.x = x;
+    },
+
+    changeIdleAnimByDirection: function (direction) {
+        if (direction <= 0) {
+            this.anim.play('idle-left');
+        }
+        else {
+            this.anim.play('idle');
+        }
     }
 });
