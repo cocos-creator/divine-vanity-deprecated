@@ -24,6 +24,13 @@ var PowerBar = cc.Class ({
         this.addPower = this.newPowerBarValue > this.power.progress ? 1 : -1;
     },
 
+    increase: function (addition) {
+        this.changePower = true;
+        this.newPowerValue = this.curValue + addition;
+        this.newPowerBarValue = this.newPowerValue / 100;
+        this.addPower = this.newPowerBarValue > this.power.progress ? 1 : -1;
+    },
+
     animaBar: function () {
         if (this.changePower) {
             var progress = parseFloat(this.power.progress.toFixed(2));
