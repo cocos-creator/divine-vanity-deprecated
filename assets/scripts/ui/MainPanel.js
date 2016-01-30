@@ -37,7 +37,6 @@ var MainPanel = cc.Class ({
     start: function () {
         this.content = this.scrollView.content;
         this.skills = [];
-        this.people.string = "0";
         this.instantiate();
     },
 

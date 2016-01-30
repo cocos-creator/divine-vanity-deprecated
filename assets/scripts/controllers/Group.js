@@ -80,20 +80,23 @@ cc.js.mixin(Group.prototype, {
                 // Not learning anymore
                 this.poses.length = 0;
                 var people = this.people;
-                var lostCoef = this.society.lostCoef;
+                var society = this.society;
                 people.forEach((person, index) => {
                     var behavior = person.getComponent('HumanBehavior');
+                    var lostCount = 0;
                     // Correct pose
                     if (detail === behavior.currentPose) {
                         behavior.currentState = States.WORSHINPING;
                     }
                     // Incorrect
                     else {
-                        if (Math.random() < lostCoef) {
+                        if (Math.random() < society.lostCoef) {
                             behavior.currentState = States.LOST;
                             delete people[index];
+                            lostCount++;
                         }
                     }
+                    society.lost(lostCount);
                 });
                 this.wish = null;
                 this.countdown = 3;
@@ -114,7 +117,11 @@ cc.js.mixin(Group.prototype, {
                 this.people.forEach((person) => {
                     var behavior = person.getComponent('HumanBehavior');
                     if (!behavior.checked) {
-                        behavior.currentPose = this.poses[Math.floor(Math.random() * this.poses.length)];
+                        var prevPose = this.poses.indexOf(behavior.currentPose), poseId;
+                        do {
+                            poseId = Math.floor(Math.random() * this.poses.length);
+                        } while (poseId === prevPose);
+                        behavior.currentPose = this.poses[poseId];
                     }
                 });
                 this.countdown = this.wish.poseDuration;
