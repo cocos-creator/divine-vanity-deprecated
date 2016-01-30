@@ -1,0 +1,125 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "fx_lightning",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 4,
+  "sample": 20,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "sprite": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0.2,
+              "value": 0
+            },
+            {
+              "frame": 0.3,
+              "value": 255
+            },
+            {
+              "frame": 0.65,
+              "value": 255
+            },
+            {
+              "frame": 0.95,
+              "value": 0
+            }
+          ]
+        },
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": [
+              {
+                "frame": 0.2,
+                "value": {
+                  "__uuid__": "3c6b9ed1-c2ea-4212-83fb-8a58b94c64f2"
+                }
+              },
+              {
+                "frame": 0.25,
+                "value": {
+                  "__uuid__": "cdd70e6a-ab8e-4aa1-a3bf-2dd7d6584d90"
+                }
+              },
+              {
+                "frame": 0.55,
+                "value": {
+                  "__uuid__": "6f5e177c-a8d1-49b0-aa3e-eff034a2cf06"
+                }
+              },
+              {
+                "frame": 0.6,
+                "value": {
+                  "__uuid__": "c8e02a5a-f0bc-47ea-803a-62a4b918e44d"
+                }
+              },
+              {
+                "frame": 0.7,
+                "value": {
+                  "__uuid__": "fd9951b3-a15d-49aa-83ca-dcd4b43aa3d3"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "fireBase": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0.25,
+              "value": 0
+            },
+            {
+              "frame": 0.6,
+              "value": 0
+            },
+            {
+              "frame": 0.9,
+              "value": 255
+            },
+            {
+              "frame": 3.75,
+              "value": 255
+            },
+            {
+              "frame": 4,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "mask": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.05,
+              "value": 255
+            },
+            {
+              "frame": 0.15,
+              "value": 0
+            },
+            {
+              "frame": 0.2,
+              "value": 255
+            },
+            {
+              "frame": 0.3,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}
