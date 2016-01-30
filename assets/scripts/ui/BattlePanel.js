@@ -97,9 +97,5 @@ var BattlePanel = cc.Class ({
             skill.updateSkill(skillInfo, this.useSkill, this);
             this.skills.push(skill);
         }
-    },
-
-    update: function (dt) {
-
     }
 });
