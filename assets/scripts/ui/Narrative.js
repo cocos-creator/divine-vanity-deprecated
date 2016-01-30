@@ -16,11 +16,11 @@ cc.Class({
     onLoad: function () {
         this.currentTextId = 0;
         this.node.opacity = 0;
-        let idx = 0;
-        this.schedule(function() {
-            this.playLine(idx);
-            idx++;
-        }.bind(this), this.durationPerLine, 4, 0);
+        // let idx = 0;
+        // this.schedule(function() {
+        //     this.playLine(idx);
+        //     idx++;
+        // }.bind(this), this.durationPerLine, 4, 0);
     },
 
     playLine (idx) {

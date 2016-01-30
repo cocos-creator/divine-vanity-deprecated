@@ -119,11 +119,9 @@
       "__id__": 1
     },
     "_enabled": true,
-    "population": 20,
+    "population": 3,
     "y": [
-      50,
-      90,
-      120
+      100
     ],
     "person": {
       "__uuid__": "09a4a97c-211f-4362-a0b0-a3bb71d0666f"
@@ -135,6 +133,6 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "6aea9LoS91OdLU10fdLLHij"
+    "fileId": "d4246hAww5Cfb6koQUwlEX9"
   }
 ]
