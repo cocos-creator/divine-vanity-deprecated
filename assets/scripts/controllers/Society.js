@@ -56,7 +56,7 @@ var Society = cc.Class({
         prayCoef: 0.3,
 
         // Decide when to learn, +- 1 floating
-        learnDelay: 1,
+        learnDelay: 10,
 
         // Population
         population: 0,
@@ -76,7 +76,8 @@ var Society = cc.Class({
         // All running groups which is not in default state
         this.runningGroups = [];
 
-        this.timeout = this.prayDelay;
+        this.prayTimeout = this.prayDelay;
+        this.learnTimeout = this.learnDelay;
     },
 
     wishCheck: function (group, wishID) {
@@ -176,7 +177,7 @@ var Society = cc.Class({
         for (var i = 0; i < this.wishes.length; ++i) {
             var wish = this.wishes[i];
             this.learningGroup.reuse(this);
-            var delay = this.learnDelay - 1 + Math.random() * 2;
+            var delay = 2 + Math.random() * 2;
             var succeed = this.defaultGroup.split(wish, this.learningGroup);
             if (succeed) {
                 this.learningGroup.wish = wish;
@@ -190,7 +191,7 @@ var Society = cc.Class({
     ritualLearnt: function (wish, pose) {
         this.rituals[wish.id] = pose;
         this.ritualCount = Object.keys(this.rituals).length;
-        this.timeout = this.prayDelay;
+        this.prayTimeout = this.prayDelay;
         var index = this.wishes.indexOf(wish);
         if (index !== -1) {
             this.wishes.splice(index, 1);
@@ -230,7 +231,11 @@ var Society = cc.Class({
     update: function (dt) {
         // Learn new skill if possible
         if (this.wishes.length > 0 && !this.learningGroup.learning) {
-            this.learn();
+            if (this.learnTimeout <= 0 || this.ritualCount === 0) {
+                this.learnTimeout = this.learnDelay;
+                this.learn();
+            }
+            this.learnTimeout -= dt;
         }
         if (this.learningGroup.active) {
             this.learningGroup.update(dt);
@@ -239,8 +244,8 @@ var Society = cc.Class({
         var group;
         if (this.ritualCount > 0) {
             // Ready for praying
-            if (this.timeout <= 0) {
-                this.timeout = this.prayDelay;
+            if (this.prayTimeout <= 0) {
+                this.prayTimeout = this.prayDelay;
                 var knownWishes = Object.keys(this.rituals);
                 var wishID = knownWishes[Math.floor(Math.random() * knownWishes.length)];
                 var wish = Wishes[wishID];
@@ -253,7 +258,7 @@ var Society = cc.Class({
                     group.toState(States.PRAYING);
                 }
             }
-            this.timeout -= dt;
+            this.prayTimeout -= dt;
         }
 
         for (var i = 0; i < this.runningGroups.length; ++i) {

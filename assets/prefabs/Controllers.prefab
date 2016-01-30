@@ -93,10 +93,11 @@
     "host": null,
     "battlePanel": null,
     "fxRitual": null,
-    "prayDelay": 15,
+    "gameOver": null,
+    "prayDelay": 8,
     "lostCoef": 0.5,
     "prayCoef": 0.3,
-    "learnDelay": 3,
+    "learnDelay": 10,
     "population": 0
   },
   {
@@ -119,9 +120,11 @@
       "__id__": 1
     },
     "_enabled": true,
-    "population": 3,
+    "population": 5,
     "y": [
-      100
+      50,
+      90,
+      120
     ],
     "person": {
       "__uuid__": "09a4a97c-211f-4362-a0b0-a3bb71d0666f"
@@ -133,6 +136,6 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "d4246hAww5Cfb6koQUwlEX9"
+    "fileId": "bea45+S131CyLwX2ib2dJ2k"
   }
 ]
