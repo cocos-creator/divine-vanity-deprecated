@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "dark_knight_idle",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1,
+  "sample": 6,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "f491dc10-ce60-4d22-8073-fa67cc0cdef2"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "64e36ac0-b223-4ffc-a8a2-238e58af0ffb"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "68599a7c-fe77-48ce-b1b8-a999572ac68f"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "9493260b-b08f-4b47-9015-ebd01a4861e3"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "5a8d9652-5464-4972-b831-0742b4178010"
+            }
+          },
+          {
+            "frame": 0.8333333333333334,
+            "value": {
+              "__uuid__": "f82d39f5-0e45-4da1-a612-db6e7626ead5"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

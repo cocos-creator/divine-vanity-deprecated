@@ -1,0 +1,28 @@
+{
+  "ver": "1.0.0",
+  "uuid": "4aba28ff-a7d8-4211-ace8-7a95508d5762",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "dark_knight_atlas": {
+      "ver": "1.0.2",
+      "uuid": "f571b446-a6a3-4f6d-9d8d-34ea438355f6",
+      "rawTextureUuid": "4aba28ff-a7d8-4211-ace8-7a95508d5762",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 506,
+      "height": 508,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
