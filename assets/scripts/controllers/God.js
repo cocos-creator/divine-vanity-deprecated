@@ -1,10 +1,10 @@
-var MainPanel = require('MainPanel');
+var BattlePanel = require('BattlePanel');
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        mainPanel: {
+        battlePanel: {
             default: null,
             type: cc.Node
         }
@@ -16,7 +16,7 @@ cc.Class({
         this.resources = this.node.getComponent('Resources');
         this.society = this.node.getComponent('Society');
 
-        this.mainPanel.on('skill-fired', this.skillFired, this);
+        this.battlePanel.on('skill-fired', this.skillFired, this);
     },
 
     skillFired: function (data) {

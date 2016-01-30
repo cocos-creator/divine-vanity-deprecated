@@ -1,7 +1,7 @@
 require('../../ykl/global');
 var Group = require('Group');
 var Wish = require('../Wish');
-var MainPanel = require('MainPanel');
+var BattlePanel = require('BattlePanel');
 
 var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
@@ -27,9 +27,9 @@ var Society = cc.Class({
             type: cc.Node
         },
 
-        mainPanel: {
+        battlePanel: {
             default: null,
-            type: MainPanel
+            type: BattlePanel
         },
 
         // Decide when to ask
@@ -154,7 +154,7 @@ var Society = cc.Class({
 
     lost: function (count) {
         this.population -= count;
-        this.mainPanel.people.string = this.population;
+        this.battlePanel.people.string = this.population;
     },
 
     // called every frame, uncomment this function to activate update callback
