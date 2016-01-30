@@ -100,6 +100,30 @@ cc.js.mixin(Group.prototype, {
                     behavior.currentWish = this.wish;
                     behavior.currentPose = this.poses[index % this.poses.length];
                 });
+
+                // 当 people 间距太小时，将 间距做一定调整
+                var people = this.people.sort(function (a, b) {
+                    return a.x > b.x;
+                });
+
+                var lastX = null;
+                for (var i = 0, l = people.length; i < l; i++) {
+                    if (i === 0) {
+                        lastX = people[i].x;
+                        continue;
+                    }
+
+                    var x = people[i].x;
+
+                    if (x - lastX < 50) {
+                        people[i].runAction( cc.moveTo(0.3, lastX + 50, people[i].y) );
+                        lastX += 50;
+                    }
+                    else {
+                        lastX = x;
+                    }
+                }
+
                 this.countdown = this.wish.poseDuration;
                 this.learning = true;
                 break;
@@ -166,7 +190,7 @@ cc.js.mixin(Group.prototype, {
             behavior.currentState = States.DEFAULT;
         });
     },
-    
+
     update: function (dt) {
         if (this.countdown > 0) {
             this.countdown -= dt;

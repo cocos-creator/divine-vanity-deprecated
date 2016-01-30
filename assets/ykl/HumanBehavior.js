@@ -14,7 +14,7 @@ cc.Class({
             default: '',
             displayName: '当前姿势',
             notify: function () {
-                if (CC_EDITOR) return;
+                //if (CC_EDITOR) return;
 
                 // 播动画
                 this.anim.stop();
@@ -29,7 +29,7 @@ cc.Class({
             default: '',
             displayName: '当前愿望',
             notify: function () {
-                if (CC_EDITOR) return;
+                //if (CC_EDITOR) return;
 
                 var name = WishType[this.currentWish.id];
                 this.wishIcon.getComponent(cc.Sprite).spriteFrame = this.sfWishIcons[this.currentWish.id];
@@ -99,7 +99,7 @@ cc.Class({
         else if ( state === window.States.WORSHIPING ) {
             // 头上无问号，播放跪拜动画
             this.hideWish();
-            this.anim.play('p_act03');
+            // this.anim.play('p_act03');
         }
         else if ( state === window.States.LOST ) {
             // 丢失或是死掉
