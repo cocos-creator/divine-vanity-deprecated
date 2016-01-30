@@ -74,10 +74,7 @@ cc.Class({
         var state = this.currentState;
 
         if ( state === window.States.DEFAULT ) {
-            // 无序行走
-            this.wishIcon.x = this.wishIcon.y = 0;
-            this.wishIcon.active = false;
-
+            this.hideWish();
             this.anim.play('idle');
         }
         else if ( state === window.States.LEARNING ) {
@@ -91,12 +88,13 @@ cc.Class({
             this.wishIconLabel.string = 'Doubting';
         }
         else if ( state === window.States.CONFIRMING ) {
+            this.hideWish();
             // 头上有问号
+            // this.anim.play('confirming');
         }
         else if ( state === window.States.WORSHIPING ) {
             // 头上无问号，播放跪拜动画
-            // var anim = this.getComponent(cc.Animation);
-            // anim.play('跪拜');
+            // this.anim.play('worshiping');
         }
         else if ( state === window.States.LOST ) {
             // 丢失或是死掉
@@ -118,6 +116,11 @@ cc.Class({
         this.wishIcon.stopAllActions();
         this.wishIcon.active = true;
         this.wishIcon.runAction( cc.moveBy(0.2, 0, 120) );
+    },
+
+    hideWish: function () {
+        this.wishIcon.x = this.wishIcon.y = 0;
+        this.wishIcon.active = false;
     },
 
     update: function (dt) {
