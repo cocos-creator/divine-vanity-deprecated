@@ -63,20 +63,23 @@ cc.Class({
             screenCenter = cc.Canvas.instance.node.position;
         }
 
-        // apply camera
-        world.position = screenCenter.sub(node.position);
+        // compute position
+        var position = screenCenter.sub(node.position);
 
-        // apply camera scale
+        // compute scale
         var scale = node.scaleX;
-        var offset = world.position.subSelf(screenCenter);
+        var offset = position.subSelf(screenCenter);
         offset.mulSelf(scale);
-        world.position = screenCenter.add(offset);
-        world.scale = scale;
+        position = screenCenter.add(offset);
 
-        // apply camera rotation
-        world.rotation = -node.rotation;
-        if (node.rotation !== 0) {
-            world.position = screenCenter.add(offset.rotate(-world.rotation));
+        // compute rotation
+        var rotation = -node.rotation;
+        if (rotation !== 0) {
+            position = screenCenter.add(offset.rotate(-rotation * cc.RAD));
         }
+
+        world.position = position;
+        world.rotation = rotation;
+        world.scale = scale;
     },
 });
