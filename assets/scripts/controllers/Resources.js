@@ -14,7 +14,7 @@ var Skills = {
     9: "绿色植物|" + 50
 };
 
-var INIT_POWER = 100;
+var INIT_POWER = 20;
 var MIN_POWER = 0;
 var MAX_POWER = 100;
 
@@ -44,14 +44,14 @@ var Resources = cc.Class({
     // 增加能量
     addPower: function (value) {
         this.curPower += value;
-        this.curPower = this.curPower > MAX_POWER ? MAX_POWER : this.curPower;
+        this.curPower = this.curPower >= MAX_POWER ? MAX_POWER : this.curPower;
         MainPanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
     },
 
     // 减能量
     spendPower: function (value) {
         this.curPower -= value;
-        this.curPower = this.curPower < MIN_POWER ? MIN_POWER : this.curPower;
+        this.curPower = this.curPower <= MIN_POWER ? MIN_POWER : this.curPower;
         MainPanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
     }
 });
