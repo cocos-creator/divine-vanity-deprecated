@@ -129,11 +129,31 @@ var Society = cc.Class({
         this.getComponent('generator').generate(newbies);
     },
 
+    updatePopulation: function () {
+        this.battlePanel.people.string = this.population;
+        var max, count, newSkills = [];
+        for (var i = 0; i < PopulationLevel.length; ++i) {
+            count = PopulationLevel[i];
+            if (this.population >= count && Levels[count]) {
+                max = count;
+                id = Levels[count];
+                newSkills.push(id);
+            }
+            else {
+                break;
+            }
+        }
+        this.newSkillsAvailable(newSkills);
+        // if (max) {
+        //     this.battlePanel.unlockBtn(Levels[max]);
+        // }
+    },
+
     newSkillsAvailable: function (skills) {
         for (var i = 0; i < skills.length; ++i) {
-            var name = skills[i];
-            if (Wishes[name]) {
-                this.wishes.push(Wishes[name]);
+            var id = skills[i];
+            if (Wishes[id]) {
+                this.wishes.push(Wishes[id]);
             }
         }
     },

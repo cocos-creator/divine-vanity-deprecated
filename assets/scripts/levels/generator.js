@@ -41,6 +41,6 @@ cc.Class({
             society.defaultGroup.addMember(newbie);
         }
         society.population += count;
-        society.battlePanel.people.string = society.population;
+        society.updatePopulation();
     }
 });
