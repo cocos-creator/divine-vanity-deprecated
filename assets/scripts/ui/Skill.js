@@ -2,22 +2,40 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        label: {
-            default: null,
-            type: cc.Label
+        label: cc.Label,
+        sprite: cc.Sprite,
+        sfIcons: [cc.SpriteFrame],
+        skillID: {
+            default: 0,
+            type: cc.Integer,
+            visible: false
         },
-        skillID: 0
+        costValue: {
+            default: 0,
+            type: cc.Integer,
+            visible: false
+        },
+        button: cc.Button,
+        cooldown: 0
     },
 
     userSkill: function () {
         if (this.callback) {
-            this.callback(this.skillID);
+            this.callback(this.skillID, this.costValue);
+            this.button.interactable = false;
+            this.scheduleOnce(this.onButtonCooldown.bind(this), this.cooldown);
         }
     },
 
-    updateSkill: function(skillId, skillName, callback) {
-        this.skillID = skillId;
-        this.label.string = skillName;
+    onButtonCooldown () {
+        this.button.interactable = true;
+    },
+
+    updateSkill: function(skillInfo, callback) {
+        this.skillID = skillInfo.id;
+        this.costValue = skillInfo.cost;
+        this.label.string = this.costValue;
+        this.sprite.spriteFrame = this.sfIcons[this.skillID];
         this.callback = callback;
     }
 });

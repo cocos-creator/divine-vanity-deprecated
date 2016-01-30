@@ -25,18 +25,14 @@ cc.Class({
             displayName: '当前愿望',
             notify: function () {
                 if (CC_EDITOR) return;
-
-                setTimeout(() => {
-                    this.showWish();
-                }, 1000);
             }
         },
 
         currentState: {
             visible: false,
             default: window.States.DEFAULT,
-            notify: function () {
-                this._updateState();
+            notify: function (oldState) {
+                this._updateState(oldState);
             }
         },
 
@@ -66,8 +62,11 @@ cc.Class({
             // 无序行走
         }
         else if ( state === window.States.LEARNING ) {
-            // this.randomWish();
-            // this.randomPose();
+            if (oldState !== window.States.DOUBTING) {
+                // setTimeout(() => {
+                    this.showWish();
+                // }, 1000);
+            }
         }
         else if ( state === window.States.DOUBTING ) {
             // 头上显示问号
@@ -94,10 +93,6 @@ cc.Class({
         this.wishIconLabel.string = 'checked';
 
         this.canvas.emit('wish-clicked', this);
-    },
-
-    moveTo: function (x, y) {
-        this.node.runAction( cc.moveTo(this.currentWish.moveSpeed, x, y) );
     },
 
     showWish: function () {

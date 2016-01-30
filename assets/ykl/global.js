@@ -9,11 +9,19 @@ var States = cc.Enum({
     LOST: 6
 });
 
+var WishType = cc.Enum({
+	Fire: -1,
+	Water: -1,
+	Meat: -1,
+});
+
 var Poses = [
-    'dark_knight_fall',
-    'dark_knight_idle'
+    'p_act01',
+    'p_act02',
+    'p_act03'
 ];
 
 window.States = States;
 window.Poses = Poses;
 window.UnusedPoses = Poses;
+window.WithType = WishType;

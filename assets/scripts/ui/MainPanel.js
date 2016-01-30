@@ -1,50 +1,70 @@
-cc.Class ({
+
+var PowerBar = require('PowerBar');
+
+var MainPanel = cc.Class ({
     extends: cc.Component,
 
     properties: {
-        maxPower: 100,
-        power: {
-            default: null,
-            type: cc.ProgressBar
-        },
-        powerLabel: {
+        people: {
             default: null,
             type: cc.Label
-        }
+        },
 
+        power: {
+            default: null,
+            type: PowerBar
+        },
+        skillTemplate: {
+            default: null,
+            type: cc.Prefab
+        },
+        scrollView: {
+            default: null,
+            type: cc.ScrollView
+        },
+        spawnCount: 0,
+        spacing: 0
     },
 
-    // use this for initialization
+    statics: {
+        instance: null
+    },
+
     onLoad: function () {
-        this.init();
+        MainPanel.instance = this;
     },
 
-    init: function () {
-        this.powerValue = 0;
-        this.updatePower(50);
+    start: function () {
+        this.content = this.scrollView.content;
+        this.skills = [];
+        this.people.string = "0";
+        this.instantiate();
     },
 
-    updatePower: function (value) {
-        this.changePower = true;
-        this.newPowerValue = value;
-        this.newPowerBarValue = value / this.maxPower;
-        this.addPower = this.newPowerBarValue > this.power.progress ? 0.01 : -0.01;
+    useSkill: function (skillID, costValue) {
+        this.node.emit("skill-fired", { "skillID": skillID });
+        var Resources = require('Resources');
+        Resources.instance.spendPower(costValue);
     },
 
-    // called every frame
-    update: function (dt) {
-        if (this.changePower) {
-            if (this.power.progress.toFixed(2) !== this.newPowerBarValue) {
-                this.power.progress += this.addPower;
+    instantiate: function () {
+        var Resources = require('Resources');
+        for (let i = 0; i < this.spawnCount; ++i) {
+            let item = cc.instantiate(this.skillTemplate);
+            if (i === 0) {
+                this.content.height = this.spawnCount * (item.height + this.spacing) + this.spacing;
             }
-            if (this.powerValue !== this.newPowerValue) {
-                this.powerValue++;
-                this.powerLabel.string = this.powerValue;
-            }
-            if (this.power.progress.toFixed(2) == this.newPowerBarValue &&
-                this.powerValue === this.newPowerValue) {
-                this.changePower = false;
-            }
+            this.content.addChild (item);
+            item.setPosition (0, -item.height * (0.5 + i) - this.spacing * (i + 1));
+            item.getComponent ('Skill').updateSkill ({
+                id: i,
+                cost: 10*(i+1)
+            }, this.useSkill);
+            this.skills.push (item);
         }
+    },
+
+    update: function (dt) {
+
     }
 });
