@@ -159,7 +159,12 @@ cc.js.mixin(Group.prototype, {
                         society.lost(lostCount);
                     }
                 }, 0);
-                this.countdown = 3;
+                if (this.isLearning) {
+                    this.countdown = 3;
+                }
+                else {
+                    this.countdown = 2;
+                }
                 break;
             }
         }
