@@ -44,18 +44,14 @@ cc.Class({
                 if (CC_EDITOR) return;
 
                 this._poseContinueTime = this.currentWish.poseDuration;
-
-                setTimeout(() => {
-                    this.showWish();
-                }, 1000);
             }
         },
 
         currentState: {
             visible: false,
             default: window.States.LEARNING,
-            notify: function () {
-                this._updateState();
+            notify: function (oldState) {
+                this._updateState(oldState);
             }
         },
 
@@ -96,12 +92,18 @@ cc.Class({
         }
     },
 
-    _updateState: function () {
+    _updateState: function (oldState) {
         var state = this.currentState;
 
         if ( state === window.States.LEARNING ) {
             this.randomWish();
             this.randomPose();
+
+            if (oldState !== window.States.DOUBTING) {
+                setTimeout(() => {
+                    this.showWish();
+                }, 1000);
+            }
         }
         else if ( state === window.States.DOUBTING ) {
             // 头上显示问号
@@ -138,7 +140,7 @@ cc.Class({
     randomWish: function () {
         var wishes = cc.find('Controllers').getComponent('Society').wishes;
         var rndNum = Math.random();
-        var index = Math.floor( rndNum * wishes.length );
+        var index = 0;//Math.floor( rndNum * wishes.length );
         var wish = wishes[index];
 
         if (wish !== this.currentWish) {
@@ -156,10 +158,6 @@ cc.Class({
         this.wishIconLabel.string = 'checked';
 
         this.canvas.emit('wish-clicked', this);
-    },
-
-    moveTo: function (x, y) {
-        this.node.runAction( cc.moveTo(this.currentWish.moveSpeed, x, y) );
     },
 
     showWish: function () {
