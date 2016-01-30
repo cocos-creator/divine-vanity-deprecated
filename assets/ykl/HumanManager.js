@@ -30,7 +30,19 @@ cc.Class({
     },
 
     update: function (dt) {
+        this.updateHumanState();
         this.updateHumanPosition(dt);
+    },
+
+    updateHumanState: function () {
+        var checkedHumans = this.checkedHumans;
+        for (var i = checkedHumans.length - 1; i >= 0; i--) {
+            var human = checkedHumans[i];
+
+            if (!human.checked) {
+                checkedHumans.splice(i, 1);
+            }
+        }
     },
 
     updateHumanPosition: function (dt) {
