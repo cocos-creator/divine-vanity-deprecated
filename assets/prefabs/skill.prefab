@@ -154,7 +154,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "bd3c5aDUZlKNbyUDt9Y/ai6"
+    "fileId": "32c65TX6MpIvLUojdTzDngW"
   },
   {
     "__type__": "cc.Widget",
@@ -266,7 +266,7 @@
     "target": {
       "__id__": 1
     },
-    "component": "skill",
+    "component": "Skill",
     "handler": "userSkill"
   },
   {
@@ -288,6 +288,6 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "8605d5uh7ZHarzQomfSqebw"
+    "fileId": "a7e31pVOqxO5bXEzVnkqjDj"
   }
 ]
