@@ -2,16 +2,12 @@ require('../../ykl/global');
 var Group = require('Group');
 var Wish = require('../Wish');
 
-var WishNames = [
-    'RAIN',
-    'FIRE',
-    'MEAT'
-];
+var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
-for (var i = 0; i < Wishes.length; ++i) {
-    var name = WishNames[i];
-    Wishes[name] = new Wish();
-    Wishes[name].name = name;
+for (var i = 0; i < wishTypeList.length; ++i) {
+    var id = wishTypeList[i].value;
+    Wishes[id] = new Wish();
+    Wishes[id].id = id;
 }
 
 var Society = cc.Class({
@@ -62,12 +58,18 @@ var Society = cc.Class({
         this.generate(3);
     },
 
-    skillFired: function (skill) {
-        if (this.learningGroup.isLearning()) {
-            var i, poses = {}, person, pose, max = 1, pickedPose;
-            for (i = 0; i < this.learningGroup.length; ++i) {
-                person = this.learningGroup[i];
-                pose = person.currentPose;
+    skillFired: function (wishID) {
+        if (!this.learningGroup.isLearning()) {
+            return;
+        }
+
+        // Learning process
+        if (this.learningGroup.wish.id === wishID) {
+            var i, people = this.learningGroup.people, 
+                poses = {}, person, pose, max = 1, pickedPose;
+            for (i = 0; i < people.length; ++i) {
+                person = people[i];
+                pose = person.getComponent('HumanBehavior').currentPose;
                 if (poses[pose]) {
                     poses[pose] ++;
                     if (poses[pose] > max) {
@@ -82,8 +84,12 @@ var Society = cc.Class({
             // Ritual need satisfied
             if (pickedPose && max >= this.learningGroup.wish.ritualNeed) {
                 this.learningGroup.toState(States.WORSHINPING, pickedPose);
-                this.vitualLearnt(wish, pickedPose);
+                this.vitualLearnt(wishID, pickedPose);
             }
+        }
+        else {
+            // Force update pose
+            this.learningGroup.countdown = 0;
         }
     },
 
@@ -109,7 +115,7 @@ var Society = cc.Class({
     learn: function () {
         for (var i = 0; i < this.wishes.length; ++i) {
             var wish = this.wishes[i];
-            this.learningGroup.reuse();
+            this.learningGroup.reuse(this);
             var delay = this.learnDelay - 1 + Math.random() * 2;
             var succeed = this.defaultGroup.split(wish, this.learningGroup);
             if (succeed) {
@@ -121,12 +127,12 @@ var Society = cc.Class({
     },
 
     vitualLearnt: function (wish, pose) {
-        this.rituals[wish.name] = pose;
+        this.rituals[wish.id] = pose;
         var index = this.wishes.indexOf(wish);
         if (index !== -1) {
             this.wishes.splice(index, 1);
         }
-        index = UnusedPoses.indexOf(pickedPose);
+        index = UnusedPoses.indexOf(pose);
         if (index > -1) {
             UnusedPoses.splice(index, 1);
         }
@@ -176,4 +182,4 @@ var Society = cc.Class({
 });
 
 Society.Wishes = Wishes;
-Society.WishNames = WishNames;
+

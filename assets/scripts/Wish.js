@@ -1,7 +1,7 @@
 var Wish = cc.Class({
     name: 'Wish',
     properties: {
-        name: '',
+        id: 0,
         poseCount: 2,
         poseDuration: 3,
         moveSpeed: 50,
