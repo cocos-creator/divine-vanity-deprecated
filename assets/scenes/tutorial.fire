@@ -181,7 +181,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "a869040e-124c-4a99-8ab9-2d0a707336cd"
+      "__uuid__": "d74810ee-1529-4a4e-8eb3-4f5f20d326a7"
     },
     "_type": 0,
     "_useOriginalSize": true,
@@ -260,8 +260,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -960,
-      "y": -640
+      "x": -480,
+      "y": -320
     },
     "_skewX": 0,
     "_skewY": 0,

@@ -21,18 +21,25 @@ function randomArrayItems(arr, num) {
 
 var Group = function (society) {
     this.people = [];
+    this.unuse();
     this.reuse(society);
 };
 
 cc.js.mixin(Group.prototype, {
-    reuse: function (society) {
-        this.society = society;
+    unuse: function () {
+        this.society = null;
         this.people.length = 0;
         this.state = States.DEFAULT;
         this.wish = null;
         this.poses = null;
         this.prayRitual = null;
         this.countdown = 0;
+        this.active = false;
+    },
+
+    reuse: function (society) {
+        this.society = society;
+        this.active = true;
     },
 
     addMember: function (newbie) {

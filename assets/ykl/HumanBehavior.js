@@ -95,8 +95,8 @@ cc.Class({
         }
         else if ( state === window.States.WORSHIPING ) {
             // 头上无问号，播放跪拜动画
-            // var anim = this.getComponent(cc.Animation);
-            // anim.play('跪拜');
+            var anim = this.getComponent(cc.Animation);
+            anim.play('p_act01');
         }
         else if ( state === window.States.LOST ) {
             // 丢失或是死掉

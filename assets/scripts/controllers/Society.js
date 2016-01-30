@@ -145,7 +145,7 @@ var Society = cc.Class({
             defaultGroup.addMember(person);
         });
         if (group === this.learningGroup) {
-            group.reuse(this);
+            group.unuse();
         }
         else {
             cc.pool.putInPool(group);
@@ -163,7 +163,7 @@ var Society = cc.Class({
         if (this.wishes.length > 0 && !this.learningGroup.isLearning()) {
             this.learn();
         }
-        if (this.learningGroup.isLearning()) {
+        if (this.learningGroup.active) {
             this.learningGroup.update(dt);
         }
         for (var i = 0; i < this.runningGroups.length; ++i) {
