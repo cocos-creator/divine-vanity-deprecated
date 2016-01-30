@@ -1,0 +1,41 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "fade-in",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 2.4833333333333334,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            0,
+            285
+          ]
+        },
+        {
+          "frame": 2.4833333333333334,
+          "value": [
+            0,
+            -390
+          ]
+        }
+      ],
+      "scaleX": [
+        {
+          "frame": 0,
+          "value": 0.7
+        },
+        {
+          "frame": 2.4833333333333334,
+          "value": 1
+        }
+      ]
+    }
+  },
+  "events": []
+}

@@ -6,10 +6,13 @@ var FXRitual = require('FXRitual');
 
 var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
+var PopulationLevel = [3, 5, 8, 15, 25, 35, 45];
+var Levels = {};
 for (var i = 0; i < wishTypeList.length; ++i) {
     var id = wishTypeList[i].value;
     Wishes[id] = new Wish();
     Wishes[id].id = id;
+    Levels[PopulationLevel[i]] = id;
 }
 
 var Society = cc.Class({
