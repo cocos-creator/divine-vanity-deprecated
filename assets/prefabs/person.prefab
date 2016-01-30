@@ -498,6 +498,17 @@
     "wishIconAnim": {
       "__id__": 10
     },
+    "sfWishIcons": [
+      {
+        "__uuid__": "a6dabf8b-1614-4f41-a821-806942039c97"
+      },
+      {
+        "__uuid__": "3bfc7724-4261-467d-bcf3-f5af0134e493"
+      },
+      {
+        "__uuid__": "22fa78a4-496a-48d6-bd12-8f7ea3c4d7e9"
+      }
+    ],
     "moveSpeed": 300,
     "idleMoveSpeed": 50,
     "idleChangeDirectionTimeRange": {
