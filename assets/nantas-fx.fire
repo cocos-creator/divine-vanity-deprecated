@@ -37,10 +37,10 @@
         "__id__": 2
       },
       {
-        "__id__": 62
+        "__id__": 63
       },
       {
-        "__id__": 65
+        "__id__": 66
       }
     ],
     "_localZOrder": 0,
@@ -119,7 +119,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 61
+        "__id__": 62
       }
     ],
     "_prefab": null
@@ -2027,7 +2027,9 @@
         "__id__": 60
       }
     ],
-    "_prefab": null
+    "_prefab": {
+      "__id__": 61
+    }
   },
   {
     "__type__": "cc.Label",
@@ -2078,16 +2080,28 @@
       "__id__": 57
     },
     "_enabled": true,
-    "label": null,
-    "durationPerLine": 4,
+    "label": {
+      "__id__": 58
+    },
+    "durationPerLine": 3,
     "textContents": [
       "Hmmm, what's the noise coming from the ground?",
       "Oh, a new kind of animal",
       "They seem to have strong desires, maybe I can teach them something...",
       "Ha! a simple sign works well enough",
-      "Pfff, don't give them a sign when they are not moving the same..."
+      "Pfff, don't waste power when they not mimicing each other"
     ],
-    "fadeDuration": 0
+    "fadeDuration": 1
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 57
+    },
+    "asset": {
+      "__uuid__": "462604a9-e937-474d-9fca-25748acd99b2"
+    },
+    "fileId": "491d06lH8VMIZ/P9vU0rZLv"
   },
   {
     "__type__": "cc.Canvas",
@@ -2152,11 +2166,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 63
+        "__id__": 64
       }
     ],
     "_prefab": {
-      "__id__": 64
+      "__id__": 65
     }
   },
   {
@@ -2164,7 +2178,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 62
+      "__id__": 63
     },
     "_enabled": true,
     "bgm": {
@@ -2188,7 +2202,7 @@
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 62
+      "__id__": 63
     },
     "asset": {
       "__uuid__": "ddf35fb1-e52c-49ce-9c00-d895014eaccc"
@@ -2242,7 +2256,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 66
+        "__id__": 67
       }
     ],
     "_prefab": null
@@ -2252,7 +2266,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 65
+      "__id__": 66
     },
     "_enabled": true
   }
