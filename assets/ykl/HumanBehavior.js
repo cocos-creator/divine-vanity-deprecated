@@ -32,7 +32,7 @@ cc.Class({
                 if (CC_EDITOR) return;
 
                 var name = WishType[this.currentWish.id];
-                this.wishIconLabel.string = name;
+                this.wishIconAnim.play('show');
             }
         },
 
@@ -49,9 +49,9 @@ cc.Class({
             type: cc.Node
         },
 
-        wishIconLabel: {
+        wishIconAnim: {
             default: null,
-            type: cc.Label
+            type: cc.Animation
         },
 
         moveSpeed: 300,
@@ -85,7 +85,7 @@ cc.Class({
         }
         else if ( state === window.States.DOUBTING ) {
             // 头上显示问号
-            this.wishIconLabel.string = 'Doubting';
+            this.wishIconAnim.play('doubt');
         }
         else if ( state === window.States.CONFIRMING ) {
             this.hideWish();
@@ -107,7 +107,7 @@ cc.Class({
         }
         this.checked = true;
         this.wishIcon.getComponent(cc.Button).interactable = false;
-        this.wishIconLabel.string = 'checked';
+        this.wishIconAnim.play('confirm');
 
         this.canvas.emit('wish-clicked', this);
     },
