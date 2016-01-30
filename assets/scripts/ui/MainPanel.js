@@ -1,5 +1,7 @@
 
 var PowerBar = require('PowerBar');
+var EffectMng = require('EffectMng');
+var AudioMng = require('AudioMng');
 
 var MainPanel = cc.Class ({
     extends: cc.Component,
@@ -9,21 +11,14 @@ var MainPanel = cc.Class ({
             default: null,
             type: cc.Label
         },
-
         power: {
             default: null,
             type: PowerBar
         },
-        skillTemplate: {
+        skillList: {
             default: null,
-            type: cc.Prefab
-        },
-        scrollView: {
-            default: null,
-            type: cc.ScrollView
-        },
-        spawnCount: 0,
-        spacing: 0
+            type: cc.Node
+        }
     },
 
     statics: {
@@ -32,11 +27,10 @@ var MainPanel = cc.Class ({
 
     onLoad: function () {
         MainPanel.instance = this;
+        this.skills = [];
     },
 
     start: function () {
-        this.content = this.scrollView.content;
-        this.skills = [];
         this.instantiate();
     },
 
@@ -44,22 +38,26 @@ var MainPanel = cc.Class ({
         this.node.emit("skill-fired", { "skillID": skillID });
         var Resources = require('Resources');
         Resources.instance.spendPower(costValue);
+        this.chackBtnState(Resources);
+        EffectMng.instance.play(skillID);
+        AudioMng.instance.playWishSFX(skillID);
+    },
+
+    chackBtnState: function (resources) {
+        for (let i = 0, len = this.skills.length; i < len; ++i) {
+            var skill = this.skills[i];
+            skill.button.interactable = skill.cost <= resources.instance.curPower;
+        }
     },
 
     instantiate: function () {
         var Resources = require('Resources');
-        for (let i = 0; i < this.spawnCount; ++i) {
-            let item = cc.instantiate(this.skillTemplate);
-            if (i === 0) {
-                this.content.height = this.spawnCount * (item.height + this.spacing) + this.spacing;
-            }
-            this.content.addChild(item);
-            item.setPosition(0, -item.height * (0.5 + i) - this.spacing * (i + 1));
-            item.getComponent('Skill').updateSkill({
-                id: i,
-                cost: 10*(i+1)
-            }, this.useSkill, this);
-            this.skills.push(item);
+        var skillArr = this.skillList.getChildren();
+        for (let i = 0, len = skillArr.length; i < len; ++i) {
+            var skillInfo = { id: i, cost: 10 * (i + 1) };
+            var skill = skillArr[i].getComponent('Skill');
+            skill.updateSkill(skillInfo, this.useSkill, this);
+            this.skills.push(skill);
         }
     },
 
