@@ -129,7 +129,7 @@ cc.js.mixin(Group.prototype, {
                 break;
             case States.WORSHINPING:
                 // Not learning anymore
-                this.poses.length = 0;
+                this.poses && (this.poses.length = 0);
                 this.wish = null;
                 var people = this.people;
                 var society = this.society;

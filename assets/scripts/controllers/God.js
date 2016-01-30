@@ -1,4 +1,5 @@
 var BattlePanel = require('BattlePanel');
+var Resources = require('Resources');
 
 cc.Class({
     extends: cc.Component,
@@ -7,13 +8,17 @@ cc.Class({
         battlePanel: {
             default: null,
             type: cc.Node
+        },
+
+        resources: {
+            default: null,
+            type: Resources
         }
     },
 
     // use this for initialization
     onLoad: function () {
         this.skills = this.node.getComponent('Skills');
-        this.resources = this.node.getComponent('Resources');
         this.society = this.node.getComponent('Society');
 
         this.battlePanel.on('skill-fired', this.skillFired, this);

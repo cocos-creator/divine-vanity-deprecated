@@ -3466,6 +3466,9 @@
     "_enabled": true,
     "battlePanel": {
       "__id__": 47
+    },
+    "resources": {
+      "__id__": 108
     }
   },
   {
@@ -3493,7 +3496,7 @@
     "fxRitual": {
       "__id__": 45
     },
-    "askCoef": 0,
+    "askDelay": 3,
     "lostCoef": 0.5,
     "learnDelay": 3,
     "population": 0

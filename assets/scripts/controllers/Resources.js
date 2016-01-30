@@ -46,7 +46,7 @@ var Resources = cc.Class({
     addPower: function (value) {
         this.curPower += value;
         this.curPower = this.curPower >= MAX_POWER ? MAX_POWER : this.curPower;
-        BattlePanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER,);
+        BattlePanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
     },
 
     // 减能量
