@@ -1,4 +1,4 @@
-cc.Class({
+var AudioMng = cc.Class({
     extends: cc.Component,
 
     properties: {
@@ -16,6 +16,10 @@ cc.Class({
         }
     },
 
+    statics: {
+        instance: null
+    },
+
     playBGM () {
         cc.audioEngine.playMusic(this.bgm, true);
     },
@@ -29,7 +33,8 @@ cc.Class({
     },
 
     onLoad () {
-    },
+        AudioMng.instance = this;
+    }
 
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
