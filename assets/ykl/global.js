@@ -16,3 +16,4 @@ var Poses = [
 
 window.States = States;
 window.Poses = Poses;
+window.UnusedPoses = Poses;

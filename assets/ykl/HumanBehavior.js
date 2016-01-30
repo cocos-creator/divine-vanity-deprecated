@@ -1,21 +1,4 @@
-function randomArrayItems(arr, num) {
-    var temp = [];
-    for (var index in arr) {
-        temp.push(arr[index]);
-    }
 
-    var results = [];
-    for (var i = 0; i < num; i++) {
-        if (temp.length > 0) {
-            var arrIndex = Math.floor( Math.random() * temp.length );
-            results[i] = temp[arrIndex];
-            temp.splice(arrIndex, 1);
-        } else {
-            break;
-        }
-    }
-    return results;
-}
 
 cc.Class({
     extends: cc.Component,
@@ -43,8 +26,6 @@ cc.Class({
             notify: function () {
                 if (CC_EDITOR) return;
 
-                this._poseContinueTime = this.currentWish.poseDuration;
-
                 setTimeout(() => {
                     this.showWish();
                 }, 1000);
@@ -53,7 +34,7 @@ cc.Class({
 
         currentState: {
             visible: false,
-            default: window.States.LEARNING,
+            default: window.States.DEFAULT,
             notify: function () {
                 this._updateState();
             }
@@ -78,30 +59,15 @@ cc.Class({
         this.currentState = window.States.LEARNING;
     },
 
-    update: function (dt) {
-        this.updateTime(dt);
-    },
-
-    updateTime: function (dt) {
-        this._time += dt;
-
-        if ( this._time < this._poseContinueTime ) {
-            return;
-        }
-
-        this._time = 0;
-
-        if ( !this.checked ) {
-            this.randomPose();
-        }
-    },
-
     _updateState: function () {
         var state = this.currentState;
 
-        if ( state === window.States.LEARNING ) {
-            this.randomWish();
-            this.randomPose();
+        if ( state === window.States.DEFAULT ) {
+            // 无序行走
+        }
+        else if ( state === window.States.LEARNING ) {
+            // this.randomWish();
+            // this.randomPose();
         }
         else if ( state === window.States.DOUBTING ) {
             // 头上显示问号
@@ -115,37 +81,9 @@ cc.Class({
             // var anim = this.getComponent(cc.Animation);
             // anim.play('跪拜');
         }
-        else if ( state === window.States.DEFAULT ) {
-            // 无序行走
-
-        }
         else if ( state === window.States.LOST ) {
             // 丢失或是死掉
         }
-    },
-
-    randomPose: function () {
-        var poses = randomArrayItems(window.Poses, this.currentWish.poseCount);
-        var rndNum = Math.random();
-        var index = Math.floor( rndNum * poses.length );
-        var pose = poses[index];
-
-        if (pose !== this.currentPose) {
-            this.currentPose = pose;
-        }
-    },
-
-    randomWish: function () {
-        var wishes = cc.find('Controllers').getComponent('Society').wishes;
-        var rndNum = Math.random();
-        var index = Math.floor( rndNum * wishes.length );
-        var wish = wishes[index];
-
-        if (wish !== this.currentWish) {
-            this.currentWish = wish;
-        }
-
-        this.wishIconLabel.string = this.currentWish.name;
     },
 
     onChecked: function () {

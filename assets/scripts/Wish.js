@@ -2,7 +2,7 @@ var Wish = cc.Class({
     name: 'Wish',
     properties: {
         name: '',
-        poseCount: 1,
+        poseCount: 2,
         poseDuration: 3,
         moveSpeed: 50,
         ritualNeed: 3,

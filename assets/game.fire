@@ -363,18 +363,6 @@
       },
       {
         "__id__": 14
-      },
-      {
-        "__id__": 15
-      },
-      {
-        "__id__": 16
-      },
-      {
-        "__id__": 17
-      },
-      {
-        "__id__": 18
       }
     ],
     "person": {
@@ -402,54 +390,6 @@
   {
     "__type__": "Wish",
     "name": "FIRE",
-    "poseCount": 1,
-    "poseDuration": 3,
-    "moveSpeed": 50,
-    "ritualNeed": 3,
-    "tributePerP": 2,
-    "divineConsume": 1,
-    "wishConsume": 3,
-    "levelBonus": 0.1
-  },
-  {
-    "__type__": "Wish",
-    "name": "MEAT",
-    "poseCount": 1,
-    "poseDuration": 3,
-    "moveSpeed": 50,
-    "ritualNeed": 3,
-    "tributePerP": 2,
-    "divineConsume": 1,
-    "wishConsume": 3,
-    "levelBonus": 0.1
-  },
-  {
-    "__type__": "Wish",
-    "name": "HEALTH",
-    "poseCount": 1,
-    "poseDuration": 3,
-    "moveSpeed": 50,
-    "ritualNeed": 3,
-    "tributePerP": 2,
-    "divineConsume": 1,
-    "wishConsume": 3,
-    "levelBonus": 0.1
-  },
-  {
-    "__type__": "Wish",
-    "name": "SUN",
-    "poseCount": 1,
-    "poseDuration": 3,
-    "moveSpeed": 50,
-    "ritualNeed": 3,
-    "tributePerP": 2,
-    "divineConsume": 1,
-    "wishConsume": 3,
-    "levelBonus": 0.1
-  },
-  {
-    "__type__": "Wish",
-    "name": "VEGETABLE",
     "poseCount": 1,
     "poseDuration": 3,
     "moveSpeed": 50,
