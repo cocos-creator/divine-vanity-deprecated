@@ -1,14 +1,4 @@
 
-var Wishes = [
-    // Fire
-    {
-        name: 'Fire',
-        rndPoseNum: 2,
-        poseContinueTime: 3,
-        gatherSpeed: 1
-    }
-];
-
 var States = cc.Enum({
     DEFAULT: 0,
     LEARNING: 1,
@@ -24,6 +14,5 @@ var Poses = [
     'dark_knight_idle'
 ];
 
-window.Wishes = Wishes;
 window.States = States;
 window.Poses = Poses;

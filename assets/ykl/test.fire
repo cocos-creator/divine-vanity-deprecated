@@ -35,6 +35,9 @@
     "_children": [
       {
         "__id__": 2
+      },
+      {
+        "__id__": 27
       }
     ],
     "_localZOrder": 0,
@@ -291,10 +294,10 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_fontSize": 20,
+    "_fontSize": 40,
     "_lineHeight": 40,
-    "_enableWrapText": false,
-    "_isSystemFontUsed": false,
+    "_enableWrapText": true,
+    "_isSystemFontUsed": true,
     "_N$string": "button",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -475,8 +478,12 @@
     "wishIcon": {
       "__id__": 4
     },
+    "wishIconLabel": {
+      "__id__": 6
+    },
     "_N$currentPose": "",
-    "_N$currentWish": ""
+    "_N$currentWish": "",
+    "_N$currentState": 1
   },
   {
     "__type__": "cc.Node",
@@ -663,10 +670,10 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_fontSize": 20,
+    "_fontSize": 40,
     "_lineHeight": 40,
-    "_enableWrapText": false,
-    "_isSystemFontUsed": false,
+    "_enableWrapText": true,
+    "_isSystemFontUsed": true,
     "_N$string": "button",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -847,8 +854,12 @@
     "wishIcon": {
       "__id__": 15
     },
+    "wishIconLabel": {
+      "__id__": 17
+    },
     "_N$currentPose": "",
-    "_N$currentWish": ""
+    "_N$currentWish": "",
+    "_N$currentState": 1
   },
   {
     "__type__": "cc.Canvas",
@@ -880,5 +891,119 @@
       }
     ],
     "showCheckedTimeMax": 3
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Controllers",
+    "_objFlags": 0,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_parent": {
+      "__id__": 1
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_children": [],
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_ignoreAnchorPointForPosition": false,
+    "_tag": -1,
+    "_opacityModifyRGB": false,
+    "_id": "16fd1q3KGBK0YoAUk2j5T2h",
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 28
+      },
+      {
+        "__id__": 29
+      }
+    ],
+    "_prefab": null
+  },
+  {
+    "__type__": "8d8488GNe5KUoYdFG5att29",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 27
+    },
+    "_enabled": true
+  },
+  {
+    "__type__": "07354aU81JPS5ESw2HLIjGo",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 27
+    },
+    "_enabled": true,
+    "wishes": [
+      {
+        "__id__": 30
+      },
+      {
+        "__id__": 31
+      }
+    ],
+    "person": {
+      "__uuid__": "09a4a97c-211f-4362-a0b0-a3bb71d0666f"
+    },
+    "host": {
+      "__id__": 2
+    },
+    "askCoef": 0,
+    "lostCoef": 1,
+    "learnDelay": 3
+  },
+  {
+    "__type__": "Wish",
+    "name": "RAIN",
+    "actionCount": 1,
+    "actionSpeed": 3,
+    "moveSpeed": 50,
+    "ritualNeed": 3,
+    "tributePerP": 2,
+    "divineConsume": 1,
+    "wishConsume": 3,
+    "levelBonus": 0.1
+  },
+  {
+    "__type__": "Wish",
+    "name": "FIRE",
+    "actionCount": 1,
+    "actionSpeed": 3,
+    "moveSpeed": 50,
+    "ritualNeed": 3,
+    "tributePerP": 2,
+    "divineConsume": 1,
+    "wishConsume": 3,
+    "levelBonus": 0.1
   }
 ]

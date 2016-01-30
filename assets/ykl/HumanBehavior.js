@@ -43,7 +43,7 @@ cc.Class({
             notify: function () {
                 if (CC_EDITOR) return;
 
-                this._poseContinueTime = this.currentWish.poseContinueTime;
+                this._poseContinueTime = this.currentWish.poseDuration;
 
                 setTimeout(() => {
                     this.showWish();
@@ -125,7 +125,7 @@ cc.Class({
     },
 
     randomPose: function () {
-        var poses = randomArrayItems(window.Poses, this.currentWish.rndPoseNum);
+        var poses = randomArrayItems(window.Poses, this.currentWish.poseCount);
         var rndNum = Math.random();
         var index = Math.floor( rndNum * poses.length );
         var pose = poses[index];
@@ -136,7 +136,7 @@ cc.Class({
     },
 
     randomWish: function () {
-        var wishes = window.Wishes;
+        var wishes = cc.find('Controllers').getComponent('Society').wishes;
         var rndNum = Math.random();
         var index = Math.floor( rndNum * wishes.length );
         var wish = wishes[index];
@@ -159,7 +159,7 @@ cc.Class({
     },
 
     moveTo: function (x, y) {
-        this.node.runAction( cc.moveTo(this.currentWish.gatherSpeed, x, y) );
+        this.node.runAction( cc.moveTo(this.currentWish.moveSpeed, x, y) );
     },
 
     showWish: function () {

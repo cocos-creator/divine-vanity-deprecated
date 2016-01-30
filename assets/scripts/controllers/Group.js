@@ -3,7 +3,7 @@ require('../../ykl/global');
 var Group = function () {
     this.people = [];
     this.state = States.DEFAULT;
-    this.learnRitual = null;
+    this.wish = null;
     this.prayRitual = null;
 };
 
@@ -11,7 +11,7 @@ cc.js.mixin(Group.prototype, {
     reuse: function () {
         this.people.length = 0;
         this.state = States.DEFAULT;
-        this.learnRitual = null;
+        this.wish = null;
         this.prayRitual = null;
     },
 
@@ -21,17 +21,17 @@ cc.js.mixin(Group.prototype, {
         }
     },
 
-    canLearn: function (ritual) {
-        return this.state === States.DEFAULT && this.people.length >= ritual.difficulty;
+    canLearn: function (wish) {
+        return this.state === States.DEFAULT && this.people.length >= wish.difficulty;
     },
 
     isLearning: function () {
-        return (this.learnRitual !== null);
+        return (this.wish !== null);
     },
 
-    learn: function (ritual, learningGroup) {
-        if (this.canLearn(ritual)) {
-            var leftCount = this.people.length - ritual.difficulty;
+    learn: function (wish, learningGroup) {
+        if (this.canLearn(wish)) {
+            var leftCount = this.people.length - wish.ritualNeed;
             for (var i = this.people.length-1; i >= leftCount; --i) {
                 learningGroup.push(this.people[i]);
             }

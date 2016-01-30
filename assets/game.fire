@@ -343,6 +343,26 @@
       "__id__": 7
     },
     "_enabled": true,
+    "wishes": [
+      {
+        "__id__": 12
+      },
+      {
+        "__id__": 13
+      },
+      {
+        "__id__": 14
+      },
+      {
+        "__id__": 15
+      },
+      {
+        "__id__": 16
+      },
+      {
+        "__id__": 17
+      }
+    ],
     "person": {
       "__uuid__": "09a4a97c-211f-4362-a0b0-a3bb71d0666f"
     },
@@ -352,5 +372,77 @@
     "askCoef": 0,
     "lostCoef": 1,
     "learnDelay": 3
+  },
+  {
+    "__type__": "Wish",
+    "name": "RAIN",
+    "actionCount": 1,
+    "actionSpeed": 3,
+    "moveSpeed": 50,
+    "ritualNeed": 3,
+    "tributePerP": 2,
+    "divineConsume": 1,
+    "wishConsume": 3,
+    "levelBonus": 0.1
+  },
+  {
+    "__type__": "Wish",
+    "name": "FIRE",
+    "actionCount": 1,
+    "actionSpeed": 3,
+    "moveSpeed": 50,
+    "ritualNeed": 3,
+    "tributePerP": 2,
+    "divineConsume": 1,
+    "wishConsume": 3,
+    "levelBonus": 0.1
+  },
+  {
+    "__type__": "Wish",
+    "name": "MEAT",
+    "actionCount": 1,
+    "actionSpeed": 3,
+    "moveSpeed": 50,
+    "ritualNeed": 3,
+    "tributePerP": 2,
+    "divineConsume": 1,
+    "wishConsume": 3,
+    "levelBonus": 0.1
+  },
+  {
+    "__type__": "Wish",
+    "name": "HEALTH",
+    "actionCount": 1,
+    "actionSpeed": 3,
+    "moveSpeed": 50,
+    "ritualNeed": 3,
+    "tributePerP": 2,
+    "divineConsume": 1,
+    "wishConsume": 3,
+    "levelBonus": 0.1
+  },
+  {
+    "__type__": "Wish",
+    "name": "SUN",
+    "actionCount": 1,
+    "actionSpeed": 3,
+    "moveSpeed": 50,
+    "ritualNeed": 3,
+    "tributePerP": 2,
+    "divineConsume": 1,
+    "wishConsume": 3,
+    "levelBonus": 0.1
+  },
+  {
+    "__type__": "Wish",
+    "name": "VEGETABLE",
+    "actionCount": 1,
+    "actionSpeed": 3,
+    "moveSpeed": 50,
+    "ritualNeed": 3,
+    "tributePerP": 2,
+    "divineConsume": 1,
+    "wishConsume": 3,
+    "levelBonus": 0.1
   }
 ]

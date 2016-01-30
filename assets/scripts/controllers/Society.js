@@ -1,18 +1,19 @@
 require('../../ykl/global');
 var Group = require('Group');
+var Wish = require('../Wish');
 
-var Rituals = {
-    'rain': {
-        name: 'rain',
-        difficulty: 3,
-        needs: 2
-    }
-};
+window.Wishes = {};
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
+        // Wishes
+        wishes: {
+            default: [],
+            type: [Wish],
+        },
+
         // Person prefab for generating people
         person: {
             default: null,
@@ -37,15 +38,20 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
+        for (var i = 0; i < this.wishes.length; ++i) {
+            var wish = this.wishes[i];
+            if (wish.name) {
+                Wishes[wish.name] = wish;
+            }
+        }
+
         this.rituals = {};
-        this.unknownRituals = {};
+        this.unknownWishes = {};
         
         this.god = this.getComponent('God');
         
         // People who do nothing
         this.defaultGroup = new Group();
-        // The current learning skill, unlike asking, only one skill can be learning at one time
-        this.learningRitual = null;
         // People who is learning the learningSkill
         this.learningGroup = new Group();
         // All running groups which is not in default state
@@ -67,8 +73,8 @@ cc.Class({
     newSkillsAvailable: function (skills) {
         for (var i = 0; i < skills.length; ++i) {
             var name = skills[i];
-            if (Rituals[name]) {
-                this.unknownRituals.push(Rituals[name]);
+            if (Wishes[name]) {
+                this.unknownWishes.push(Wishes[name]);
             }
         }
     },
@@ -80,17 +86,21 @@ cc.Class({
     },
 
     learn: function () {
-        for (var i = 0; i < this.unknownRituals.length; ++i) {
-            var ritual = this.unknownRituals[i];
+        for (var i = 0; i < this.unknownWishes.length; ++i) {
+            var wish = this.unknownWishes[i];
             this.learningGroup.reuse();
             var delay = this.learnDelay - 1 + Math.random() * 2;
-            var succeed = this.defaultGroup.learn(ritual, this.learningGroup);
+            var succeed = this.defaultGroup.learn(wish, this.learningGroup);
             if (succeed) {
-                this.learningGroup.learnRitual = ritual;
+                this.learningGroup.wish = wish;
                 this.scheduleOnce(this.startLearning, delay);
                 break;
             }
         }
+    },
+
+    learnt: function (wish, ritual) {
+        this.rituals[wish.name] = ritual;
     },
 
     generate: function (count) {
@@ -110,7 +120,7 @@ cc.Class({
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
         // Learn new skill if possible
-        if (this.unknownRituals.length > 0 && !this.learningGroup.isLearning()) {
+        if (this.unknownWishes.length > 0 && !this.learningGroup.isLearning()) {
             this.learn();
         }
         for (var i = 0; i < this.runningGroups.length; ++i) {
