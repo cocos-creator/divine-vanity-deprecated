@@ -1,3 +1,4 @@
+require('../../ykl/global');
 var Group = require('Group');
 
 var Rituals = {
@@ -55,7 +56,7 @@ cc.Class({
 
     skillFired: function (skill) {
         if (this.learningGroup.isLearning()) {
-            
+            // this.learningGroup.
         }
     },
 
@@ -74,7 +75,7 @@ cc.Class({
 
     startLearning: function () {
         if (this.learningGroup.isLearning()) {
-            this.learningGroup.toState(Group.State.LEARNING);
+            this.learningGroup.toState(States.LEARNING);
         }
     },
 

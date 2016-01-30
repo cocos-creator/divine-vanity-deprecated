@@ -1,26 +1,28 @@
+require('../../ykl/global');
+
 var Group = function () {
     this.people = [];
-    this.state = Group.State.DEFAULT;
+    this.state = States.DEFAULT;
     this.learnRitual = null;
-    this.askRitual = null;
+    this.prayRitual = null;
 };
 
 cc.js.mixin(Group.prototype, {
     reuse: function () {
         this.people.length = 0;
-        this.state = Group.State.DEFAULT;
+        this.state = States.DEFAULT;
         this.learnRitual = null;
-        this.askRitual = null;
+        this.prayRitual = null;
     },
 
     addMember: function (newbie) {
-        if (this.state === Group.State.DEFAULT) {
+        if (this.state === States.DEFAULT) {
             this.people.push(newbie);
         }
     },
 
     canLearn: function (ritual) {
-        return this.state === Group.State.DEFAULT && this.people.length >= ritual.difficulty;
+        return this.state === States.DEFAULT && this.people.length >= ritual.difficulty;
     },
 
     isLearning: function () {
@@ -44,16 +46,6 @@ cc.js.mixin(Group.prototype, {
             this.state = state;
         }
     }
-});
-
-Group.State = cc.Enum({
-    DEFAULT: 0,
-    LEARNING: 1,
-    DOUBTING: 2,
-    CONFIRMING: 3,
-    WORSHIPING: 4,
-    ASKING: 5,
-    LOST: 6
 });
 
 module.exports = Group;

@@ -10,13 +10,13 @@ var Wishes = [
 ];
 
 var States = cc.Enum({
-    Learning: 0,
-    Doubting: 1,
-    Confirming: 2,
-    ThanksGiving: 3,
-    Nothing: 4,
-    Asking: 5,
-    Lost: 6
+    DEFAULT: 0,
+    LEARNING: 1,
+    DOUBTING: 2,
+    CONFIRMING: 3,
+    WORSHIPING: 4,
+    ASKING: 5,
+    LOST: 6
 });
 
 var Poses = [

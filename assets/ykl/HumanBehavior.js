@@ -53,7 +53,7 @@ cc.Class({
 
         currentState: {
             visible: false,
-            default: window.States.Learning,
+            default: window.States.LEARNING,
             notify: function () {
                 this._updateState();
             }
@@ -75,7 +75,7 @@ cc.Class({
         this._time = 0;
         this.canvas = cc.find('Canvas');
 
-        this.currentState = window.States.Learning;
+        this.currentState = window.States.LEARNING;
     },
 
     update: function (dt) {
@@ -99,27 +99,27 @@ cc.Class({
     _updateState: function () {
         var state = this.currentState;
 
-        if ( state === window.States.Learning ) {
+        if ( state === window.States.LEARNING ) {
             this.randomWish();
             this.randomPose();
         }
-        else if ( state === window.States.Doubting ) {
+        else if ( state === window.States.DOUBTING ) {
             // 头上显示问号
             this.wishIconLabel.string = 'Doubting';
         }
-        else if ( state === window.States.Confirming ) {
+        else if ( state === window.States.CONFIRMING ) {
             // 头上有问号
         }
-        else if ( state === window.States.ThanksGiving ) {
+        else if ( state === window.States.WORSHIPING ) {
             // 头上无问号，播放跪拜动画
             // var anim = this.getComponent(cc.Animation);
             // anim.play('跪拜');
         }
-        else if ( state === window.States.Nothing ) {
+        else if ( state === window.States.DEFAULT ) {
             // 无序行走
 
         }
-        else if ( state === window.States.Lost ) {
+        else if ( state === window.States.LOST ) {
             // 丢失或是死掉
         }
     },
@@ -149,7 +149,7 @@ cc.Class({
     },
 
     onChecked: function () {
-        if (this.currentState !== window.States.Learning) {
+        if (this.currentState !== window.States.LEARNING) {
             return;
         }
         this.checked = true;

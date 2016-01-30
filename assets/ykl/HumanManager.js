@@ -30,10 +30,10 @@ cc.Class({
         this.checkedHumans.forEach(function (item) {
             (function (item) {
                 item.checked = false;
-                item.currentState = window.States.Doubting;
+                item.currentState = window.States.DOUBTING;
 
                 setTimeout(()=> {
-                    item.currentState = window.States.Learning;
+                    item.currentState = window.States.LEARNING;
                 }, 500);
             })(item);
         });
