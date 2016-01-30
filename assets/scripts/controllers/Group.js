@@ -81,14 +81,15 @@ cc.js.mixin(Group.prototype, {
             this.state = state;
             switch (state) {
             case States.PRAYING:
-                this.poses = randomArrayItems(UnusedPoses, this.wish.poseCount);
+                var ritual = this.society.rituals[this.wish.id];
                 this.people.forEach((person, index) => {
                     var behavior = person.getComponent('HumanBehavior');
                     behavior.currentState = States.PRAYING;
                     behavior.currentWish = this.wish;
-                    behavior.currentPose = this.poses[index % this.poses.length];
+                    behavior.currentPose = ritual;
                 });
                 this.countdown = this.wish.poseDuration;
+                this.prayRitual = ritual;
                 this.praying = true;
                 break;
             case States.LEARNING:
@@ -199,6 +200,7 @@ cc.js.mixin(Group.prototype, {
             this.countdown = 0;
             switch (this.state) {
             case States.LEARNING:
+            case States.PRAYING:
                 // Switch pose
                 this.people.forEach((person) => {
                     var behavior = person.getComponent('HumanBehavior');

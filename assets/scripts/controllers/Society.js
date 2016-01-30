@@ -39,7 +39,7 @@ var Society = cc.Class({
         },
 
         // Decide when to ask
-        askDelay: 3,
+        prayDelay: 3,
         
         // Decide the possibility to lost people
         lostCoef: 1,
@@ -54,6 +54,7 @@ var Society = cc.Class({
     // use this for initialization
     onLoad: function () {
         this.rituals = {};
+        this.ritualCount = 0;
         
         this.god = this.getComponent('God');
         
@@ -63,16 +64,13 @@ var Society = cc.Class({
         this.learningGroup = new Group(this);
         // All running groups which is not in default state
         this.runningGroups = [];
+
+        this.timeout = this.prayDelay;
     },
 
-    skillFired: function (wishID) {
-        if (!this.learningGroup.isLearning()) {
-            return;
-        }
-
-        // Learning process
-        if (this.learningGroup.wish.id === wishID) {
-            var i, people = this.learningGroup.people, 
+    wishCheck: function (group, wishID) {
+        if (group.isLearning() && group.wish && group.wish.id === wishID) {
+            var i, people = group.people, 
                 poses = {}, person, pose, max = 1, pickedPose;
             for (i = 0; i < people.length; ++i) {
                 person = people[i];
@@ -89,18 +87,35 @@ var Society = cc.Class({
                 }
             }
             // Ritual need satisfied
-            var wish = this.learningGroup.wish;
+            var wish = group.wish;
             if (pickedPose && max >= wish.ritualNeed) {
                 this.tribute(max * wish.wishConsume);
                 this.scheduleOnce(function () {
                     this.vitualLearnt(wish, pickedPose);
                 }, 3);
-                this.learningGroup.toState(States.WORSHINPING, pickedPose);
+                group.toState(States.WORSHINPING, pickedPose);
             }
         }
-        else {
+        else if (group.isPraying() && group.prayRitual === this.rituals[wishID]) {
+            this.tribute(group.people.length * Wishes[wishID].wishConsume);
+            group.toState(States.WORSHINPING);
+        }
+        else if (group.wish) {
             // Force update pose
-            this.learningGroup.punish();
+            group.punish();
+        }
+    },
+
+    skillFired: function (wishID) {
+        if (!this.learningGroup.isLearning()) {
+            return;
+        }
+
+        this.wishCheck(this.learningGroup, wish);
+
+        for (var i = 0; i < this.runningGroups.length; ++i) {
+            var group = this.runningGroups[i];
+            this.wishCheck(group);
         }
     },
 
@@ -140,6 +155,8 @@ var Society = cc.Class({
 
     vitualLearnt: function (wish, pose) {
         this.rituals[wish.id] = pose;
+        this.ritualCount = Object.keys(this.rituals).length;
+        this.timeout = this.prayDelay;
         var index = this.wishes.indexOf(wish);
         if (index !== -1) {
             this.wishes.splice(index, 1);
@@ -160,6 +177,10 @@ var Society = cc.Class({
             group.unuse();
         }
         else {
+            var index = this.runningGroups.indexOf(group);
+            if (index >= 0) {
+                this.runningGroups.splice(index, 1);
+            }
             cc.pool.putInPool(group);
         }
     },
@@ -178,9 +199,32 @@ var Society = cc.Class({
         if (this.learningGroup.active) {
             this.learningGroup.update(dt);
         }
+        // Pray with ritual
+        var group;
+        if (this.ritualCount > 0) {
+            // Ready for praying
+            if (this.timeout <= 0) {
+                this.timeout = this.prayDelay;
+                var knownWishes = Object.keys(this.rituals);
+                var wishID = knownWishes[Math.floor(Math.random() * knownWishes.length)];
+                var wish = Wishes[wishID];
+                group = cc.pool.hasObject(Group) ? cc.pool.getFromPool(Group) : new Group(this);
+                var succeed = this.defaultGroup.split(wish, group);
+                if (succeed) {
+                    group.wish = wish;
+                    group.praying = true;
+                    this.runningGroups.push(group);
+                    group.toState(States.PRAYING);
+                }
+            }
+            this.timeout -= dt;
+        }
+
         for (var i = 0; i < this.runningGroups.length; ++i) {
-            var group = this.runningGroups[i];
-            // switch (group.)
+            group = this.runningGroups[i];
+            if (group.active) {
+                group.update(dt);
+            }
         }
     },
 });
