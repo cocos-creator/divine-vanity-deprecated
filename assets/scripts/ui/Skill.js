@@ -6,18 +6,21 @@ cc.Class({
             default: null,
             type: cc.Label
         },
-        skillID: 0
+        skillID: 0,
+        costValue: 0
     },
 
     userSkill: function () {
         if (this.callback) {
-            this.callback(this.skillID);
+            this.callback(this.skillID, this.costValue);
         }
     },
 
-    updateSkill: function(skillId, skillName, callback) {
+    updateSkill: function(skillId, skillInfo, callback) {
         this.skillID = skillId;
-        this.label.string = skillName;
+        var info = skillInfo.split('|');
+        this.label.string = info[0];
+        this.costValue = parseInt(info[1]);
         this.callback = callback;
     }
 });
