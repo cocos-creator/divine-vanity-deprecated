@@ -21,12 +21,6 @@ var Society = cc.Class({
             type: [Wish],
         },
 
-        // Person prefab for generating people
-        person: {
-            default: null,
-            type: cc.Prefab
-        },
-
         // Root node to host all people
         host: {
             default: null,
@@ -63,8 +57,6 @@ var Society = cc.Class({
         this.learningGroup = new Group(this);
         // All running groups which is not in default state
         this.runningGroups = [];
-
-        this.generate(3);
     },
 
     skillFired: function (wishID) {
@@ -158,22 +150,6 @@ var Society = cc.Class({
         else {
             cc.pool.putInPool(group);
         }
-    },
-
-    generate: function (count) {
-        if (!this.host) {
-            return;
-        }
-        for (var i = 0; i < count; ++i) {
-            var newbie = cc.instantiate(this.person);
-            // Random between [50, width-100)
-            newbie.x = cc.visibleRect.width / 2 - 200 + i * 200;
-            newbie.y = 180;
-            this.host.addChild(newbie);
-            this.defaultGroup.addMember(newbie);
-        }
-        this.population += count;
-        this.mainPanel.people.string = this.population;
     },
 
     lost: function (count) {
