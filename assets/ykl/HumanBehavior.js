@@ -99,7 +99,7 @@ cc.Class({
         else if ( state === window.States.WORSHIPING ) {
             // 头上无问号，播放跪拜动画
             this.hideWish();
-            this.anim.play('p_act03');
+            // this.anim.play('p_act03');
         }
         else if ( state === window.States.LOST ) {
             // 丢失或是死掉
