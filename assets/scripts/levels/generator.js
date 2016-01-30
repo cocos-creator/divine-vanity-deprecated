@@ -32,10 +32,10 @@ cc.Class({
             var newbie = cc.instantiate(this.person);
             // Random between [50, width-100)
             var w = cc.winSize.width;
-            newbie.x = w * 0.1 + Math.floor(Math.random() * w * 0.8);
+            newbie.x = w * 0.2 + Math.floor(Math.random() * w * 0.6) - 96;
             newbie.y = this.y.length > 0 ? this.y[i % this.y.length] : 100;
-            newbie.zIndex = newbie.y;
-            society.host.addChild(newbie);
+            var zIndex = cc.winSize.height - newbie.y;
+            society.host.addChild(newbie, zIndex);
             society.defaultGroup.addMember(newbie);
         }
         society.population += count;
