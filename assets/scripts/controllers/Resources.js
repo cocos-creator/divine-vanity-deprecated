@@ -1,5 +1,6 @@
 
 var BattlePanel = require('BattlePanel');
+var GameOverPanel = require('GameOverPanel');
 
 var Skills = {
     0: "雨|" + 5,
@@ -26,7 +27,12 @@ var Resources = cc.Class({
             default: 0,
             type: cc.Integer,
             visible: false
-        }
+        },
+
+        gameOver: {
+            default: null,
+            type: GameOverPanel
+        },
     },
 
     statics: {
@@ -54,6 +60,12 @@ var Resources = cc.Class({
         this.curPower -= value;
         this.curPower = this.curPower <= MIN_POWER ? MIN_POWER : this.curPower;
         BattlePanel.instance.power.updateValue(this.curPower, this.curPower / Resources.MAX_POWER);
+
+        this.scheduleOnce(function () {
+            if (this.curPower < 10) {
+                this.gameOver.node.active = true;
+            }
+        }, 5);
     }
 });
 

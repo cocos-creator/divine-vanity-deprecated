@@ -70,22 +70,26 @@ var BattlePanel = cc.Class ({
     },
 
     unlockBtn: function (state) {
+        var current = 0;
         for (let i = 0, len = this.skills.length; i < len; ++i) {
-            this.skills[i].node.active = false;
-        }
-
-        var firstPosX = 0;
-        for (let i = 0; i <= state; i++) {
-            var skill = this.skills[i];
-            if (i === 0) {
-                firstPosX = 200 - (state * 100);
-                skill.node.x = firstPosX;
+            // this.skills[i].node.active = false;
+            if (this.skills[i].node.active) {
+                current = i;
             }
             else {
-                skill.node.x = firstPosX + (100 * i);
+                break;
             }
-            skill.node.active = true;
         }
+
+        var unlocked = [];
+        var firstPosX = 200 - (state * 100);
+        for (let i = current + 1; i <= state; i++) {
+            var skill = this.skills[i];
+            skill.node.x = firstPosX + (100 * i);
+            skill.node.active = true;
+            unlocked.push(i);
+        }
+        return unlocked;
     },
 
     instantiate: function () {

@@ -17,7 +17,7 @@ cc.Class({
     },
 
     // use this for initialization
-    onLoad: function () {
+    start: function () {
         this.society = this.getComponent('Society');
 
         this.generate(this.population);

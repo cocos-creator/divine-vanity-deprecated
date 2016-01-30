@@ -3,6 +3,7 @@ var Group = require('Group');
 var Wish = require('../Wish');
 var BattlePanel = require('BattlePanel');
 var FXRitual = require('FXRitual');
+var GameOverPanel = require('GameOverPanel');
 
 var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
@@ -41,6 +42,11 @@ var Society = cc.Class({
             type: FXRitual,
         },
 
+        gameOver: {
+            default: null,
+            type: GameOverPanel
+        },
+
         // Decide when to ask
         prayDelay: 20,
         
@@ -76,10 +82,13 @@ var Society = cc.Class({
     wishCheck: function (group, wishID) {
         if (group.isLearning() && group.wish && group.wish.id === wishID) {
             var i, people = group.people, 
-                poses = {}, person, pose, max = 1, pickedPose;
+                poses = {}, behavior, pose, max = 1, pickedPose;
             for (i = 0; i < people.length; ++i) {
-                person = people[i];
-                pose = person.getComponent('HumanBehavior').currentPose;
+                behavior = people[i].getComponent('HumanBehavior');
+                if (!behavior.checked) {
+                    continue;
+                }
+                pose = behavior.currentPose;
                 if (poses[pose]) {
                     poses[pose] ++;
                     if (poses[pose] > max) {
@@ -131,22 +140,21 @@ var Society = cc.Class({
 
     updatePopulation: function () {
         this.battlePanel.people.string = this.population;
-        var max, count, newSkills = [];
+        var max, count;
         for (var i = 0; i < PopulationLevel.length; ++i) {
             count = PopulationLevel[i];
             if (this.population >= count && Levels[count]) {
                 max = count;
                 id = Levels[count];
-                newSkills.push(id);
             }
-            else {
+            else if (this.population < count) {
                 break;
             }
         }
-        this.newSkillsAvailable(newSkills);
-        // if (max) {
-        //     this.battlePanel.unlockBtn(Levels[max]);
-        // }
+        if (max) {
+            var unlocked = this.battlePanel.unlockBtn(Levels[max]);
+            this.newSkillsAvailable(unlocked);
+        }
     },
 
     newSkillsAvailable: function (skills) {
@@ -214,7 +222,7 @@ var Society = cc.Class({
         this.population -= count;
         this.battlePanel.people.string = this.population;
         if (this.population < 3) {
-            this.node.emit('population-out');
+            this.gameOver.node.active = true;
         }
     },
 
