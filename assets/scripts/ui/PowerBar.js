@@ -31,7 +31,7 @@ var PowerBar = cc.Class ({
                 this.power.progress += 0.01 * this.addPower;
             }
             if (this.curValue !== this.newPowerValue) {
-                this.curValue += this.addPower;
+                this.curValue += 1;
                 this.content.string = this.curValue;
             }
             if (progress == this.newPowerBarValue && this.curValue === this.newPowerValue) {
