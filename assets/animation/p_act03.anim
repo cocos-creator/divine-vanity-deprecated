@@ -3,7 +3,7 @@
   "_name": "p_act03",
   "_objFlags": 0,
   "_rawFiles": null,
-  "_duration": 1.5,
+  "_duration": 1.55,
   "sample": 20,
   "speed": 1,
   "wrapMode": 2,
@@ -16,6 +16,60 @@
             "value": {
               "__uuid__": "17307041-4c31-4dd4-9c83-90b6c895a848"
             }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "a5bf9b2f-c28a-4a50-b9c4-a8f543f518fa"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "17307041-4c31-4dd4-9c83-90b6c895a848"
+            }
+          },
+          {
+            "frame": 0.35,
+            "value": {
+              "__uuid__": "a5bf9b2f-c28a-4a50-b9c4-a8f543f518fa"
+            }
+          },
+          {
+            "frame": 0.45,
+            "value": {
+              "__uuid__": "17307041-4c31-4dd4-9c83-90b6c895a848"
+            }
+          },
+          {
+            "frame": 0.8,
+            "value": {
+              "__uuid__": "a5bf9b2f-c28a-4a50-b9c4-a8f543f518fa"
+            }
+          },
+          {
+            "frame": 0.9,
+            "value": {
+              "__uuid__": "17307041-4c31-4dd4-9c83-90b6c895a848"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "a5bf9b2f-c28a-4a50-b9c4-a8f543f518fa"
+            }
+          },
+          {
+            "frame": 1.1,
+            "value": {
+              "__uuid__": "17307041-4c31-4dd4-9c83-90b6c895a848"
+            }
+          },
+          {
+            "frame": 1.5,
+            "value": {
+              "__uuid__": "17307041-4c31-4dd4-9c83-90b6c895a848"
+            }
           }
         ]
       }
@@ -24,35 +78,19 @@
       "scaleX": [
         {
           "frame": 0,
-          "value": -0.7768502499998607
-        },
-        {
-          "frame": 0.15,
-          "value": 0.75
-        },
-        {
-          "frame": 0.5,
-          "value": 0.9
+          "value": -0.82
         },
         {
           "frame": 0.75,
-          "value": 0.82
+          "value": -0.82
         },
         {
           "frame": 0.8,
-          "value": -0.82
+          "value": 0.82
         },
         {
-          "frame": 1,
-          "value": -0.75
-        },
-        {
-          "frame": 1.35,
-          "value": -0.9
-        },
-        {
-          "frame": 1.5,
-          "value": -0.82
+          "frame": 1.3,
+          "value": 0.82
         }
       ],
       "scaleY": [

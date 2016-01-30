@@ -3,8 +3,8 @@
   "_name": "p_act04",
   "_objFlags": 0,
   "_rawFiles": null,
-  "_duration": 1,
-  "sample": 30,
+  "_duration": 1.3,
+  "sample": 10,
   "speed": 1,
   "wrapMode": 2,
   "curveData": {
@@ -14,44 +14,31 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "dbcb0049-b91f-4c29-8eee-2a5c52e3c800"
+              "__uuid__": "436cac81-5bab-46f1-ba23-e5c8e477f8bf"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "2f0d3d64-c2e4-460d-bb0e-0aa35a0c77bf"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "436cac81-5bab-46f1-ba23-e5c8e477f8bf"
+            }
+          },
+          {
+            "frame": 1.2,
+            "value": {
+              "__uuid__": "2f0d3d64-c2e4-460d-bb0e-0aa35a0c77bf"
             }
           }
         ]
       }
     },
-    "props": {
-      "rotation": [
-        {
-          "frame": 0,
-          "value": 0
-        },
-        {
-          "frame": 0.13333333333333333,
-          "value": 12
-        },
-        {
-          "frame": 0.16666666666666666,
-          "value": 15
-        },
-        {
-          "frame": 0.3333333333333333,
-          "value": 0
-        },
-        {
-          "frame": 0.6666666666666666,
-          "value": 0
-        },
-        {
-          "frame": 0.8333333333333334,
-          "value": -15
-        },
-        {
-          "frame": 1,
-          "value": 0
-        }
-      ]
-    }
+    "props": {}
   },
   "events": []
 }

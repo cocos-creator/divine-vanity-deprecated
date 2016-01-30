@@ -3,7 +3,7 @@
   "_name": "idle",
   "_objFlags": 0,
   "_rawFiles": null,
-  "_duration": 0.6,
+  "_duration": 0.5,
   "sample": 10,
   "speed": 1,
   "wrapMode": 2,
@@ -30,7 +30,7 @@
             }
           },
           {
-            "frame": 0.5,
+            "frame": 0.4,
             "value": {
               "__uuid__": "7c0fb175-ce27-473c-a6d8-3b3732979f0e"
             }

@@ -3,8 +3,8 @@
   "_name": "p_act05",
   "_objFlags": 0,
   "_rawFiles": null,
-  "_duration": 0.4,
-  "sample": 50,
+  "_duration": 1.05,
+  "sample": 20,
   "speed": 1,
   "wrapMode": 2,
   "curveData": {
@@ -14,7 +14,31 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "436cac81-5bab-46f1-ba23-e5c8e477f8bf"
+              "__uuid__": "de21feac-ce07-46ec-aabb-413d9da8042b"
+            }
+          },
+          {
+            "frame": 0.15,
+            "value": {
+              "__uuid__": "dbcb0049-b91f-4c29-8eee-2a5c52e3c800"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "de21feac-ce07-46ec-aabb-413d9da8042b"
+            }
+          },
+          {
+            "frame": 0.65,
+            "value": {
+              "__uuid__": "dbcb0049-b91f-4c29-8eee-2a5c52e3c800"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "de21feac-ce07-46ec-aabb-413d9da8042b"
             }
           }
         ]
@@ -24,15 +48,23 @@
       "scaleY": [
         {
           "frame": 0,
-          "value": 0.82
-        },
-        {
-          "frame": 0.2,
           "value": 0.7
         },
         {
-          "frame": 0.4,
+          "frame": 0.15,
           "value": 0.82
+        },
+        {
+          "frame": 0.5,
+          "value": 0.7
+        },
+        {
+          "frame": 0.65,
+          "value": 0.82
+        },
+        {
+          "frame": 1,
+          "value": 0.7
         }
       ]
     }
