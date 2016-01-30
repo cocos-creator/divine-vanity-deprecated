@@ -5,6 +5,11 @@ var MainPanel = cc.Class ({
     extends: cc.Component,
 
     properties: {
+        people: {
+            default: null,
+            type: cc.Label
+        },
+
         power: {
             default: null,
             type: PowerBar
@@ -32,6 +37,7 @@ var MainPanel = cc.Class ({
     start: function () {
         this.content = this.scrollView.content;
         this.skills = [];
+        this.people.string = "0";
         this.instantiate();
     },
 

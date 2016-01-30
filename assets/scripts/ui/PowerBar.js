@@ -14,35 +14,33 @@ var PowerBar = cc.Class ({
         this.newPowerValue = 0;
         this.newPowerBarValue = 0;
         this.addPower = 0;
-        this.addPowerText = 0;
-        this._curValue = 0;
+        this.curValue = 0;
     },
 
     updateValue: function (value, barValue) {
         this.changePower = true;
         this.newPowerValue = value;
         this.newPowerBarValue = barValue;
-        this.addPower = this.newPowerBarValue > this.power.progress ? 0.01 : -0.01;
-        this.addPowerText = this.newPowerBarValue > this.power.progress ? 1 : -1;
+        this.addPower = this.newPowerBarValue > this.power.progress ? 1 : -1;
     },
 
-    animatPBar: function () {
+    animaBar: function () {
         if (this.changePower) {
             var progress = parseFloat(this.power.progress.toFixed(2));
             if (progress !== this.newPowerBarValue) {
-                this.power.progress += this.addPower;
+                this.power.progress += 0.01 * this.addPower;
             }
-            if (this._curValue !== this.newPowerValue) {
-                this._curValue += this.addPowerText ;
-                this.content.string = this._curValue;
+            if (this.curValue !== this.newPowerValue) {
+                this.curValue += this.addPower;
+                this.content.string = this.curValue;
             }
-            if (progress == this.newPowerBarValue && this._curValue === this.newPowerValue) {
+            if (progress == this.newPowerBarValue && this.curValue === this.newPowerValue) {
                 this.changePower = false;
             }
         }
     },
 
     update: function (dt) {
-        this.animatPBar();
+        this.animaBar();
     }
 });
