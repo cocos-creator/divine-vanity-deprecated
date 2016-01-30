@@ -23,7 +23,15 @@ var Poses = [
     'p_act05'
 ];
 
+var UnusedPoses = [
+    'p_act01',
+    'p_act02',
+    'p_act03',
+    'p_act04',
+    'p_act05'
+];
+
 window.States = States;
 window.Poses = Poses;
-window.UnusedPoses = Poses;
+window.UnusedPoses = UnusedPoses;
 window.WishType = WishType;
