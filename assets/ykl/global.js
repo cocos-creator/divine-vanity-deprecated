@@ -5,7 +5,7 @@ var States = cc.Enum({
     DOUBTING: 2,
     CONFIRMING: 3,
     WORSHIPING: 4,
-    ASKING: 5,
+    PRAYING: 5,
     LOST: 6
 });
 

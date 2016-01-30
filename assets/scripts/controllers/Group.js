@@ -32,6 +32,7 @@ cc.js.mixin(Group.prototype, {
         this.state = States.DEFAULT;
         this.wish = null;
         this.poses = null;
+        this.praying = false;
         this.prayRitual = null;
         this.countdown = 0;
         this.active = false;
@@ -57,6 +58,10 @@ cc.js.mixin(Group.prototype, {
         return (this.learning === true);
     },
 
+    isPraying: function () {
+        return (this.praying === true);
+    },
+
     split: function (wish, learningGroup) {
         if (this.canLearn(wish)) {
             var need = wish.ritualNeed + Math.ceil(Math.random() * 2);
@@ -75,14 +80,25 @@ cc.js.mixin(Group.prototype, {
         if (state !== this.state) {
             this.state = state;
             switch (state) {
+            case States.PRAYING:
+                this.poses = randomArrayItems(UnusedPoses, this.wish.poseCount);
+                this.people.forEach((person, index) => {
+                    var behavior = person.getComponent('HumanBehavior');
+                    behavior.currentState = States.PRAYING;
+                    behavior.currentWish = this.wish;
+                    behavior.currentPose = this.poses[index % this.poses.length];
+                });
+                this.countdown = this.wish.poseDuration;
+                this.praying = true;
+                break;
             case States.LEARNING:
                 // Init learning
                 this.poses = randomArrayItems(UnusedPoses, this.wish.poseCount);
-                this.people.forEach((person) => {
+                this.people.forEach((person, index) => {
                     var behavior = person.getComponent('HumanBehavior');
                     behavior.currentState = States.LEARNING;
                     behavior.currentWish = this.wish;
-                    behavior.currentPose = this.poses[Math.floor(Math.random() * this.poses.length)];
+                    behavior.currentPose = this.poses[index % this.poses.length];
                 });
 
                 // 当 people 间距太小时，将 间距做一定调整
@@ -113,7 +129,7 @@ cc.js.mixin(Group.prototype, {
                 break;
             case States.WORSHINPING:
                 // Not learning anymore
-                this.poses.length = 0;
+                this.poses && (this.poses.length = 0);
                 this.wish = null;
                 var people = this.people;
                 var society = this.society;
