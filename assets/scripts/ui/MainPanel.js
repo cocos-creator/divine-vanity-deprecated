@@ -1,5 +1,7 @@
 
 var PowerBar = require('PowerBar');
+var EffectMng = require('EffectMng');
+var AudioMng = require('AudioMng');
 
 var MainPanel = cc.Class ({
     extends: cc.Component,
@@ -44,6 +46,8 @@ var MainPanel = cc.Class ({
         this.node.emit("skill-fired", { "skillID": skillID });
         var Resources = require('Resources');
         Resources.instance.spendPower(costValue);
+        EffectMng.instance.play(skillID);
+        AudioMng.instance.playWishSFX(skillID);
     },
 
     instantiate: function () {
