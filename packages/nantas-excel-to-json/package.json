@@ -1,0 +1,29 @@
+{
+    "name": "nantas-excel-to-json",
+    "version": "0.0.1",
+    "description": "A package parse excel and export to json",
+    "author": "Firebox Technology",
+    "main": "main.js",
+    "build": false,
+    "menus": {
+        "User/Excel to JSON": {
+            "message": "nantas-excel-to-json:open"
+        }
+    },
+    "panels": {
+        "panel": {
+            "frame": "panel/panel.html",
+            "type": "dockable",
+            "title": "Nantas: Excel to JSON",
+            "width": 600,
+            "height": 400,
+            "messages": [],
+            "profiles": {
+                "local": {
+                    "srcExcelPath": "",
+                    "outJsonName": ""
+                }
+            }
+        }
+    }
+}
