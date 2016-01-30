@@ -35,6 +35,7 @@ cc.js.mixin(Group.prototype, {
         this.prayRitual = null;
         this.countdown = 0;
         this.active = false;
+        this.learning = false;
     },
 
     reuse: function (society) {
@@ -53,7 +54,7 @@ cc.js.mixin(Group.prototype, {
     },
 
     isLearning: function () {
-        return (this.wish !== null);
+        return (this.learning === true);
     },
 
     split: function (wish, learningGroup) {
@@ -83,7 +84,32 @@ cc.js.mixin(Group.prototype, {
                     behavior.currentWish = this.wish;
                     behavior.currentPose = this.poses[Math.floor(Math.random() * this.poses.length)];
                 });
+
+                // 当 people 间距太小时，将 间距做一定调整
+                var people = this.people.sort(function (a, b) {
+                    return a.x > b.x;
+                });
+
+                var lastX = null;
+                for (var i = 0, l = people.length; i < l; i++) {
+                    if (i === 0) {
+                        lastX = people[i].x;
+                        continue;
+                    }
+
+                    var x = people[i].x;
+
+                    if (x - lastX < 50) {
+                        people[i].runAction( cc.moveTo(0.3, lastX + 50, people[i].y) );
+                        lastX += 50;
+                    }
+                    else {
+                        lastX = x;
+                    }
+                }
+
                 this.countdown = this.wish.poseDuration;
+                this.learning = true;
                 break;
             case States.WORSHINPING:
                 // Not learning anymore
@@ -119,13 +145,36 @@ cc.js.mixin(Group.prototype, {
         }
     },
 
+    punish: function () {
+        var people = this.people;
+        var society = this.society;
+        var self = this;
+        this.society.scheduleOnce(function () {
+            people.forEach((person, index) => {
+                var behavior = person.getComponent('HumanBehavior');
+                var lostCount = 0;
+                if (Math.random() < society.lostCoef) {
+                    behavior.currentState = States.LOST;
+                    delete people[index];
+                    lostCount++;
+                }
+                else {
+                    behavior.currentState = States.DEFAULT;
+                }
+                society.lost(lostCount);
+            });
+            society.rejointDefault(self);
+        }, 0);
+        this.state = States.DEFAULT;
+    },
+
     toDefault: function () {
         this.people.forEach((person) => {
             var behavior = person.getComponent('HumanBehavior');
             behavior.currentState = States.DEFAULT;
         });
     },
-    
+
     update: function (dt) {
         if (this.countdown > 0) {
             this.countdown -= dt;
