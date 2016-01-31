@@ -91,6 +91,9 @@
       },
       {
         "__id__": 149
+      },
+      {
+        "__id__": 173
       }
     ],
     "_rotationX": 0,
@@ -113,13 +116,13 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 176
+        "__id__": 178
       },
       {
         "__id__": 169
       },
       {
-        "__id__": 177
+        "__id__": 179
       }
     ],
     "_prefab": null
@@ -4775,11 +4778,11 @@
         "__id__": 166
       },
       {
-        "__id__": 174
+        "__id__": 176
       }
     ],
     "_prefab": {
-      "__id__": 175
+      "__id__": 177
     }
   },
   {
@@ -5322,11 +5325,11 @@
         "__id__": 170
       },
       {
-        "__id__": 172
+        "__id__": 174
       }
     ],
     "_prefab": {
-      "__id__": 173
+      "__id__": 175
     }
   },
   {
@@ -5382,6 +5385,9 @@
     "gameOver": {
       "__id__": 166
     },
+    "assetMng": {
+      "__id__": 172
+    },
     "prayDelay": 8,
     "lostCoef": 0.5,
     "prayCoef": 0.3,
@@ -5399,6 +5405,67 @@
     "divineConsume": 1,
     "wishConsume": 3,
     "levelBonus": 0.1
+  },
+  {
+    "__type__": "b181bc2SmNOeJf9tXPf0Dt7",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 173
+    },
+    "_enabled": true
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "AssetMng",
+    "_objFlags": 0,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_parent": {
+      "__id__": 2
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_children": [],
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_ignoreAnchorPointForPosition": false,
+    "_tag": -1,
+    "_opacityModifyRGB": false,
+    "_id": "086f5dyPvZBkIHsJ0y1odL0",
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 172
+      }
+    ],
+    "_prefab": null
   },
   {
     "__type__": "7d32f/FDHZEMY1WZNTt3Lps",

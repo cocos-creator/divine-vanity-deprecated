@@ -4,6 +4,7 @@ var Wish = require('../Wish');
 var BattlePanel = require('BattlePanel');
 var FXRitual = require('FXRitual');
 var GameOverPanel = require('GameOverPanel');
+var AssetMng = require('AssetMng');
 
 var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
@@ -47,9 +48,14 @@ var Society = cc.Class({
             type: GameOverPanel
         },
 
+        assetMng: {
+            default: null,
+            type: AssetMng
+        },
+
         // Decide when to ask
         prayDelay: 20,
-        
+
         // Decide the possibility to lost people
         lostCoef: 1,
 
@@ -78,6 +84,22 @@ var Society = cc.Class({
 
         this.prayTimeout = this.prayDelay;
         this.learnTimeout = this.learnDelay;
+
+        this.assetMng.init(function () {
+            for (var i = 0; i < wishTypeList.length; ++i) {
+                var id = wishTypeList[i].value;
+                let wishInfo = this.assetMng.wishesDB[id];
+                Wishes[id].poseCount = wishInfo.poseCount;
+                Wishes[id].poseDuration = wishInfo.poseDuration;
+                Wishes[id].moveSpeed = wishInfo.moveSpeed;
+                Wishes[id].ritualNeed = wishInfo.ritualNeed;
+                Wishes[id].tributePerP = wishInfo.tributePerP;
+                Wishes[id].divineConsume = wishInfo.divineConsume;
+                Wishes[id].wishConsume = wishInfo.wishConsume;
+                Wishes[id].levelBonus = wishInfo.levelBonus;
+            }
+            console.log(Wishes);
+        }.bind(this));
     },
 
     wishCheck: function (group, wishID) {
