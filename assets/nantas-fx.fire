@@ -37,10 +37,10 @@
         "__id__": 2
       },
       {
-        "__id__": 109
+        "__id__": 113
       },
       {
-        "__id__": 112
+        "__id__": 116
       }
     ],
     "_localZOrder": 0,
@@ -125,7 +125,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 108
+        "__id__": 112
       }
     ],
     "_prefab": null
@@ -3077,6 +3077,9 @@
       },
       {
         "__id__": 103
+      },
+      {
+        "__id__": 106
       }
     ],
     "_rotationX": 0,
@@ -3099,11 +3102,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 106
+        "__id__": 110
       }
     ],
     "_prefab": {
-      "__id__": 107
+      "__id__": 111
     }
   },
   {
@@ -3710,6 +3713,114 @@
     "fileId": "439d8O1gC1F5I4S/horBcBw"
   },
   {
+    "__type__": "cc.Node",
+    "_name": "pray",
+    "_objFlags": 0,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_parent": {
+      "__id__": 85
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 33,
+      "height": 78
+    },
+    "_children": [],
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": 5,
+      "y": 114
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_ignoreAnchorPointForPosition": false,
+    "_tag": -1,
+    "_opacityModifyRGB": false,
+    "_id": "8f57cjueK5FaJb6R8u3Sinw",
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 107
+      },
+      {
+        "__id__": 108
+      }
+    ],
+    "_prefab": {
+      "__id__": 109
+    }
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 106
+    },
+    "_enabled": false,
+    "_spriteFrame": {
+      "__uuid__": "661db887-b583-4600-95e1-8f59cbf34daa"
+    },
+    "_type": 0,
+    "_useOriginalSize": true,
+    "_sizeMode": 1,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null
+  },
+  {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 106
+    },
+    "_enabled": true,
+    "_defaultClip": null,
+    "_clips": [
+      {
+        "__uuid__": "170509d8-aced-412b-b628-23a32e822880"
+      }
+    ],
+    "playOnLoad": false
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 85
+    },
+    "asset": {
+      "__uuid__": "09a4a97c-211f-4362-a0b0-a3bb71d0666f"
+    },
+    "fileId": "8f57cjueK5FaJb6R8u3Sinw"
+  },
+  {
     "__type__": "fd410vTg3VKQbu9IoKPzDA9",
     "_name": "",
     "_objFlags": 0,
@@ -3743,6 +3854,9 @@
         "__uuid__": "81d80e82-5bc8-4c40-845d-0043c34b073c"
       }
     ],
+    "pray": {
+      "__id__": 108
+    },
     "moveSpeed": 300,
     "idleMoveSpeed": 50,
     "idleChangeDirectionTimeRange": {
@@ -3827,11 +3941,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 110
+        "__id__": 114
       }
     ],
     "_prefab": {
-      "__id__": 111
+      "__id__": 115
     }
   },
   {
@@ -3839,7 +3953,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 109
+      "__id__": 113
     },
     "_enabled": true,
     "bgm": {
@@ -3863,7 +3977,7 @@
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 109
+      "__id__": 113
     },
     "asset": {
       "__uuid__": "ddf35fb1-e52c-49ce-9c00-d895014eaccc"
@@ -3917,7 +4031,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 113
+        "__id__": 117
       }
     ],
     "_prefab": null
@@ -3927,7 +4041,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 112
+      "__id__": 116
     },
     "_enabled": true
   }

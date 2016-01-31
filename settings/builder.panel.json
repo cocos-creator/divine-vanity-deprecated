@@ -1,4 +1,8 @@
 {
+  "excludeScenes": [],
   "packageName": "org.cocos2d.ggj-creator",
+  "platform": "web-mobile",
+  "startScene": "5b019cd3-4f44-4e76-9b37-172f71ed29b0",
+  "startSceneUuid": "5b019cd3-4f44-4e76-9b37-172f71ed29b0",
   "title": "ggj-creator"
 }

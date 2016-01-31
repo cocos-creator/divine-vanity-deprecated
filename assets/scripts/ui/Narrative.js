@@ -30,6 +30,15 @@ cc.Class({
         let callback = cc.callFunc(this.switchText, this);
         let seq = cc.sequence(actFadeOut, callback, actFadeIn);
         this.node.runAction(seq);
+        if (idx === 4 || idx === 3) {
+            this.scheduleOnce(function() {
+                this.hideLine();
+            }, 3);
+        }
+    },
+
+    hideLine () {
+        this.node.runAction(cc.fadeOut(2));
     },
 
     switchText () {

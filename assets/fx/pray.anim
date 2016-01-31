@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "pray",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.4,
+  "sample": 10,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "661db887-b583-4600-95e1-8f59cbf34daa"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "380fe1a9-0504-4b04-8244-6c399dee7891"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "58734d80-d7a7-4b41-b1e2-81bd1586c83f"
+            }
+          },
+          {
+            "frame": 0.3,
+            "value": {
+              "__uuid__": "58734d80-d7a7-4b41-b1e2-81bd1586c83f"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
