@@ -51,7 +51,7 @@ cc.js.mixin(Group.prototype, {
     },
 
     canLearn: function (wish) {
-        return this.state === States.DEFAULT && this.people.length >= wish.ritualNeed;
+        return (this.state === States.DEFAULT) && (this.people.length >= wish.ritualNeed);
     },
 
     isLearning: function () {
@@ -68,9 +68,9 @@ cc.js.mixin(Group.prototype, {
             var leftCount = this.people.length - need;
             leftCount < 0 && (leftCount = 0);
             for (var i = this.people.length-1; i >= leftCount; --i) {
-                learningGroup.addMember(this.people[i]);
+                var person = this.people.splice(i, 1);
+                learningGroup.addMember(person[0]);
             }
-            this.people.length = leftCount;
             return true;
         }
         return false;
@@ -135,27 +135,32 @@ cc.js.mixin(Group.prototype, {
                 var people = this.people;
                 var society = this.society;
                 var praying = this.praying;
+                var self = this;
                 this.society.scheduleOnce(function () {
                     var lostCount = 0;
+                    var array = [];
                     people.forEach((person, index) => {
                         var behavior = person.getComponent('HumanBehavior');
                         // Correct pose
                         if (praying || detail === behavior.currentPose) {
                             behavior.tribute = wish.tributePerP;
                             behavior.currentState = States.WORSHIPING;
+                            array.push(person);
                         }
                         // Incorrect
                         else {
                             if (Math.random() < society.lostCoef) {
+                                var behavior = person.getComponent('HumanBehavior');
                                 behavior.currentState = States.LOST;
-                                delete people[index];
                                 lostCount++;
                             }
                             else {
                                 behavior.currentState = States.DEFAULT;
+                                array.push(person);
                             }
                         }
                     });
+                    self.people = array;
                     if (lostCount > 0) {
                         society.lost(lostCount);
                     }
@@ -178,22 +183,25 @@ cc.js.mixin(Group.prototype, {
         var self = this;
         this.society.scheduleOnce(function () {
             var lostCount = 0;
+            var array = [];
             people.forEach((person, index) => {
-                var behavior = person.getComponent('HumanBehavior');
                 if (Math.random() < society.lostCoef) {
-                    behavior.currentState = States.LOST;
-                    delete people[index];
                     lostCount++;
+                    var behavior = person.getComponent('HumanBehavior');
+                    behavior.currentState = States.LOST;
                 }
                 else {
-                    behavior.currentState = States.DEFAULT;
+                    array.push(person);
+                    person.getComponent('HumanBehavior').currentState = States.DEFAULT;
                 }
             });
+            self.people = array;
             if (lostCount > 0) {
                 society.lost(lostCount);
             }
             society.rejointDefault(self);
         }, 0);
+        this.active = false;
         this.state = States.DEFAULT;
     },
 
@@ -221,25 +229,29 @@ cc.js.mixin(Group.prototype, {
             case States.PRAYING:
                 var people = this.people;
                 var society = this.society;
+                var self = this;
                 this.society.scheduleOnce(function () {
                     var lostCount = 0;
+                    var array = [];
                     people.forEach((person, index) => {
-                        var behavior = person.getComponent('HumanBehavior');
                         if (Math.random() < society.prayCoef) {
-                            behavior.currentState = States.LOST;
-                            delete people[index];
                             lostCount++;
+                            var behavior = person.getComponent('HumanBehavior');
+                            behavior.currentState = States.LOST;
                         }
                         else {
-                            behavior.currentState = States.DEFAULT;
+                            array.push(person);
+                            person.getComponent('HumanBehavior').currentState = States.DEFAULT;
                         }
                     });
+                    self.people = array;
                     if (lostCount > 0) {
                         society.lost(lostCount);
                     }
+                    society.rejointDefault(self);
                 }, 0);
+                this.active = false;
                 this.state = States.DEFAULT;
-                this.society.rejointDefault(this);
                 break;
             case States.WORSHIPING:
                 var behaviors = [];

@@ -279,7 +279,7 @@ var Society = cc.Class({
 
     lost: function (count) {
         this.population -= count;
-        this.battlePanel.people.string = this.population;
+        this.updatePopulation();
         if (this.population < 3) {
             this.gameOver.node.active = true;
         }
