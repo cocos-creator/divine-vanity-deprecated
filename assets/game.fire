@@ -40,7 +40,7 @@
         "__id__": 235
       },
       {
-        "__id__": 280
+        "__id__": 281
       }
     ],
     "_localZOrder": 0,
@@ -107,13 +107,13 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 278
+        "__id__": 279
       },
       {
         "__id__": 237
       },
       {
-        "__id__": 279
+        "__id__": 280
       }
     ],
     "_prefab": null
@@ -5982,11 +5982,11 @@
         "__id__": 233
       },
       {
-        "__id__": 276
+        "__id__": 277
       }
     ],
     "_prefab": {
-      "__id__": 277
+      "__id__": 278
     }
   },
   {
@@ -7216,7 +7216,7 @@
       "__id__": 234
     },
     "animCtrl": {
-      "__id__": 276
+      "__id__": 277
     },
     "eyesNode": {
       "__id__": 197
@@ -7241,7 +7241,7 @@
     "_enabled": true,
     "wishes": [
       {
-        "__id__": 275
+        "__id__": 276
       }
     ],
     "host": {
@@ -7321,11 +7321,11 @@
         "__id__": 234
       },
       {
-        "__id__": 273
+        "__id__": 274
       }
     ],
     "_prefab": {
-      "__id__": 274
+      "__id__": 275
     }
   },
   {
@@ -7435,11 +7435,11 @@
         "__id__": 238
       },
       {
-        "__id__": 271
+        "__id__": 272
       }
     ],
     "_prefab": {
-      "__id__": 272
+      "__id__": 273
     }
   },
   {
@@ -8150,10 +8150,13 @@
       },
       {
         "__id__": 268
+      },
+      {
+        "__id__": 270
       }
     ],
     "_prefab": {
-      "__id__": 270
+      "__id__": 271
     }
   },
   {
@@ -8269,7 +8272,7 @@
       "__id__": 263
     },
     "_enabled": true,
-    "transition": 2,
+    "transition": 0,
     "pressedColor": {
       "__type__": "cc.Color",
       "r": 255,
@@ -8328,6 +8331,17 @@
     },
     "component": "GameOverPanel",
     "handler": "goToMainPanelClick"
+  },
+  {
+    "__type__": "108b2nVDh9IeZC26KkMkuCF",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 263
+    },
+    "_enabled": true,
+    "pressedScale": 0.8,
+    "transDuration": 0.1
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -8510,10 +8524,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 281
+        "__id__": 282
       },
       {
-        "__id__": 282
+        "__id__": 283
       }
     ],
     "_prefab": null
@@ -8523,7 +8537,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 280
+      "__id__": 281
     },
     "_enabled": true,
     "world": {
@@ -8536,7 +8550,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 280
+      "__id__": 281
     },
     "_enabled": true,
     "target": {
