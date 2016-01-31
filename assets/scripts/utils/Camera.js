@@ -55,7 +55,7 @@ cc.Class({
         this.world.scale = cc.Vec2.ONE;
         this.world.rotation = 0;
 
-        if (/*CC_EDITOR && */!cc.engine.isPlaying) {
+        if (CC_EDITOR  && !cc.engine.isPlaying) {
             cc.engine.repaintInEditMode();
         }
     },
