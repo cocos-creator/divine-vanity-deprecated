@@ -15,6 +15,7 @@ cc.Class({
         this.sprite.spriteFrame = this.sfSigns[signID];
         this.node.scale = 3;
         this.node.opacity = 0;
+        this.sprite._sgNode.opacity = 255;
         let fadeIn = cc.fadeIn(0.3);
         let scaleDown = cc.scaleTo(0.5, 1);
         let callback = cc.callFunc(this.wait, this);
@@ -25,7 +26,7 @@ cc.Class({
         this.scheduleOnce(function () {
             let fadeOut = cc.fadeOut(0.5);
             this.node.runAction(fadeOut);
-        }.bind(this), 1.5);
+        }, 1.5);
     }
 
 
