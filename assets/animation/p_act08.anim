@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "p_act08",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.8,
+  "sample": 10,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "8a15d17f-4799-469d-995a-60ffe20d1484"
+            }
+          },
+          {
+            "frame": 0.3,
+            "value": {
+              "__uuid__": "f89a07ab-a774-4250-bd16-6093a801485b"
+            }
+          },
+          {
+            "frame": 0.9,
+            "value": {
+              "__uuid__": "8a15d17f-4799-469d-995a-60ffe20d1484"
+            }
+          },
+          {
+            "frame": 1.2,
+            "value": {
+              "__uuid__": "f89a07ab-a774-4250-bd16-6093a801485b"
+            }
+          },
+          {
+            "frame": 1.7,
+            "value": {
+              "__uuid__": "f89a07ab-a774-4250-bd16-6093a801485b"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

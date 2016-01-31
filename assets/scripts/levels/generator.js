@@ -20,7 +20,14 @@ cc.Class({
     start: function () {
         this.society = this.getComponent('Society');
 
-        this.generate(this.population);
+        if (!this.society._pause) {
+            this.generate(this.population);
+        }
+        else {
+            this.society.node.on('resume', function () {
+                this.generate(this.population);
+            }, this);
+        }
     },
 
     generate: function (count) {

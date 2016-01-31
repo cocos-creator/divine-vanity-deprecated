@@ -154,7 +154,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "5f792dkq/NGoo4aaUXmJmdq"
+    "fileId": "f0f1cPSxPtPMaksWa6YRDbq"
   },
   {
     "__type__": "cc.Sprite",
@@ -265,21 +265,27 @@
     },
     "sfIcons": [
       {
-        "__uuid__": "a6dabf8b-1614-4f41-a821-806942039c97"
-      },
-      {
         "__uuid__": "3bfc7724-4261-467d-bcf3-f5af0134e493"
       },
       {
+        "__uuid__": "a6dabf8b-1614-4f41-a821-806942039c97"
+      },
+      {
         "__uuid__": "22fa78a4-496a-48d6-bd12-8f7ea3c4d7e9"
+      },
+      {
+        "__uuid__": "585e79d6-41db-4ee3-891e-56099e5b0aca"
+      },
+      {
+        "__uuid__": "81d80e82-5bc8-4c40-845d-0043c34b073c"
       }
     ],
     "skillID": 0,
-    "costValue": 0,
+    "cost": 0,
     "button": {
       "__id__": 6
     },
-    "cooldown": 3
+    "cooldown": 4
   },
   {
     "__type__": "108b2nVDh9IeZC26KkMkuCF",
@@ -298,6 +304,6 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "7b30dFK0pRGxJrZAyK4Nafa"
+    "fileId": "a67f4cnkYBCl6TZy61qEEm6"
   }
 ]

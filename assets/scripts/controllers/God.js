@@ -39,10 +39,10 @@ cc.Class({
         this.society.skillFired(data.detail.skillID);
     },
 
-    showWonder: function () {
+    showWonder: function (id) {
         let wonder = cc.instantiate(this.wonderPrefab);
         this.wonderLayer.addChild(wonder);
         wonder.x = cc.randomMinus1To1() * 350;
-        wonder.getComponent('FXWonder').playAnim();
+        wonder.getComponent('FXWonder').playAnim(id);
     }
 });

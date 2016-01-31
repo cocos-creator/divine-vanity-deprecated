@@ -13,6 +13,14 @@ var EffectMng = cc.Class ({
         fxFire: {
             default: null,
             type: cc.Animation
+        },
+        fxSun: {
+            default: null,
+            type: cc.Animation
+        },
+        fxWheat: {
+            default: null,
+            type: cc.Animation
         }
     },
 
@@ -26,16 +34,22 @@ var EffectMng = cc.Class ({
 
     play: function (skillID) {
         switch (skillID) {
-            case 0: // 火
-                this.fxFire.play('fx_lightning');
-                break;
-            case 1: // 水
+            case 0: // 水
                 this.fxRain.enabled  = true;
                 this.fxRain.resetSystem();
+                break;
+            case 1: // 火
+                this.fxFire.play('fx_lightning');
                 break;
             case 2: // 肉
                 this.fxMeta.enabled  = true;
                 this.fxMeta.resetSystem();
+                break;
+            case 3: // 阳光
+                this.fxSun.play('fx_sun');
+                break;
+            case 4: // 麦子
+                this.fxFire.play('fx_wheat');
                 break;
         }
     },

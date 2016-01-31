@@ -9,7 +9,7 @@ var AudioMng = require('AudioMng');
 
 var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
-var PopulationLevel = [3, 5, 8, 15, 25, 35, 45];
+var PopulationLevel = [3, 8, 20, 35, 50];
 var Levels = {};
 for (var i = 0; i < wishTypeList.length; ++i) {
     var id = wishTypeList[i].value;
@@ -18,8 +18,9 @@ for (var i = 0; i < wishTypeList.length; ++i) {
     Levels[PopulationLevel[i]] = id;
 }
 
-function createRitual (pose) {
+function createRitual (pose, id) {
     return {
+        id: id,
         pose: pose,
         count: 1,
         level: 1
@@ -77,10 +78,23 @@ var Society = cc.Class({
         population: 0,
     },
 
+    pause: function () {
+        this._pause = true;
+        this.node.emit('pause');
+    },
+
+    resume: function () {
+        this._pause = false;
+        this.node.emit('resume');
+    },
+
     // use this for initialization
     onLoad: function () {
         this.rituals = {};
         this.ritualCount = 0;
+        this.lastRitualID = 0;
+
+        this._pause = false;
         
         this.god = this.getComponent('God');
         
@@ -175,7 +189,11 @@ var Society = cc.Class({
         // Upgrade rituals
         var ritual = this.rituals[wish.id];
         ritual.count ++;
+        let lastLevel = ritual.level;
         ritual.level = Math.floor(ritual.count / 3);
+        if (ritual.level > lastLevel) {
+            this.god.showWonder(ritual.id);
+        }
     },
 
     updatePopulation: function () {
@@ -228,7 +246,8 @@ var Society = cc.Class({
     },
 
     ritualLearnt: function (wish, pose) {
-        this.rituals[wish.id] = createRitual(pose);
+        this.rituals[wish.id] = createRitual(pose, this.lastRitualID);
+        this.lastRitualID++;
         this.ritualCount = Object.keys(this.rituals).length;
         this.prayTimeout = this.prayDelay;
         var index = this.wishes.indexOf(wish);
@@ -268,6 +287,10 @@ var Society = cc.Class({
 
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
+        if (this._pause) {
+            return;
+        }
+
         // Learn new skill if possible
         if (this.wishes.length > 0 && !this.learningGroup.learning) {
             if (this.learnTimeout <= 0 || this.ritualCount === 0) {

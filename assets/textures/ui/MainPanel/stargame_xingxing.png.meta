@@ -1,0 +1,28 @@
+{
+  "ver": "1.0.0",
+  "uuid": "74235dee-9436-4307-b4b6-9e1b9d4efe13",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "stargame_xingxing": {
+      "ver": "1.0.2",
+      "uuid": "3d8f806c-0d97-49c6-a295-374727a02fda",
+      "rawTextureUuid": "74235dee-9436-4307-b4b6-9e1b9d4efe13",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1,
+      "offsetY": -2.5,
+      "trimX": 15,
+      "trimY": 14,
+      "width": 159,
+      "height": 164,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
