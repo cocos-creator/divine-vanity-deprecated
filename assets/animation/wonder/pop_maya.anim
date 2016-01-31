@@ -1,6 +1,6 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "empty",
+  "_name": "pop_maya",
   "_objFlags": 0,
   "_rawFiles": null,
   "_duration": 1.5,
@@ -14,16 +14,36 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "528a22a7-7178-42a9-a7e0-c0f656cd40f3"
+              "__uuid__": "202c0972-ffdf-43c6-b224-f232b5183b11"
             }
           }
         ]
       }
     },
     "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            0,
+            -665
+          ]
+        },
+        {
+          "frame": 1.5,
+          "value": [
+            0,
+            -282
+          ]
+        }
+      ],
       "opacity": [
         {
           "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.3,
           "value": 255
         }
       ],
@@ -45,8 +65,16 @@
           "value": 3
         },
         {
-          "frame": 0.5,
+          "frame": 0.4,
           "value": -3
+        },
+        {
+          "frame": 0.5,
+          "value": 2
+        },
+        {
+          "frame": 0.6,
+          "value": -2
         },
         {
           "frame": 0.7,
@@ -57,38 +85,12 @@
           "value": -2
         },
         {
-          "frame": 1.1,
+          "frame": 1.2,
           "value": 2
-        },
-        {
-          "frame": 1.3,
-          "value": -1
         },
         {
           "frame": 1.5,
           "value": 0
-        }
-      ],
-      "position": [
-        {
-          "frame": 0,
-          "value": [
-            0,
-            -770
-          ],
-          "curve": [
-            0.3,
-            0.3,
-            0.57,
-            1.73
-          ]
-        },
-        {
-          "frame": 1.5,
-          "value": [
-            0,
-            -316
-          ]
         }
       ]
     }
