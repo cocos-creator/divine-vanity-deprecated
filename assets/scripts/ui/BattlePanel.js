@@ -2,6 +2,7 @@
 var PowerBar = require('PowerBar');
 var EffectMng = require('EffectMng');
 var AudioMng = require('AudioMng');
+var Rituals = require('rituals');
 
 var BattlePanel = cc.Class ({
     extends: cc.Component,
@@ -18,11 +19,23 @@ var BattlePanel = cc.Class ({
         skillList: {
             default: null,
             type: cc.Node
+        },
+        rituals: {
+            default: null,
+            type: Rituals
         }
     },
 
     statics: {
         instance: null
+    },
+
+    openRituals: function () {
+        this.rituals.node.active = true;
+    },
+
+    closeRituals: function () {
+        this.rituals.node.active = false;
     },
 
     onLoad: function () {
