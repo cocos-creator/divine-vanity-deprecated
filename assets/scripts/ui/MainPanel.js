@@ -1,6 +1,7 @@
 
 var Society = require('Society');
 var AudioMng = require('AudioMng');
+var Narrative = require('Narrative');
 
 var MainPanel = cc.Class({
     extends: cc.Component,
@@ -25,14 +26,15 @@ var MainPanel = cc.Class({
         battlePanelAnim: {
             default: null,
             type: cc.Animation
-        }
-
+        },
+        narrative: Narrative
     },
 
     onLoad: function () {
         this.hasMoveScene = false;
         var scene = cc.director.getScene();
         scene.y = -1450;
+        this.narrative.playLine(0);
     },
 
     hideMainPanelAnimEnd: function () {
@@ -44,6 +46,7 @@ var MainPanel = cc.Class({
         var state = this.startGameBtn.getAnimationState('fadeInStartBtn');
         state.wrapMode = cc.WrapMode.Reverse;
         AudioMng.instance.playBGM();
+        this.society.narrative.playLine(1);
         this.startGameBtn.play('fadeInStartBtn');
         this.hasMoveScene = true;
     },

@@ -1,4 +1,5 @@
-
+var firstRight = false;
+var firstWrong = false;
 
 cc.Class({
     extends: cc.Component,
@@ -88,6 +89,10 @@ cc.Class({
             this.wishIcon.getComponent(cc.Button).interactable = true;
         }
         else if ( state === window.States.DOUBTING ) {
+            if (firstWrong === false) {
+                firstWrong = true;
+                cc.find('Canvas/world/narrative').getComponent('Narrative').playLine(4);
+            }
             // 头上显示问号
             this.wishIconAnim.play('doubt');
         }
@@ -124,6 +129,10 @@ cc.Class({
     onChecked: function () {
         if (this.currentState !== window.States.LEARNING) {
             return;
+        }
+        if (firstRight === false) {
+            firstRight = true;
+            cc.find('Canvas/world/narrative').getComponent('Narrative').playLine(3);
         }
         this.checked = true;
         this.wishIcon.getComponent(cc.Button).interactable = false;

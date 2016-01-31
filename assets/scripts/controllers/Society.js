@@ -6,6 +6,7 @@ var FXRitual = require('FXRitual');
 var GameOverPanel = require('GameOverPanel');
 var AssetMng = require('AssetMng');
 var AudioMng = require('AudioMng');
+var Narrative = require('Narrative');
 
 var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
@@ -63,6 +64,8 @@ var Society = cc.Class({
             type: AssetMng
         },
 
+        narrative: Narrative,
+
         // Decide when to ask
         prayDelay: 20,
 
@@ -93,6 +96,8 @@ var Society = cc.Class({
         this.rituals = {};
         this.ritualCount = 0;
         this.lastRitualID = 0;
+
+        this.firstWishPop = false;
 
         this._pause = true;
 
@@ -232,6 +237,12 @@ var Society = cc.Class({
     },
 
     learn: function () {
+        if (this.firstWishPop === false) {
+            this.firstWishPop = true;
+            this.scheduleOnce(function() {
+                this.narrative.playLine(2);
+            }, 1);
+        }
         for (var i = 0; i < this.wishes.length; ++i) {
             var wish = this.wishes[i];
             this.learningGroup.reuse(this);

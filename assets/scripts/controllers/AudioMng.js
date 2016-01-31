@@ -37,7 +37,9 @@ var AudioMng = cc.Class({
     },
 
     playWishSFX (wishType) {
-        cc.audioEngine.playEffect(this.wishSFX[wishType], false);
+        if (wishType < this.wishSFX.length) {
+            cc.audioEngine.playEffect(this.wishSFX[wishType], false);
+        }
     },
 
     onLoad () {
