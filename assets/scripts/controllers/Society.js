@@ -132,6 +132,7 @@ var Society = cc.Class({
                 this.scheduleOnce(function() {
                     let poseID = Poses.indexOf(pickedPose);
                     this.fxRitual.playAnim(poseID);
+                    // this.god.showWonder();
                 }, 2.5);
                 AudioMng.instance.playRitual();
                 this.ritualLearnt(wish, pickedPose);
