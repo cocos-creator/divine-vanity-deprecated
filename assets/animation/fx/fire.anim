@@ -3,9 +3,9 @@
   "_name": "fire",
   "_objFlags": 0,
   "_rawFiles": null,
-  "_duration": 0.5,
+  "_duration": 0.5833333333333334,
   "sample": 12,
-  "speed": 1,
+  "speed": 0.6,
   "wrapMode": 2,
   "curveData": {
     "comps": {
@@ -24,15 +24,33 @@
             }
           },
           {
-            "frame": 0.25,
+            "frame": 0.16666666666666666,
             "value": {
               "__uuid__": "aeacfc31-e116-4c9a-b5aa-c3d141adfc46"
             }
           },
           {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "e7bac759-47b6-4620-b464-4f7d919345a4"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "4309f84a-7c92-411a-bd13-4f9d3b1cf883"
+            }
+          },
+          {
             "frame": 0.4166666666666667,
             "value": {
-              "__uuid__": "aeacfc31-e116-4c9a-b5aa-c3d141adfc46"
+              "__uuid__": "4309f84a-7c92-411a-bd13-4f9d3b1cf883"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "e7bac759-47b6-4620-b464-4f7d919345a4"
             }
           }
         ]
@@ -42,15 +60,42 @@
       "scaleY": [
         {
           "frame": 0,
-          "value": 1.6666667
+          "value": 1.77
         },
         {
-          "frame": 0.25,
-          "value": 1.2
+          "frame": 0.3333333333333333,
+          "value": 1.6
         },
         {
           "frame": 0.4166666666666667,
-          "value": 1.6666
+          "value": 1.4333333333333333,
+          "curve": "cubicOut"
+        },
+        {
+          "frame": 0.5,
+          "value": 1.7
+        }
+      ],
+      "opacity": [
+        {
+          "frame": 0,
+          "value": 255
+        },
+        {
+          "frame": 0.08333333333333333,
+          "value": 230
+        },
+        {
+          "frame": 0.16666666666666666,
+          "value": 255
+        },
+        {
+          "frame": 0.4166666666666667,
+          "value": 235
+        },
+        {
+          "frame": 0.5,
+          "value": 255
         }
       ]
     }
