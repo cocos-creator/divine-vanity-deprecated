@@ -105,10 +105,8 @@ var Society = cc.Class({
             var wish = group.wish;
             if (pickedPose && max >= wish.ritualNeed) {
                 this.tribute(max * wish.wishConsume);
-                this.scheduleOnce(function () {
-                    let poseID = Poses.indexOf(pickedPose);
-                    this.fxRitual.playAnim(poseID);
-                }, 3);
+                let poseID = Poses.indexOf(pickedPose);
+                this.fxRitual.playAnim(poseID);
                 this.ritualLearnt(wish, pickedPose);
                 group.toState(States.WORSHIPING, pickedPose);
             }

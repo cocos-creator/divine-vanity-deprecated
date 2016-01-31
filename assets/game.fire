@@ -3580,8 +3580,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1000,
-      "height": 1000
+      "width": 1300,
+      "height": 1300
     },
     "_children": [],
     "_rotationX": 0,
