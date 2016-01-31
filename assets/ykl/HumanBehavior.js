@@ -99,6 +99,19 @@ cc.Class({
         else if ( state === window.States.WORSHIPING ) {
             // 头上无问号，播放跪拜动画
             this.hideWish();
+            var tribute = this.node.getChildByName('tribute');
+            var str = '+' + this.tribute;
+            tribute.active = true;
+            tribute.getComponent(cc.Label).string = str;
+            tribute.runAction(cc.sequence(
+                cc.spawn(
+                    cc.moveBy(1, 0, 60),
+                    cc.fadeOut(1)
+                ),
+                cc.callFunc(function () {
+                    tribute.active = false;
+                })
+            ).easing(cc.easeOut(2)));
             // this.anim.play('p_act03');
         }
         else if ( state === window.States.LOST ) {

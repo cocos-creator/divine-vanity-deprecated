@@ -131,7 +131,7 @@ cc.js.mixin(Group.prototype, {
             case States.WORSHIPING:
                 // Not learning anymore
                 this.poses && (this.poses.length = 0);
-                this.wish = null;
+                var wish = this.wish;
                 var people = this.people;
                 var society = this.society;
                 var praying = this.praying;
@@ -141,6 +141,7 @@ cc.js.mixin(Group.prototype, {
                         var behavior = person.getComponent('HumanBehavior');
                         // Correct pose
                         if (praying || detail === behavior.currentPose) {
+                            behavior.tribute = wish.tributePerP;
                             behavior.currentState = States.WORSHIPING;
                         }
                         // Incorrect
@@ -159,6 +160,7 @@ cc.js.mixin(Group.prototype, {
                         society.lost(lostCount);
                     }
                 }, 0);
+                this.wish = null;
                 if (this.isLearning) {
                     this.countdown = 3;
                 }

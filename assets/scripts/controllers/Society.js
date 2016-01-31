@@ -152,7 +152,7 @@ var Society = cc.Class({
         }
         if (max) {
             var unlocked = this.battlePanel.unlockBtn(Levels[max]);
-            this.newSkillsAvailable(unlocked);
+            unlocked && this.newSkillsAvailable(unlocked);
         }
     },
 
