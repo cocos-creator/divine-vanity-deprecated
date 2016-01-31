@@ -100,15 +100,15 @@ var Society = cc.Class({
             for (var i = 0; i < wishTypeList.length; ++i) {
                 var id = wishTypeList[i].value;
                 let wishInfo = this.assetMng.wishesDB[id];
-                Wishes[id].poseCount = wishInfo.poseCount;
-                Wishes[id].poseDuration = wishInfo.poseDuration;
-                Wishes[id].moveSpeed = wishInfo.moveSpeed;
-                Wishes[id].ritualNeed = wishInfo.ritualNeed;
-                Wishes[id].tributePerP = wishInfo.tributePerP;
-                Wishes[id].divineConsume = wishInfo.divineConsume;
-                Wishes[id].wishConsume = wishInfo.wishConsume;
-                Wishes[id].levelBonus = wishInfo.levelBonus;
-                Wishes[id].attraction = wishInfo.attraction;
+                Wishes[id].poseCount = parseInt(wishInfo.poseCount);
+                Wishes[id].poseDuration = parseInt(wishInfo.poseDuration);
+                Wishes[id].moveSpeed = parseInt(wishInfo.moveSpeed);
+                Wishes[id].ritualNeed = parseInt(wishInfo.ritualNeed);
+                Wishes[id].tributePerP = parseInt(wishInfo.tributePerP);
+                Wishes[id].divineConsume = parseInt(wishInfo.divineConsume);
+                Wishes[id].wishConsume = parseInt(wishInfo.wishConsume);
+                Wishes[id].levelBonus = parseInt(wishInfo.levelBonus);
+                Wishes[id].attraction = parseInt(wishInfo.attraction);
             }
         }.bind(this));
     },
@@ -137,7 +137,6 @@ var Society = cc.Class({
             // Ritual need satisfied
             var wish = group.wish;
             if (pickedPose && max >= wish.ritualNeed) {
-                this.tribute(max * wish.wishConsume, wish);
                 this.scheduleOnce(function() {
                     let poseID = Poses.indexOf(pickedPose);
                     this.fxRitual.playAnim(poseID);
@@ -145,6 +144,7 @@ var Society = cc.Class({
                 }, 2.5);
                 AudioMng.instance.playRitual();
                 this.ritualLearnt(wish, pickedPose);
+                this.tribute(max * wish.wishConsume, wish);
                 group.toState(States.WORSHIPING, pickedPose);
             }
         }

@@ -78,10 +78,10 @@ var BattlePanel = cc.Class ({
             this.allUnlocked = true;
         }
         var firstPosX = 200 - (state * 100);
-        var current = 0;
-        for (let i = 0, len = this.skills.length; i < len; ++i) {
+        var current = 0, i, len, skill;
+        for (i = 0, len = this.skills.length; i < len; ++i) {
             // this.skills[i].node.active = false;
-            var skill = this.skills[i];
+            skill = this.skills[i];
             if (skill.node.active) {
                 current = i;
                 skill.node.x = firstPosX + (100 * i);
@@ -91,13 +91,12 @@ var BattlePanel = cc.Class ({
             }
         }
         var unlocked = [];
-        for (let i = current + 1; i <= state; i++) {
-            var skill = this.skills[i];
+        for (i = current + 1; i <= state && i < this.skills.length; i++) {
+            skill = this.skills[i];
             skill.node.x = firstPosX + (100 * i);
             skill.node.active = true;
             unlocked.push(i);
         }
-        console.log(unlocked.length);
         return unlocked;
     },
 

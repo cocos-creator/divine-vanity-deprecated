@@ -104,11 +104,9 @@ cc.Class({
             tribute.active = true;
             tribute.getComponent(cc.Label).string = str;
             tribute.runAction(cc.sequence(
-                cc.spawn(
-                    cc.moveBy(1, 0, 60),
-                    cc.fadeOut(1)
-                ),
+                cc.moveTo(1, 0, 120),
                 cc.callFunc(function () {
+                    tribute.y = 80;
                     tribute.active = false;
                 })
             ).easing(cc.easeOut(2)));

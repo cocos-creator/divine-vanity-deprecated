@@ -13,7 +13,6 @@ cc.Class({
                 if (data[i].id === "") break;
                 this.wishesDB[data[i].id] = data[i];
             }
-            console.log(this.wishesDB);
             if (cb) {
                 cb();
             }
