@@ -1,14 +1,14 @@
 {
   "ver": "1.0.0",
-  "uuid": "5c98cb87-796a-4afb-9311-07f95b214b30",
+  "uuid": "34c4903f-06f0-4362-adc7-2558373b2711",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "subMetas": {
-    "mainSceneBg": {
+    "tubiao09": {
       "ver": "1.0.2",
-      "uuid": "5cc8d401-1a75-4de7-b018-f63c3f6249b5",
-      "rawTextureUuid": "5c98cb87-796a-4afb-9311-07f95b214b30",
+      "uuid": "f85ad3b1-b163-478a-a678-20761eab4710",
+      "rawTextureUuid": "34c4903f-06f0-4362-adc7-2558373b2711",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -16,8 +16,8 @@
       "offsetY": 0,
       "trimX": 0,
       "trimY": 0,
-      "width": 1009,
-      "height": 755,
+      "width": 84,
+      "height": 86,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

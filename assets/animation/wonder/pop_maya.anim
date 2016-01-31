@@ -1,0 +1,99 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "pop_maya",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.5,
+  "sample": 10,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "202c0972-ffdf-43c6-b224-f232b5183b11"
+            }
+          }
+        ]
+      }
+    },
+    "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            0,
+            -665
+          ]
+        },
+        {
+          "frame": 1.5,
+          "value": [
+            0,
+            -282
+          ]
+        }
+      ],
+      "opacity": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.3,
+          "value": 255
+        }
+      ],
+      "rotation": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.1,
+          "value": 3
+        },
+        {
+          "frame": 0.2,
+          "value": -3
+        },
+        {
+          "frame": 0.3,
+          "value": 3
+        },
+        {
+          "frame": 0.4,
+          "value": -3
+        },
+        {
+          "frame": 0.5,
+          "value": 2
+        },
+        {
+          "frame": 0.6,
+          "value": -2
+        },
+        {
+          "frame": 0.7,
+          "value": 2
+        },
+        {
+          "frame": 0.9,
+          "value": -2
+        },
+        {
+          "frame": 1.2,
+          "value": 2
+        },
+        {
+          "frame": 1.5,
+          "value": 0
+        }
+      ]
+    }
+  },
+  "events": []
+}

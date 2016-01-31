@@ -75,7 +75,11 @@
     },
     "_enabled": true,
     "battlePanel": null,
-    "resources": null
+    "resources": null,
+    "wonderPrefab": {
+      "__uuid__": "20a791c4-7d4d-4206-b875-bed410b79efa"
+    },
+    "wonderLayer": null
   },
   {
     "__type__": "07354aU81JPS5ESw2HLIjGo",
@@ -94,6 +98,7 @@
     "battlePanel": null,
     "fxRitual": null,
     "gameOver": null,
+    "assetMng": null,
     "prayDelay": 8,
     "lostCoef": 0.5,
     "prayCoef": 0.3,
@@ -110,7 +115,8 @@
     "tributePerP": 2,
     "divineConsume": 1,
     "wishConsume": 3,
-    "levelBonus": 0.1
+    "levelBonus": 0.1,
+    "attraction": 1
   },
   {
     "__type__": "7d32f/FDHZEMY1WZNTt3Lps",
@@ -122,9 +128,9 @@
     "_enabled": true,
     "population": 5,
     "y": [
-      50,
-      90,
-      120
+      40,
+      80,
+      100
     ],
     "person": {
       "__uuid__": "09a4a97c-211f-4362-a0b0-a3bb71d0666f"

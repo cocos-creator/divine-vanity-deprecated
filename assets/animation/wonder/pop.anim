@@ -102,6 +102,18 @@
           "value": 255
         }
       ]
+    },
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "eddbe53c-015b-447a-b125-539bebfbe89d"
+            }
+          }
+        ]
+      }
     }
   },
   "events": []
