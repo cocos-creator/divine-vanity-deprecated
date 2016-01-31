@@ -168,7 +168,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 0
+      "y": 5.684341886080802e-14
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -2082,7 +2082,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 640
+      "y": 320
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -2497,7 +2497,7 @@
     "_alignFlags": 1,
     "_left": 0,
     "_right": 0,
-    "_top": -320,
+    "_top": 0,
     "_bottom": 0,
     "_isAbsLeft": true,
     "_isAbsRight": true,
@@ -6379,7 +6379,8 @@
     "tributePerP": 2,
     "divineConsume": 1,
     "wishConsume": 3,
-    "levelBonus": 0.1
+    "levelBonus": 0.1,
+    "attraction": 1
   },
   {
     "__type__": "b181bc2SmNOeJf9tXPf0Dt7",
@@ -6511,8 +6512,8 @@
     "_alignFlags": 45,
     "_left": 0,
     "_right": 0,
-    "_top": 0,
-    "_bottom": 0,
+    "_top": -5.684341886080802e-14,
+    "_bottom": 5.684341886080802e-14,
     "_isAbsLeft": true,
     "_isAbsRight": true,
     "_isAbsTop": true,
@@ -6578,7 +6579,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 479.9999999999999,
+      "x": 480,
       "y": 319.99999999999994
     },
     "_skewX": 0,
@@ -6607,7 +6608,7 @@
     "node": {
       "__id__": 212
     },
-    "_enabled": false,
+    "_enabled": true,
     "world": {
       "__id__": 3
     },

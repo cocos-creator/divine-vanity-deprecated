@@ -9,7 +9,7 @@ var AudioMng = require('AudioMng');
 
 var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
-var PopulationLevel = [3, 5, 8, 15, 25, 35, 45];
+var PopulationLevel = [3, 8, 20, 35, 50];
 var Levels = {};
 for (var i = 0; i < wishTypeList.length; ++i) {
     var id = wishTypeList[i].value;
@@ -175,7 +175,11 @@ var Society = cc.Class({
         // Upgrade rituals
         var ritual = this.rituals[wish.id];
         ritual.count ++;
+        let lastLevel = ritual.level;
         ritual.level = Math.floor(ritual.count / 3);
+        if (ritual.level > lastLevel) {
+            this.god.showWonder();
+        }
     },
 
     updatePopulation: function () {
