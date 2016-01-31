@@ -114,7 +114,8 @@ cc.Class({
         }
         else if ( state === window.States.LOST ) {
             // 丢失或是死掉
-            this.node.runAction(cc.sequence(cc.fadeOut(1), cc.callFunc(function () {
+            this.anim.play('die');
+            this.node.runAction(cc.sequence(cc.fadeOut(2.5), cc.callFunc(function () {
                 this.node.removeFromParent();
             }, this)));
         }
