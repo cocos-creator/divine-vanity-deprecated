@@ -74,7 +74,7 @@ var BattlePanel = cc.Class ({
         if (this.allUnlocked) {
             return;
         }
-        if (state > 1) {
+        if (state > 3) {
             this.allUnlocked = true;
         }
         var firstPosX = 200 - (state * 100);
