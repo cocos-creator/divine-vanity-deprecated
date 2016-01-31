@@ -28,6 +28,7 @@ var BattlePanel = cc.Class ({
     onLoad: function () {
         BattlePanel.instance = this;
         this.skills = [];
+        this.allUnlocked = false;
     },
 
     start: function () {
@@ -70,8 +71,13 @@ var BattlePanel = cc.Class ({
     },
 
     unlockBtn: function (state) {
+        if (this.allUnlocked) {
+            return;
+        }
+        if (state > 1) {
+            this.allUnlocked = true;
+        }
         var firstPosX = 200 - (state * 100);
-
         var current = 0;
         for (let i = 0, len = this.skills.length; i < len; ++i) {
             // this.skills[i].node.active = false;
@@ -91,6 +97,7 @@ var BattlePanel = cc.Class ({
             skill.node.active = true;
             unlocked.push(i);
         }
+        console.log(unlocked.length);
         return unlocked;
     },
 
