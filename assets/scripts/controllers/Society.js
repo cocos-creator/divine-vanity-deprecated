@@ -78,11 +78,23 @@ var Society = cc.Class({
         population: 0,
     },
 
+    pause: function () {
+        this._pause = true;
+        this.node.emit('pause');
+    },
+
+    resume: function () {
+        this._pause = false;
+        this.node.emit('resume');
+    },
+
     // use this for initialization
     onLoad: function () {
         this.rituals = {};
         this.ritualCount = 0;
         this.lastRitualID = 0;
+
+        this._pause = false;
         
         this.god = this.getComponent('God');
         
@@ -275,6 +287,10 @@ var Society = cc.Class({
 
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
+        if (this._pause) {
+            return;
+        }
+
         // Learn new skill if possible
         if (this.wishes.length > 0 && !this.learningGroup.learning) {
             if (this.learnTimeout <= 0 || this.ritualCount === 0) {

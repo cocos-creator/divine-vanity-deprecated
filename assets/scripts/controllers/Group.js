@@ -104,7 +104,7 @@ cc.js.mixin(Group.prototype, {
 
                 // 当 people 间距太小时，将 间距做一定调整
                 var people = this.people.sort(function (a, b) {
-                    return a.x > b.x;
+                    return a.x > b.x ? 1 : -1;
                 });
 
                 var lastX = null;
