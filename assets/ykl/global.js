@@ -10,9 +10,11 @@ var States = cc.Enum({
 });
 
 var WishType = cc.Enum({
+    Rain: -1,
 	Fire: -1,
-	Rain: -1,
 	Meat: -1,
+    Sun: -1,
+    Wheet: -1
 });
 
 var Poses = [
