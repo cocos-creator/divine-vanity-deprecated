@@ -161,7 +161,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "65403AMXP1M5Yx04QnXkhGR"
+    "fileId": "50772Rcry5MD53kUNHgKjYD"
   },
   {
     "__type__": "cc.Node",
@@ -248,7 +248,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "e111dbmw6FFSYN1v+gIHx2Y"
+    "fileId": "1e272ZTYRdDVJ6LG90GqUX9"
   },
   {
     "__type__": "cc.Node",
@@ -402,7 +402,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "9f26dUCF2pI0oT8Mx6oXy9/"
+    "fileId": "8691bey8DFM3q0T9no4MckN"
   },
   {
     "__type__": "cc.Node",
@@ -512,6 +512,15 @@
       },
       {
         "__uuid__": "6a2776a3-e912-481f-855d-ed5be9f3a890"
+      },
+      {
+        "__uuid__": "88decfae-9b8b-4082-b5e3-ac11986eab3c"
+      },
+      {
+        "__uuid__": "f85ad3b1-b163-478a-a678-20761eab4710"
+      },
+      {
+        "__uuid__": "8962f64a-351d-4cb5-a4e2-655be1411b32"
       }
     ]
   },
@@ -521,7 +530,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "6870eDT7zlG2JBRMbqADMpf"
+    "fileId": "3f742I5jLRABoG9hCMPjSEW"
   },
   {
     "__type__": "cc.Animation",
@@ -565,6 +574,6 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "1e31fWvASpJkKcjHldLKaFb"
+    "fileId": "684b2MLpvhBhbLziDCHcXW/"
   }
 ]

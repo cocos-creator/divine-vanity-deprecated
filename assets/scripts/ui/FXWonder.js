@@ -4,13 +4,13 @@ cc.Class({
     properties: {
         particle: cc.ParticleSystem,
         anim: cc.Animation,
-        sprite: cc.Sprite,
         sfWonders: [cc.SpriteFrame]
     },
 
     playAnim (idx) {
-        console.log('wonder idx: ' + idx);
-        this.sprite.spriteFrame = this.sfWonders[idx];
+        let sprite = this.anim.getComponent(cc.Sprite);
+        sprite.spriteFrame = this.sfWonders[idx];
+        sprite.enabled = true;
         this.anim.play('pop');
         this.particle.resetSystem();
     }

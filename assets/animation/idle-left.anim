@@ -3,8 +3,8 @@
   "_name": "idle-left",
   "_objFlags": 0,
   "_rawFiles": null,
-  "_duration": 0.6,
-  "sample": 10,
+  "_duration": 0.5,
+  "sample": 8,
   "speed": 1,
   "wrapMode": 2,
   "curveData": {
@@ -18,19 +18,19 @@
             }
           },
           {
-            "frame": 0.1,
+            "frame": 0.125,
             "value": {
               "__uuid__": "54000834-5b4d-4aa7-af7d-7482dee1d05e"
             }
           },
           {
-            "frame": 0.2,
+            "frame": 0.25,
             "value": {
               "__uuid__": "7c0fb175-ce27-473c-a6d8-3b3732979f0e"
             }
           },
           {
-            "frame": 0.5,
+            "frame": 0.375,
             "value": {
               "__uuid__": "7c0fb175-ce27-473c-a6d8-3b3732979f0e"
             }

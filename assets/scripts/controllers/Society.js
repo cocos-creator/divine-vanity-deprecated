@@ -22,8 +22,8 @@ function createRitual (pose, id) {
     return {
         id: id,
         pose: pose,
-        count: 1,
-        level: 1
+        count: 0,
+        level: 0
     };
 }
 
