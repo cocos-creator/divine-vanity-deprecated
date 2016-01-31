@@ -1512,7 +1512,7 @@
     "__type__": "cc.Node",
     "_name": "skylight",
     "_objFlags": 0,
-    "_opacity": 255,
+    "_opacity": 0,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -8498,8 +8498,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 480.0000000000001,
-      "y": 319.9999999999999
+      "x": 480,
+      "y": 320
     },
     "_skewX": 0,
     "_skewY": 0,

@@ -58,6 +58,8 @@ cc.Class({
 
         sfWishIcons: [cc.SpriteFrame],
 
+        pray: cc.Animation,
+
         moveSpeed: 300,
 
         idleMoveSpeed: 50,
@@ -76,6 +78,9 @@ cc.Class({
 
     _updateState: function (oldState) {
         var state = this.currentState;
+        if (oldState === window.States.PRAYING) {
+            this.pray.getComponent(cc.Sprite).enabled = false;
+        }
 
         if ( state === window.States.DEFAULT ) {
             this.hideWish();
@@ -132,7 +137,10 @@ cc.Class({
         }
         if (firstRight === false) {
             firstRight = true;
-            cc.find('Canvas/world/narrative').getComponent('Narrative').playLine(3);
+            let nar = cc.find('Canvas/world/narrative').getComponent('Narrative');
+            this.scheduleOnce(function() {
+                nar.playLine(3);
+            }, 1);
         }
         this.checked = true;
         this.wishIcon.getComponent(cc.Button).interactable = false;

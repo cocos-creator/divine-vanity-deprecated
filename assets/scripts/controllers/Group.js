@@ -87,6 +87,8 @@ cc.js.mixin(Group.prototype, {
                     behavior.currentState = States.PRAYING;
                     behavior.currentWish = this.wish;
                     behavior.currentPose = ritual.pose;
+                    behavior.pray.getComponent(cc.Sprite).enabled = true;
+                    behavior.pray.play('pray');
                 });
                 this.countdown = this.wish.poseDuration;
                 this.prayRitual = ritual.pose;
