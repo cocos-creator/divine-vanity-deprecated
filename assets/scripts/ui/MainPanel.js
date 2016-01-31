@@ -25,7 +25,6 @@ var MainPanel = cc.Class({
     },
 
     onLoad: function () {
-        this.society.pause();
         this.hasMoveScene = false;
         var scene = cc.director.getScene();
         scene.y = -1450;
