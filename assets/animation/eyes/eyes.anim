@@ -83,5 +83,11 @@
       }
     }
   },
-  "events": []
+  "events": [
+    {
+      "frame": 2.9833333333333334,
+      "func": "eyesAnimEnd",
+      "params": []
+    }
+  ]
 }

@@ -94,7 +94,7 @@ var Society = cc.Class({
         this.ritualCount = 0;
         this.lastRitualID = 0;
 
-        this._pause = false;
+        this._pause = true;
         
         this.god = this.getComponent('God');
         
