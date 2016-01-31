@@ -13,6 +13,7 @@ cc.Class({
     },
 
     onLoad: function () {
+        this.hasDown = false;
         this.node.active = false;
         this.node.on("touchstart", function (event) {
             event.stopPropagation();
@@ -20,10 +21,14 @@ cc.Class({
     },
 
     onEnable: function () {
-        this.eyesAnimCtrl.play('showBattlePanel');
+        this.eyesAnimCtrl.play('hideEyes');
     },
 
     goToMainPanelClick: function () {
+        if (this.hasDown) {
+            return;
+        }
+        this.hasDown = true;
         cc.director.loadScene("game");
     }
 });
