@@ -16,6 +16,18 @@ cc.Class({
     playAnim (signID) {
         this.signID = signID;
         this.anim.play('play_ritual');
+
+        var camera = cc.find('Camera');
+        var lookAt = cc.find('Camera').getComponent('LookAt');
+
+        lookAt.target = this.node;
+
+        var action = cc.sequence([
+            cc.scaleTo(0.5, 1.5, 1.5),
+            cc.delayTime(2),
+            cc.scaleTo(0.5, 1, 1),
+        ]);
+        camera.runAction( action );
     },
 
     playParticle () {
