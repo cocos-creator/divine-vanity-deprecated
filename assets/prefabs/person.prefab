@@ -52,8 +52,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 241,
-      "y": 162
+      "x": 299,
+      "y": -137
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -158,7 +158,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "ec71aGkVqBLyafoEoqTdjRo"
+    "fileId": "494824smgxMVbVRIa/H6/RD"
   },
   {
     "__type__": "cc.Node",
@@ -312,7 +312,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "2b26fQgvf5CaoqLk87bqiBn"
+    "fileId": "0ca25lbIo1EWZAffbxqtDrl"
   },
   {
     "__type__": "cc.Sprite",
@@ -446,7 +446,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "4ef75Jrh6ND9bRp48bPqZ3F"
+    "fileId": "ed7dbjUMvFK7p2g3chv+aSS"
   },
   {
     "__type__": "cc.Node",
@@ -471,8 +471,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 72,
-      "height": 92
+      "width": 127,
+      "height": 133
     },
     "_children": [],
     "_rotationX": 0,
@@ -514,7 +514,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "17307041-4c31-4dd4-9c83-90b6c895a848"
+      "__uuid__": "c6fa1cfd-e8d4-4da8-bef1-508494d2abdb"
     },
     "_type": 0,
     "_useOriginalSize": true,
@@ -562,6 +562,15 @@
       },
       {
         "__uuid__": "c2c079f3-7182-4873-85ea-577e35f44992"
+      },
+      {
+        "__uuid__": "96172af3-ca20-4427-b7fa-9f4fa240ad0e"
+      },
+      {
+        "__uuid__": "cf6b7979-8776-4c0d-bba3-3b702b020a3a"
+      },
+      {
+        "__uuid__": "79a90e6f-fe9b-4665-b87f-151e13d24227"
       }
     ],
     "playOnLoad": false
@@ -572,7 +581,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "0f51bD8cdBIJq2BBh0d6nXw"
+    "fileId": "9cc85tI5z1FS548yXTGRglq"
   },
   {
     "__type__": "cc.Node",
@@ -655,7 +664,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "c69e97S8OVMqageQMjttAuV"
+    "fileId": "439d8O1gC1F5I4S/horBcBw"
   },
   {
     "__type__": "fd410vTg3VKQbu9IoKPzDA9",
@@ -708,6 +717,6 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "5ef61ia21NC3q1uadLhMLwP"
+    "fileId": "746beDcZMNFi7DYf6gpGUqA"
   }
 ]

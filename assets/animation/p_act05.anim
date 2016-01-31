@@ -66,6 +66,12 @@
           "frame": 1,
           "value": 0.7
         }
+      ],
+      "scaleX": [
+        {
+          "frame": 0,
+          "value": -1
+        }
       ]
     }
   },

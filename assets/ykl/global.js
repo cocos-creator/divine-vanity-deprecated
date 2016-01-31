@@ -22,7 +22,10 @@ var Poses = [
     'p_act02',
     'p_act03',
     'p_act04',
-    'p_act05'
+    'p_act05',
+    'p_act06',
+    'p_act07',
+    'p_act08'
 ];
 
 var UnusedPoses = [
@@ -30,7 +33,10 @@ var UnusedPoses = [
     'p_act02',
     'p_act03',
     'p_act04',
-    'p_act05'
+    'p_act05',
+    'p_act06',
+    'p_act07',
+    'p_act08'
 ];
 
 window.States = States;

@@ -3,10 +3,13 @@ cc.Class({
 
     properties: {
         particle: cc.ParticleSystem,
-        anim: cc.Animation
+        anim: cc.Animation,
+        sprite: cc.Sprite,
+        sfWonders: [cc.SpriteFrame]
     },
 
-    playAnim () {
+    playAnim (idx) {
+        this.sprite.spriteFrame = this.sfWonders[idx];
         this.anim.play('pop');
         this.particle.resetSystem();
     }

@@ -18,8 +18,9 @@ for (var i = 0; i < wishTypeList.length; ++i) {
     Levels[PopulationLevel[i]] = id;
 }
 
-function createRitual (pose) {
+function createRitual (pose, id) {
     return {
+        id: id,
         pose: pose,
         count: 1,
         level: 1
@@ -81,6 +82,7 @@ var Society = cc.Class({
     onLoad: function () {
         this.rituals = {};
         this.ritualCount = 0;
+        this.lastRitualID = 0;
         
         this.god = this.getComponent('God');
         
@@ -178,7 +180,7 @@ var Society = cc.Class({
         let lastLevel = ritual.level;
         ritual.level = Math.floor(ritual.count / 3);
         if (ritual.level > lastLevel) {
-            this.god.showWonder();
+            this.god.showWonder(ritual.id);
         }
     },
 
@@ -232,7 +234,8 @@ var Society = cc.Class({
     },
 
     ritualLearnt: function (wish, pose) {
-        this.rituals[wish.id] = createRitual(pose);
+        this.rituals[wish.id] = createRitual(pose, this.lastRitualID);
+        this.lastRitualID++;
         this.ritualCount = Object.keys(this.rituals).length;
         this.prayTimeout = this.prayDelay;
         var index = this.wishes.indexOf(wish);
