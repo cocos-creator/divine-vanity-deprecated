@@ -5,6 +5,7 @@ var BattlePanel = require('BattlePanel');
 var FXRitual = require('FXRitual');
 var GameOverPanel = require('GameOverPanel');
 var AssetMng = require('AssetMng');
+var AudioMng = require('AudioMng');
 
 var wishTypeList = cc.Enum.getList(WishType);
 var Wishes = {};
@@ -85,6 +86,8 @@ var Society = cc.Class({
         this.prayTimeout = this.prayDelay;
         this.learnTimeout = this.learnDelay;
 
+        AudioMng.instance.playBGM();
+
         this.assetMng.init(function () {
             for (var i = 0; i < wishTypeList.length; ++i) {
                 var id = wishTypeList[i].value;
@@ -98,7 +101,6 @@ var Society = cc.Class({
                 Wishes[id].wishConsume = wishInfo.wishConsume;
                 Wishes[id].levelBonus = wishInfo.levelBonus;
             }
-            console.log(Wishes);
         }.bind(this));
     },
 
@@ -127,8 +129,11 @@ var Society = cc.Class({
             var wish = group.wish;
             if (pickedPose && max >= wish.ritualNeed) {
                 this.tribute(max * wish.wishConsume);
-                let poseID = Poses.indexOf(pickedPose);
-                this.fxRitual.playAnim(poseID);
+                this.scheduleOnce(function() {
+                    let poseID = Poses.indexOf(pickedPose);
+                    this.fxRitual.playAnim(poseID);
+                }, 2.5);
+                AudioMng.instance.playRitual();
                 this.ritualLearnt(wish, pickedPose);
                 group.toState(States.WORSHIPING, pickedPose);
             }

@@ -162,7 +162,7 @@ cc.js.mixin(Group.prototype, {
                 }, 0);
                 this.wish = null;
                 if (this.isLearning) {
-                    this.countdown = 3;
+                    this.countdown = 4.5;
                 }
                 else {
                     this.countdown = 2;
