@@ -20,6 +20,10 @@ var MainPanel = cc.Class({
         startGameBtn: {
             default: null,
             type: cc.Animation
+        },
+        battlePanelAnim: {
+            default: null,
+            type: cc.Animation
         }
 
     },
@@ -32,6 +36,7 @@ var MainPanel = cc.Class({
 
     hideMainPanelAnimEnd: function () {
         this.society.resume();
+        this.battlePanelAnim.play('showBattlePanel');
     },
 
     runMoveScene: function () {
