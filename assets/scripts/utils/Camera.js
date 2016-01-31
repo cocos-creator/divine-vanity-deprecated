@@ -25,13 +25,13 @@ cc.Class({
         // ...
     },
 
-    onFocusInEditor : CC_EDITOR && function () {
+    onFocusInEditor : /*CC_EDITOR &&*/ function () {
         if (this.previewOnFocus) {
             this.enabled = true;
         }
     },
 
-    onLostFocusInEditor : CC_EDITOR && function () {
+    onLostFocusInEditor : /*CC_EDITOR &&*/ function () {
         this.enabled = false;
     },
 
@@ -55,7 +55,7 @@ cc.Class({
         this.world.scale = cc.Vec2.ONE;
         this.world.rotation = 0;
 
-        if (CC_EDITOR && !cc.engine.isPlaying) {
+        if (/*CC_EDITOR && */!cc.engine.isPlaying) {
             cc.engine.repaintInEditMode();
         }
     },
