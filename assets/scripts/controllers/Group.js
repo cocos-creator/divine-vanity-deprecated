@@ -86,10 +86,10 @@ cc.js.mixin(Group.prototype, {
                     var behavior = person.getComponent('HumanBehavior');
                     behavior.currentState = States.PRAYING;
                     behavior.currentWish = this.wish;
-                    behavior.currentPose = ritual;
+                    behavior.currentPose = ritual.pose;
                 });
                 this.countdown = this.wish.poseDuration;
-                this.prayRitual = ritual;
+                this.prayRitual = ritual.pose;
                 this.praying = true;
                 break;
             case States.LEARNING:

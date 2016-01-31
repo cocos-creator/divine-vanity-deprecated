@@ -9,7 +9,8 @@ var Wish = cc.Class({
         tributePerP: 2,
         divineConsume: 1,
         wishConsume: 3,
-        levelBonus: 0.1
+        levelBonus: 0.1,
+        attraction: 1,
     }
 });
 

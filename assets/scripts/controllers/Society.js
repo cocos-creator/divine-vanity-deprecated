@@ -18,6 +18,14 @@ for (var i = 0; i < wishTypeList.length; ++i) {
     Levels[PopulationLevel[i]] = id;
 }
 
+function createRitual (pose) {
+    return {
+        pose: pose,
+        count: 1,
+        level: 1
+    };
+}
+
 var Society = cc.Class({
     extends: cc.Component,
 
@@ -128,7 +136,7 @@ var Society = cc.Class({
             // Ritual need satisfied
             var wish = group.wish;
             if (pickedPose && max >= wish.ritualNeed) {
-                this.tribute(max * wish.wishConsume);
+                this.tribute(max * wish.wishConsume, wish);
                 this.scheduleOnce(function() {
                     let poseID = Poses.indexOf(pickedPose);
                     this.fxRitual.playAnim(poseID);
@@ -138,8 +146,8 @@ var Society = cc.Class({
                 group.toState(States.WORSHIPING, pickedPose);
             }
         }
-        else if (group.isPraying() && group.prayRitual === this.rituals[wishID]) {
-            this.tribute(group.people.length * Wishes[wishID].wishConsume * 2);
+        else if (group.isPraying() && group.prayRitual === this.rituals[wishID].pose) {
+            this.tribute(group.people.length * Wishes[wishID].wishConsume, Wishes[wishID]);
             group.toState(States.WORSHIPING);
         }
         else if (group.wish) {
@@ -157,11 +165,15 @@ var Society = cc.Class({
         }
     },
 
-    tribute: function (resources) {
+    tribute: function (resources, wish) {
         this.god.tribute(resources);
-        var ratio = resources / 100;
-        var newbies = Math.ceil(this.population * ratio * this.prayCoef);
+        var newbies = Math.round(wish.attraction + Math.random() * 2 - 1);
         this.getComponent('generator').generate(newbies);
+
+        // Upgrade rituals
+        var ritual = this.rituals[wish.id];
+        ritual.count ++;
+        ritual.level = Math.floor(ritual.count / 3);
     },
 
     updatePopulation: function () {
@@ -214,7 +226,7 @@ var Society = cc.Class({
     },
 
     ritualLearnt: function (wish, pose) {
-        this.rituals[wish.id] = pose;
+        this.rituals[wish.id] = createRitual(pose);
         this.ritualCount = Object.keys(this.rituals).length;
         this.prayTimeout = this.prayDelay;
         var index = this.wishes.indexOf(wish);
