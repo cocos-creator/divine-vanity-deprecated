@@ -10,6 +10,10 @@ var AudioMng = cc.Class({
             default: null,
             url: cc.AudioClip
         },
+        baby: {
+            default: null,
+            url: cc.AudioClip
+        },
         wishSFX: {
             default: [],
             url: cc.AudioClip
@@ -26,6 +30,10 @@ var AudioMng = cc.Class({
 
     playRitual () {
         cc.audioEngine.playEffect(this.ritual, false);
+    },
+
+    playBaby () {
+        cc.audioEngine.playEffect(this.baby, false);
     },
 
     playWishSFX (wishType) {

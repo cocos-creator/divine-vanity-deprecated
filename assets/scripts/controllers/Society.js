@@ -95,9 +95,9 @@ var Society = cc.Class({
         this.lastRitualID = 0;
 
         this._pause = true;
-        
+
         this.god = this.getComponent('God');
-        
+
         // People who do nothing
         this.defaultGroup = new Group(this);
         // People who is learning the learningSkill
@@ -108,7 +108,7 @@ var Society = cc.Class({
         this.prayTimeout = this.prayDelay;
         this.learnTimeout = this.learnDelay;
 
-        AudioMng.instance.playBGM();
+        // AudioMng.instance.playBGM();
 
         this.assetMng.init(function () {
             for (var i = 0; i < wishTypeList.length; ++i) {
@@ -185,6 +185,7 @@ var Society = cc.Class({
         this.god.tribute(resources);
         var newbies = Math.round(wish.attraction + Math.random() * 2 - 1);
         this.getComponent('generator').generate(newbies);
+        AudioMng.instance.playBaby();
 
         // Upgrade rituals
         var ritual = this.rituals[wish.id];

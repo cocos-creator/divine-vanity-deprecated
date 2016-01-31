@@ -1,5 +1,6 @@
 
 var Society = require('Society');
+var AudioMng = require('AudioMng');
 
 var MainPanel = cc.Class({
     extends: cc.Component,
@@ -42,6 +43,7 @@ var MainPanel = cc.Class({
     runMoveScene: function () {
         var state = this.startGameBtn.getAnimationState('fadeInStartBtn');
         state.wrapMode = cc.WrapMode.Reverse;
+        AudioMng.instance.playBGM();
         this.startGameBtn.play('fadeInStartBtn');
         this.hasMoveScene = true;
     },
