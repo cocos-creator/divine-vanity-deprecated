@@ -100,6 +100,7 @@ var Society = cc.Class({
                 Wishes[id].divineConsume = wishInfo.divineConsume;
                 Wishes[id].wishConsume = wishInfo.wishConsume;
                 Wishes[id].levelBonus = wishInfo.levelBonus;
+                Wishes[id].attraction = wishInfo.attraction;
             }
         }.bind(this));
     },
