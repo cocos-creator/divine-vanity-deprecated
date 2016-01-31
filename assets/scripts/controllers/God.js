@@ -13,7 +13,14 @@ cc.Class({
         resources: {
             default: null,
             type: Resources
-        }
+        },
+
+        wonderPrefab: {
+            default: null,
+            type: cc.Prefab
+        },
+
+        wonderLayer: cc.Node
     },
 
     // use this for initialization
@@ -31,4 +38,11 @@ cc.Class({
     skillFired: function (data) {
         this.society.skillFired(data.detail.skillID);
     },
+
+    showWonder: function () {
+        let wonder = cc.instantiate(this.wonderPrefab);
+        this.wonderLayer.addChild(wonder);
+        wonder.x = cc.randomMinus1To1() * 350;
+        wonder.getComponent('FXWonder').playAnim();
+    }
 });
