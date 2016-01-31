@@ -9,6 +9,7 @@ cc.Class({
     },
 
     playAnim (idx) {
+        console.log('wonder idx: ' + idx);
         this.sprite.spriteFrame = this.sfWonders[idx];
         this.anim.play('pop');
         this.particle.resetSystem();
