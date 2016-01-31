@@ -2,7 +2,7 @@ cc.Class({
     extends: cc.Component,
 
     editor: {
-        executeInEditMode: true,
+        executeInEditMode: false,
         playOnFocus: true,
     },
 

@@ -71,7 +71,7 @@
     "__type__": "cc.Node",
     "_name": "qiji_tuteng",
     "_objFlags": 0,
-    "_opacity": 255,
+    "_opacity": 0,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -101,7 +101,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": -257
+      "y": -665
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -340,7 +340,27 @@
     },
     "anim": {
       "__id__": 4
-    }
+    },
+    "sprite": {
+      "__id__": 3
+    },
+    "sfWonders": [
+      {
+        "__uuid__": "eddbe53c-015b-447a-b125-539bebfbe89d"
+      },
+      {
+        "__uuid__": "528a22a7-7178-42a9-a7e0-c0f656cd40f3"
+      },
+      {
+        "__uuid__": "eddbe53c-015b-447a-b125-539bebfbe89d"
+      },
+      {
+        "__uuid__": "528a22a7-7178-42a9-a7e0-c0f656cd40f3"
+      },
+      {
+        "__uuid__": "eddbe53c-015b-447a-b125-539bebfbe89d"
+      }
+    ]
   },
   {
     "__type__": "cc.PrefabInfo",

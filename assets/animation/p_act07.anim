@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "p_act07",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.5,
+  "sample": 10,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "bd429e76-7200-49d9-b35a-fe1e0f41afc4"
+            }
+          },
+          {
+            "frame": 0.3,
+            "value": {
+              "__uuid__": "cc97059d-9a16-4807-8de2-62f7cfae905f"
+            }
+          },
+          {
+            "frame": 0.6,
+            "value": {
+              "__uuid__": "bd429e76-7200-49d9-b35a-fe1e0f41afc4"
+            }
+          },
+          {
+            "frame": 0.9,
+            "value": {
+              "__uuid__": "cc97059d-9a16-4807-8de2-62f7cfae905f"
+            }
+          },
+          {
+            "frame": 1.4,
+            "value": {
+              "__uuid__": "cc97059d-9a16-4807-8de2-62f7cfae905f"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

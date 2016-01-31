@@ -1,0 +1,87 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "eyes",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 3,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {},
+    "comps": {
+      "cc.Widget": {}
+    },
+    "paths": {
+      "bot_eye": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                300
+              ]
+            },
+            {
+              "frame": 1,
+              "value": [
+                0,
+                30
+              ]
+            },
+            {
+              "frame": 2,
+              "value": [
+                0,
+                320
+              ]
+            },
+            {
+              "frame": 3,
+              "value": [
+                0,
+                50
+              ]
+            }
+          ]
+        }
+      },
+      "top_eye": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                -300
+              ]
+            },
+            {
+              "frame": 1,
+              "value": [
+                0,
+                -10
+              ]
+            },
+            {
+              "frame": 1.9833333333333334,
+              "value": [
+                0,
+                -320
+              ]
+            },
+            {
+              "frame": 3,
+              "value": [
+                0,
+                -50
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

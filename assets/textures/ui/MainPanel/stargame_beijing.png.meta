@@ -1,0 +1,28 @@
+{
+  "ver": "1.0.0",
+  "uuid": "df37f29e-f9b7-4583-a5a4-207674bf09a6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "stargame_beijing": {
+      "ver": "1.0.2",
+      "uuid": "6bbf77e2-8b01-46fa-be3d-21f10d4e34e7",
+      "rawTextureUuid": "df37f29e-f9b7-4583-a5a4-207674bf09a6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1080,
+      "height": 1572,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

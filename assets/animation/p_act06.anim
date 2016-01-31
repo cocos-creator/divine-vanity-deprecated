@@ -1,0 +1,69 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "p_act06",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.1,
+  "sample": 10,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "3963b426-2da2-4470-a93e-0ad4ec96af2d"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "2366b251-4df6-4a73-8339-ebe7306115bc"
+            }
+          },
+          {
+            "frame": 0.4,
+            "value": {
+              "__uuid__": "3963b426-2da2-4470-a93e-0ad4ec96af2d"
+            }
+          },
+          {
+            "frame": 0.6,
+            "value": {
+              "__uuid__": "2366b251-4df6-4a73-8339-ebe7306115bc"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "2366b251-4df6-4a73-8339-ebe7306115bc"
+            }
+          }
+        ]
+      }
+    },
+    "props": {
+      "rotation": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.3,
+          "value": 2
+        },
+        {
+          "frame": 0.6,
+          "value": -2
+        },
+        {
+          "frame": 1,
+          "value": 0
+        }
+      ]
+    }
+  },
+  "events": []
+}
