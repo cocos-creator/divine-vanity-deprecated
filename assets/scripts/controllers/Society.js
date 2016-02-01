@@ -270,6 +270,12 @@ var Society = cc.Class({
         if (index > -1) {
             UnusedPoses.splice(index, 1);
         }
+        var btnRituals = this.battlePanel.btnRituals;
+        if (!btnRituals.active) {
+            btnRituals.active = true;
+            btnRituals.runAction(cc.fadeIn(1));
+        }
+        this.battlePanel.rituals.activateRitual(wish.id, Poses.indexOf(pose));
     },
 
     rejointDefault: function (group) {

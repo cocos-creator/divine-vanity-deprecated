@@ -2,7 +2,7 @@
 var PowerBar = require('PowerBar');
 var EffectMng = require('EffectMng');
 var AudioMng = require('AudioMng');
-var Rituals = require('rituals');
+var Rituals = require('Rituals');
 var Credits = require('Credits');
 
 var BattlePanel = cc.Class ({
@@ -24,20 +24,13 @@ var BattlePanel = cc.Class ({
         rituals: {
             default: null,
             type: Rituals
-        }
+        },
+        btnRituals: cc.Node,
         creditPanel: Credits
     },
 
     statics: {
         instance: null
-    },
-
-    openRituals: function () {
-        this.rituals.node.active = true;
-    },
-
-    closeRituals: function () {
-        this.rituals.node.active = false;
     },
 
     onLoad: function () {
@@ -117,8 +110,16 @@ var BattlePanel = cc.Class ({
     },
 
     showCredit () {
-        this.creditPanel.node.active = true;
-        // this.creditPanel.startScroll();
+        if (!this.creditPanel.node.active) {
+            this.creditPanel.node.active = true;
+            // this.creditPanel.startScroll();
+        }
+    },
+
+    showRituals () {
+        if (!this.rituals.node.active) {
+            this.rituals.node.active = true;
+        }
     },
 
     instantiate: function () {
