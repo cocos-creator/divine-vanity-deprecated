@@ -3719,8 +3719,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -377.6572151692711,
-      "y": 274.67499999999995
+      "x": -377.65979532877634,
+      "y": 274.66874999999993
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -3885,9 +3885,9 @@
     },
     "_enabled": true,
     "_alignFlags": 9,
-    "_left": 88.74278483072885,
+    "_left": 88.74020467122364,
     "_right": 0,
-    "_top": 29.325000000000074,
+    "_top": 29.331250000000075,
     "_bottom": 0,
     "_isAbsLeft": true,
     "_isAbsRight": true,
@@ -5688,7 +5688,7 @@
     "_useOriginalSize": false,
     "_fontSize": 20,
     "_lineHeight": 40,
-    "_enableWrapText": false,
+    "_enableWrapText": true,
     "_isSystemFontUsed": false,
     "_N$string": "Rituals",
     "_N$horizontalAlign": 1,
@@ -11963,7 +11963,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 480,
-      "y": 320.0000000000001
+      "y": 320.00000000000006
     },
     "_skewX": 0,
     "_skewY": 0,
