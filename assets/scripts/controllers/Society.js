@@ -74,6 +74,8 @@ var Society = cc.Class({
 
         prayCoef: 0.3,
 
+        rollWishCoef: 1.3,
+
         // Decide when to learn, +- 1 floating
         learnDelay: 10,
 
@@ -100,6 +102,8 @@ var Society = cc.Class({
         this.firstWishPop = false;
 
         this._pause = true;
+
+        this._nextWish = null;
 
         this.god = this.getComponent('God');
 
@@ -326,22 +330,38 @@ var Society = cc.Class({
             // Ready for praying
             if (this.prayTimeout <= 0) {
                 this.prayTimeout = this.prayDelay;
-                var knownWishes = Object.keys(this.rituals);
-                var wishID = knownWishes[Math.floor(Math.random() * knownWishes.length)];
-                var wish = Wishes[wishID];
+                if (this._nextWish === null) {
+                    var knownWishes = Object.keys(this.rituals);
+                    var count = knownWishes.length;
+                    var rand = Math.random() * this.rollWishCoef;
+                    var unit = rand / count;
+                    var bouns = (this.rollWishCoef - 1) / (count * (count-1) / 2);
+                    var range = 0;
+                    var rolled = 0;
+                    for (let i = 0; i < knownWishes.length; ++i) {
+                        range += unit + bouns * i;
+                        if (rand < range) {
+                            rolled = i;
+                            break;
+                        }
+                    }
+                    var wishID = knownWishes[rolled];
+                    this._nextWish = Wishes[wishID];
+                }
                 group = cc.pool.hasObject(Group) ? cc.pool.getFromPool(Group) : new Group(this);
-                var succeed = this.defaultGroup.split(wish, group);
+                var succeed = this.defaultGroup.split(this._nextWish, group);
                 if (succeed) {
-                    group.wish = wish;
+                    group.wish = this._nextWish;
                     group.praying = true;
                     this.runningGroups.push(group);
                     group.toState(States.PRAYING);
+                    this._nextWish = null;
                 }
             }
             this.prayTimeout -= dt;
         }
 
-        for (var i = 0; i < this.runningGroups.length; ++i) {
+        for (let i = 0; i < this.runningGroups.length; ++i) {
             group = this.runningGroups[i];
             if (group.active) {
                 group.update(dt);

@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "ritual4",
+    "_name": "ritual5",
     "_objFlags": 0,
     "_opacity": 255,
     "_color": {
@@ -49,7 +49,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 110.2,
+      "x": 220.4,
       "y": -30
     },
     "_skewX": 0,
@@ -151,7 +151,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "028464qXypBdJyEL7ExaVys"
+    "fileId": "c850fOBbgJL9KE64k+/OBaN"
   },
   {
     "__type__": "cc.Node",
@@ -216,7 +216,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "3bfc7724-4261-467d-bcf3-f5af0134e493"
+      "__uuid__": "81d80e82-5bc8-4c40-845d-0043c34b073c"
     },
     "_type": 0,
     "_useOriginalSize": true,
@@ -238,7 +238,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "61acdHDXQ1NMoFuULm/n75P"
+    "fileId": "8e00fplX6FE/oFxgD3Vo4uu"
   },
   {
     "__type__": "cc.Node",
@@ -321,7 +321,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "507c6cN1qZCX6L3m+pfCnPe"
+    "fileId": "cb3d7azbpxOQ5LN+8eJjsP7"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -329,6 +329,6 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "7ea50yMWXpIUpyv9BCWGzfI"
+    "fileId": "994c1oQIDRDIYYtA3IBb1P2"
   }
 ]
