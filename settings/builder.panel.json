@@ -1,8 +1,15 @@
 {
-  "excludeScenes": [],
+  "excludeScenes": [
+    "a321bfb4-69cd-40af-bcc6-66ab970ce751",
+    "b66dae54-08ab-4830-abe4-3cbd1d2633c5",
+    "f210b7d0-845a-43d5-b369-55c77a3d2d1f",
+    "a9fe0481-a8dd-44af-8ff9-f673b0480648",
+    "86ba0bbc-5438-4dfd-8062-cb577bc672ed",
+    "3ebede8b-b14a-43c9-9359-c19afda0100d"
+  ],
   "packageName": "org.cocos2d.ggj-creator",
   "platform": "web-mobile",
-  "startScene": "5b019cd3-4f44-4e76-9b37-172f71ed29b0",
+  "startScene": "42d1e58a-f949-4548-85c5-58b63d83a3ec",
   "startSceneUuid": "5b019cd3-4f44-4e76-9b37-172f71ed29b0",
   "title": "ggj-creator"
 }
