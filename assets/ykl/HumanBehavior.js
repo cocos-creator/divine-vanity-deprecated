@@ -34,7 +34,9 @@ cc.Class({
 
                 var name = WishType[this.currentWish.id];
                 this.wishIcon.getComponent(cc.Sprite).spriteFrame = this.sfWishIcons[this.currentWish.id];
+                this.wishIconAnim.stop();
                 this.wishIconAnim.play('show');
+                this.skillConfirm.enabled = false;
             }
         },
 
@@ -70,6 +72,7 @@ cc.Class({
     onLoad: function () {
         this.checked = false;
         this.canvas = cc.find('Canvas');
+        this.skillConfirm = this.wishIcon.getChildByName('skill_confirm').getComponent(cc.Sprite);
 
         this._idleTime = this._idleChangeDirectionTime = 3;
 
@@ -88,10 +91,13 @@ cc.Class({
             this.checked = false;
         }
         else if ( state === window.States.LEARNING ) {
-            if (oldState !== window.States.DOUBTING) {
-                this.showWish();
-                this.wishIcon.getChildByName('skill_confirm').opacity = 0;
-            }
+            this.showWish();
+            this.wishIconAnim.stop();
+            this.skillConfirm.enabled = false;
+            this.wishIconAnim.play('show');
+
+            // if (oldState !== window.States.DOUBTING) {
+            // }
             this.wishIcon.getComponent(cc.Button).interactable = true;
         }
         else if ( state === window.States.DOUBTING ) {
@@ -100,6 +106,8 @@ cc.Class({
                 cc.find('Canvas/world/narrative').getComponent('Narrative').playLine(4);
             }
             // 头上显示问号
+            this.skillConfirm.enabled = true;
+            this.wishIconAnim.stop();
             this.wishIconAnim.play('doubt');
         }
         else if ( state === window.States.CONFIRMING ) {
@@ -126,6 +134,7 @@ cc.Class({
         else if ( state === window.States.LOST ) {
             // 丢失或是死掉
             this.anim.play('die');
+            this.checked = false;
             this.node.runAction(cc.sequence(cc.fadeOut(2.5), cc.callFunc(function () {
                 this.node.removeFromParent();
             }, this)));
@@ -145,6 +154,8 @@ cc.Class({
         }
         this.checked = true;
         this.wishIcon.getComponent(cc.Button).interactable = false;
+        this.wishIconAnim.stop();
+        this.skillConfirm.enabled = true;
         this.wishIconAnim.play('confirm');
 
         this.canvas.emit('wish-clicked', this);

@@ -19,12 +19,12 @@ cc.Class({
                 break;
             case 2:
                 this.anim.play('pop_maya');
-                this.node.y += cc.random0To1() * 60;
+                this.node.y += cc.random0To1() * 30;
                 this.node.scale *= cc.random0To1() * 0.3 + 1;
                 break;
             case 3:
                 this.anim.play('pop_egypt');
-                this.node.y += cc.random0To1() * 80;
+                this.node.y += cc.random0To1() * 30;
                 break;
             case 4:
                 this.anim.play('pop');

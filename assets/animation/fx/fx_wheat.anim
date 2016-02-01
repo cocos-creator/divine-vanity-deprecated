@@ -49,6 +49,18 @@
           "value": 1
         }
       ]
+    },
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "97fa0feb-c8fa-4c40-8acb-42a3918854a6"
+            }
+          }
+        ]
+      }
     }
   },
   "events": []

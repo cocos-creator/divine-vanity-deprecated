@@ -7,7 +7,7 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        this.node.runAction(cc.sequence(cc.fadeOut(1), cc.fadeIn(1)));
+        this.node.runAction(cc.repeatForever(cc.sequence(cc.fadeOut(1), cc.fadeIn(1))));
         cc.eventManager.addListener({
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
             onTouchBegan: function(touch, event) {
