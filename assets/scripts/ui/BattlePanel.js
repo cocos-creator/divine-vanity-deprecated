@@ -2,6 +2,7 @@
 var PowerBar = require('PowerBar');
 var EffectMng = require('EffectMng');
 var AudioMng = require('AudioMng');
+var Credits = require('Credits');
 
 var BattlePanel = cc.Class ({
     extends: cc.Component,
@@ -18,7 +19,8 @@ var BattlePanel = cc.Class ({
         skillList: {
             default: null,
             type: cc.Node
-        }
+        },
+        creditPanel: Credits
     },
 
     statics: {
@@ -29,6 +31,7 @@ var BattlePanel = cc.Class ({
         BattlePanel.instance = this;
         this.skills = [];
         this.allUnlocked = false;
+        this.creditPanel.node.active = false;
     },
 
     start: function () {
@@ -98,6 +101,11 @@ var BattlePanel = cc.Class ({
             unlocked.push(i);
         }
         return unlocked;
+    },
+
+    showCredit () {
+        this.creditPanel.node.active = true;
+        // this.creditPanel.startScroll();
     },
 
     instantiate: function () {
