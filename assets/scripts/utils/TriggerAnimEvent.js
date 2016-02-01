@@ -5,15 +5,12 @@ cc.Class({
         startBtnAnim: {
             default: null,
             type: cc.Animation
-        }
-    },
-
-    // use this for initialization
-    onLoad: function () {
-
+        },
+        startBtn: cc.Node
     },
 
     eyesAnimEnd: function () {
+        this.startBtn.active = true;
         this.startBtnAnim.play('fadeInStartBtn');
     }
 
