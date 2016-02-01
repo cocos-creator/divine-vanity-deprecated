@@ -88,9 +88,9 @@ cc.Class({
             this.checked = false;
         }
         else if ( state === window.States.LEARNING ) {
-            this.wishIcon.getChildByName('skill_confirm').opacity = 0;
             if (oldState !== window.States.DOUBTING) {
                 this.showWish();
+                this.wishIcon.getChildByName('skill_confirm').opacity = 0;
             }
             this.wishIcon.getComponent(cc.Button).interactable = true;
         }
