@@ -69,7 +69,7 @@ cc.Class({
         idleChangeDirectionTimeRange: cc.v2(2, 4)
     },
 
-    onLoad: function () {
+    start: function () {
         this.checked = false;
         this.canvas = cc.find('Canvas');
         this.skillConfirm = this.wishIcon.getChildByName('skill_confirm').getComponent(cc.Sprite);
@@ -168,7 +168,7 @@ cc.Class({
     },
 
     hideWish: function () {
-        this.wishIcon.x = this.wishIcon.y = 0;
+        // this.wishIcon.x = this.wishIcon.y = 0;
         this.wishIcon.active = false;
     },
 

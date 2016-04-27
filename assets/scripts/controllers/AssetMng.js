@@ -7,8 +7,7 @@ cc.Class({
     // use this for initialization
     init: function (cb) {
         this.wishesDB = {};
-        let url = cc.url.raw('data/wishes.json');
-        cc.loader.loadJson(url, function(error, data){
+        cc.loader.loadRes('data/wishes.json', function(error, data){
             for (var i = 0; i < data.length; ++i) {
                 if (data[i].id === "") break;
                 this.wishesDB[data[i].id] = data[i];

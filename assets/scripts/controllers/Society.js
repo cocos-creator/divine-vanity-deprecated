@@ -160,11 +160,10 @@ var Society = cc.Class({
             // Ritual need satisfied
             var wish = group.wish;
             if (pickedPose && max >= wish.ritualNeed) {
-                this.scheduleOnce(function() {
+                setTimeout(function() {
                     let poseID = Poses.indexOf(pickedPose);
                     this.fxRitual.playAnim(poseID);
-                    // this.god.showWonder();
-                }, 2.5);
+                }.bind(this), 2.5 * 1000);
                 AudioMng.instance.playRitual();
                 this.ritualLearnt(wish, pickedPose);
                 this.tribute(max * wish.wishConsume, wish);
