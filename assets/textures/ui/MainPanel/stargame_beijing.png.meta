@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "stargame_beijing": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "6bbf77e2-8b01-46fa-be3d-21f10d4e34e7",
       "rawTextureUuid": "df37f29e-f9b7-4583-a5a4-207674bf09a6",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 0,
       "width": 1080,
       "height": 1572,
+      "rawWidth": 1080,
+      "rawHeight": 1572,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

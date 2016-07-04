@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "tuteng": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "38a4274e-50d7-42e4-b7f7-fdce2c731cfd",
       "rawTextureUuid": "4037038c-a253-4d03-90f8-40d2c13310f6",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 0,
       "width": 542,
       "height": 939,
+      "rawWidth": 558,
+      "rawHeight": 944,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

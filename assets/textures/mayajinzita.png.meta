@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "mayajinzita": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "528a22a7-7178-42a9-a7e0-c0f656cd40f3",
       "rawTextureUuid": "9bb16ec4-7cdc-4075-aac6-5a2d8fef3395",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 0,
       "width": 400,
       "height": 222,
+      "rawWidth": 400,
+      "rawHeight": 222,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

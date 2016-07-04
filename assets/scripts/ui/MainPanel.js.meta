@@ -1,5 +1,6 @@
 {
-  "ver": "1.0.0",
+  "ver": "1.0.2",
   "uuid": "8001771f-17cf-4b3a-87e1-e2cdf0ca4853",
+  "isPlugin": false,
   "subMetas": {}
 }

@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "scene03b": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "d74810ee-1529-4a4e-8eb3-4f5f20d326a7",
       "rawTextureUuid": "244eb549-4a60-44e6-a664-b47b12026309",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 0,
       "width": 1920,
       "height": 1079,
+      "rawWidth": 1920,
+      "rawHeight": 1079,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

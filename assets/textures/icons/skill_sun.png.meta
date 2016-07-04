@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "skill_sun": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "585e79d6-41db-4ee3-891e-56099e5b0aca",
       "rawTextureUuid": "1583a787-e114-4462-8dfa-4a40d1c20d9c",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 2,
       "width": 78,
       "height": 78,
+      "rawWidth": 80,
+      "rawHeight": 80,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "qiji_fuhuojie": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "202c0972-ffdf-43c6-b224-f232b5183b11",
       "rawTextureUuid": "8132de4e-da6b-468c-a656-efa6eed7ced5",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 0,
       "width": 128,
       "height": 208,
+      "rawWidth": 128,
+      "rawHeight": 208,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

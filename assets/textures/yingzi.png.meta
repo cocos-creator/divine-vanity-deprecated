@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "yingzi": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "5335822c-6269-4396-bbd5-f049f0418eae",
       "rawTextureUuid": "2740da9f-4142-49a3-8d1a-5285d5ce9d48",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 4,
       "width": 113,
       "height": 65,
+      "rawWidth": 122,
+      "rawHeight": 73,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

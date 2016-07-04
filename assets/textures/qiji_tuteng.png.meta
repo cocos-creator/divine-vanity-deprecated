@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "qiji_tuteng": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "eddbe53c-015b-447a-b125-539bebfbe89d",
       "rawTextureUuid": "d9e0a007-1181-453e-bb2c-549415a1bfb9",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 0,
       "width": 149,
       "height": 337,
+      "rawWidth": 150,
+      "rawHeight": 337,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

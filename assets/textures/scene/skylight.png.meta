@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "skylight": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "3e5c38e9-9a75-4066-9bdd-6d7bdb0a2ec4",
       "rawTextureUuid": "bf52ef5f-e726-418c-8909-ecb1b79358bd",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 0,
       "width": 241,
       "height": 208,
+      "rawWidth": 256,
+      "rawHeight": 208,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

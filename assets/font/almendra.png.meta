@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "almendra": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "57a377ab-f06e-4d96-81a6-df827496ee37",
       "rawTextureUuid": "97d61b60-501a-4844-bff9-0bfacb9baa7b",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 3,
       "width": 505,
       "height": 296,
+      "rawWidth": 512,
+      "rawHeight": 512,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

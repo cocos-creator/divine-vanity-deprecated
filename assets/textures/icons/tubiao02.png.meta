@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "tubiao02": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "901e4c76-17c7-435c-a3e4-0d28927ec9e4",
       "rawTextureUuid": "29a60834-4f0a-4be8-b356-59d7426b6def",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 0,
       "width": 81,
       "height": 79,
+      "rawWidth": 81,
+      "rawHeight": 79,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

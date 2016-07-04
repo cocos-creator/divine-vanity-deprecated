@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "shandian1": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "3c6b9ed1-c2ea-4212-83fb-8a58b94c64f2",
       "rawTextureUuid": "d30d6844-6e3f-4bd2-918d-fecc1e6bcd49",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 0,
       "width": 85,
       "height": 283,
+      "rawWidth": 100,
+      "rawHeight": 283,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

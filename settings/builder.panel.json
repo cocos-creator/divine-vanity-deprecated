@@ -8,8 +8,13 @@
     "3ebede8b-b14a-43c9-9359-c19afda0100d"
   ],
   "packageName": "org.cocos2d.ggj-creator",
-  "platform": "web-mobile",
   "startScene": "42d1e58a-f949-4548-85c5-58b63d83a3ec",
-  "startSceneUuid": "5b019cd3-4f44-4e76-9b37-172f71ed29b0",
-  "title": "ggj-creator"
+  "title": "ggj-creator",
+  "orientation": {
+    "landscapeRight": true,
+    "landscapeLeft": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "webOrientation": "auto"
 }

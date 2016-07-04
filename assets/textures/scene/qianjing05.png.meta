@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "qianjing05": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "54b805a6-19a4-4ae3-b094-1bd67453a062",
       "rawTextureUuid": "62aa39d4-b472-41ad-a3a6-43120a6e0ce6",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 26,
       "width": 1080,
       "height": 204,
+      "rawWidth": 1080,
+      "rawHeight": 230,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

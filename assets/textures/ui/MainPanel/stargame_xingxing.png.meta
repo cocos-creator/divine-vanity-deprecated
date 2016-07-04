@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "subMetas": {
     "stargame_xingxing": {
-      "ver": "1.0.2",
+      "ver": "1.0.3",
       "uuid": "3d8f806c-0d97-49c6-a295-374727a02fda",
       "rawTextureUuid": "74235dee-9436-4307-b4b6-9e1b9d4efe13",
       "trimType": "auto",
@@ -18,6 +18,8 @@
       "trimY": 14,
       "width": 159,
       "height": 164,
+      "rawWidth": 187,
+      "rawHeight": 187,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,
