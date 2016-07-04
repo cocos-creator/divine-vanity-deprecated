@@ -1,4 +1,8 @@
-# God of Vanity（暂定）
+# Divine Vanity
+
+This is a game made during Global Game Jam 2016, with Cocos Creator.
+
+# Design Document
 
 ## 游戏元素
 
